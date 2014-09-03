@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ipojo xmlns="org.apache.felix.ipojo">
+  <component classname="org.aimas.ami.cmm.simulation.SmartClassroomSimImpl" name="SmartClassroomSim">
+    <requires optional="true" specification="fr.liglab.adele.icasa.device.presence.PresenceSensor" field="presenceSensor"/>
+    <callback method="start" transition="validate"/>
+    <callback method="stop" transition="invalidate"/>
+    <requires aggregate="true" optional="true" specification="fr.liglab.adele.icasa.device.light.Photometer" field="luminositySensors">
+      <callback method="bindLuminositySensor" type="bind"/>
+      <callback method="unbindLuminositySensor" type="unbind"/>
+    </requires>
+    <requires aggregate="true" optional="true" specification="fr.liglab.adele.icasa.device.temperature.Thermometer" field="temperatureSensors">
+      <callback method="bindTemperatureSensor" type="bind"/>
+      <callback method="unbindTemperatureSensor" type="unbind"/>
+    </requires>
+  </component>
+  <instance component="SmartClassroomSim" name="SmartClassroomSim-1"/>
+</ipojo>

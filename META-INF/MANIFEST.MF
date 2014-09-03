@@ -1,0 +1,79 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: SmartClassroomSim
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-SymbolicName: SmartClassroomSim
+Bundle-Version: 1.0.0.qualifier
+Created-By: iPOJO 1.10.1
+Import-Package: fr.liglab.adele.icasa, fr.liglab.adele.icasa.access, f
+ r.liglab.adele.icasa.access.command, fr.liglab.adele.icasa.applicatio
+ n, fr.liglab.adele.icasa.application.impl, fr.liglab.adele.icasa.appl
+ ication.impl.command, fr.liglab.adele.icasa.application.remote, fr.li
+ glab.adele.icasa.application.remote.util, fr.liglab.adele.icasa.clock
+ , fr.liglab.adele.icasa.clock.impl, fr.liglab.adele.icasa.clock.util,
+  fr.liglab.adele.icasa.command.handler, fr.liglab.adele.icasa.command
+ s, fr.liglab.adele.icasa.commands.impl, fr.liglab.adele.icasa.common,
+  fr.liglab.adele.icasa.common.impl, fr.liglab.adele.icasa.common.xml.
+ utils, fr.liglab.adele.icasa.device, fr.liglab.adele.icasa.device.bat
+ hroomscale, fr.liglab.adele.icasa.device.box, fr.liglab.adele.icasa.d
+ evice.button, fr.liglab.adele.icasa.device.button.simulated, fr.ligla
+ b.adele.icasa.device.gasSensor, fr.liglab.adele.icasa.device.light, f
+ r.liglab.adele.icasa.device.manager, fr.liglab.adele.icasa.device.mot
+ ion, fr.liglab.adele.icasa.device.power, fr.liglab.adele.icasa.device
+ .presence, fr.liglab.adele.icasa.device.settopbox, fr.liglab.adele.ic
+ asa.device.sound, fr.liglab.adele.icasa.device.sprinkler, fr.liglab.a
+ dele.icasa.device.temperature, fr.liglab.adele.icasa.device.util, fr.
+ liglab.adele.icasa.exception, fr.liglab.adele.icasa.frontend.services
+ , fr.liglab.adele.icasa.frontend.services.rest, fr.liglab.adele.icasa
+ .frontend.services.utils, fr.liglab.adele.icasa.listener, fr.liglab.a
+ dele.icasa.location, fr.liglab.adele.icasa.location.impl, fr.liglab.a
+ dele.icasa.location.util, fr.liglab.adele.icasa.remote.wisdom, fr.lig
+ lab.adele.icasa.remote.wisdom.util, fr.liglab.adele.icasa.service.loc
+ ation, fr.liglab.adele.icasa.service.preferences, fr.liglab.adele.ica
+ sa.service.scheduler, fr.liglab.adele.icasa.service.zone.dimension.ca
+ lculator, fr.liglab.adele.icasa.service.zone.size.calculator, fr.ligl
+ ab.adele.icasa.simulator, fr.liglab.adele.icasa.simulator.listener, f
+ r.liglab.adele.icasa.simulator.listener.util, fr.liglab.adele.icasa.s
+ imulator.remote.wisdom.util, fr.liglab.adele.icasa.simulator.script.e
+ xecutor, org.apache.felix.ipojo;version="[1.8.0,2.0.0)", org.apache.f
+ elix.ipojo.architecture;version="[1.8.0,2.0.0)", org.json, org.osgi.s
+ ervice.cm;version=1.2, org.osgi.service.log;version=1.3
+iPOJO-Components: instance { $component="SmartClassroomSim" $name="Sma
+ rtClassroomSim-1" }component { $classname="org.aimas.ami.cmm.simulati
+ on.SmartClassroomSimImpl" $name="SmartClassroomSim" requires { $optio
+ nal="true" $specification="fr.liglab.adele.icasa.device.presence.Pres
+ enceSensor" $field="presenceSensor" }requires { $aggregate="true" $op
+ tional="true" $specification="fr.liglab.adele.icasa.device.light.Phot
+ ometer" $field="luminositySensors" callback { $method="bindLuminosity
+ Sensor" $type="bind" }callback { $method="unbindLuminositySensor" $ty
+ pe="unbind" }}requires { $aggregate="true" $optional="true" $specific
+ ation="fr.liglab.adele.icasa.device.temperature.Thermometer" $field="
+ temperatureSensors" callback { $method="bindTemperatureSensor" $type=
+ "bind" }callback { $method="unbindTemperatureSensor" $type="unbind" }
+ }callback { $method="start" $transition="validate" }callback { $metho
+ d="stop" $transition="invalidate" }manipulation { interface { $name="
+ fr.liglab.adele.icasa.device.DeviceListener" }field { $name="luminosi
+ tySensorMap" $type="java.util.Map" }field { $name="luminositySensors"
+  $type="fr.liglab.adele.icasa.device.light.Photometer[]" }field { $na
+ me="presenceSensor" $type="fr.liglab.adele.icasa.device.presence.Pres
+ enceSensor" }field { $name="temperatureSensorMap" $type="java.util.Ma
+ p" }field { $name="temperatureSensors" $type="fr.liglab.adele.icasa.d
+ evice.temperature.Thermometer[]" }method { $name="bindLuminositySenso
+ r" $arguments="{fr.liglab.adele.icasa.device.light.Photometer,java.ut
+ il.Map}" }method { $name="unbindLuminositySensor" $arguments="{fr.lig
+ lab.adele.icasa.device.light.Photometer,java.util.Map}" }method { $na
+ me="bindTemperatureSensor" $arguments="{fr.liglab.adele.icasa.device.
+ temperature.Thermometer,java.util.Map}" }method { $name="unbindTemper
+ atureSensor" $arguments="{fr.liglab.adele.icasa.device.temperature.Th
+ ermometer,java.util.Map}" }method { $name="start" }method { $name="st
+ op" }method { $name="deviceAdded" $arguments="{fr.liglab.adele.icasa.
+ device.GenericDevice}" }method { $name="deviceEvent" $arguments="{fr.
+ liglab.adele.icasa.device.GenericDevice,java.lang.Object}" }method { 
+ $name="devicePropertyAdded" $arguments="{fr.liglab.adele.icasa.device
+ .GenericDevice,java.lang.String}" }method { $name="devicePropertyModi
+ fied" $arguments="{fr.liglab.adele.icasa.device.GenericDevice,java.la
+ ng.String,java.lang.Object,java.lang.Object}" }method { $name="device
+ PropertyRemoved" $arguments="{fr.liglab.adele.icasa.device.GenericDev
+ ice,java.lang.String}" }method { $name="deviceRemoved" $arguments="{f
+ r.liglab.adele.icasa.device.GenericDevice}" }}}
+
