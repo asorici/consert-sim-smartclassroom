@@ -5,75 +5,500 @@ Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-SymbolicName: SmartClassroomSim
 Bundle-Version: 1.0.0.qualifier
 Created-By: iPOJO 1.10.1
-Import-Package: fr.liglab.adele.icasa, fr.liglab.adele.icasa.access, f
- r.liglab.adele.icasa.access.command, fr.liglab.adele.icasa.applicatio
- n, fr.liglab.adele.icasa.application.impl, fr.liglab.adele.icasa.appl
- ication.impl.command, fr.liglab.adele.icasa.application.remote, fr.li
- glab.adele.icasa.application.remote.util, fr.liglab.adele.icasa.clock
- , fr.liglab.adele.icasa.clock.impl, fr.liglab.adele.icasa.clock.util,
-  fr.liglab.adele.icasa.command.handler, fr.liglab.adele.icasa.command
- s, fr.liglab.adele.icasa.commands.impl, fr.liglab.adele.icasa.common,
-  fr.liglab.adele.icasa.common.impl, fr.liglab.adele.icasa.common.xml.
- utils, fr.liglab.adele.icasa.device, fr.liglab.adele.icasa.device.bat
- hroomscale, fr.liglab.adele.icasa.device.box, fr.liglab.adele.icasa.d
- evice.button, fr.liglab.adele.icasa.device.button.simulated, fr.ligla
- b.adele.icasa.device.gasSensor, fr.liglab.adele.icasa.device.light, f
- r.liglab.adele.icasa.device.manager, fr.liglab.adele.icasa.device.mot
- ion, fr.liglab.adele.icasa.device.power, fr.liglab.adele.icasa.device
- .presence, fr.liglab.adele.icasa.device.settopbox, fr.liglab.adele.ic
- asa.device.sound, fr.liglab.adele.icasa.device.sprinkler, fr.liglab.a
- dele.icasa.device.temperature, fr.liglab.adele.icasa.device.util, fr.
- liglab.adele.icasa.exception, fr.liglab.adele.icasa.frontend.services
- , fr.liglab.adele.icasa.frontend.services.rest, fr.liglab.adele.icasa
- .frontend.services.utils, fr.liglab.adele.icasa.listener, fr.liglab.a
- dele.icasa.location, fr.liglab.adele.icasa.location.impl, fr.liglab.a
- dele.icasa.location.util, fr.liglab.adele.icasa.remote.wisdom, fr.lig
- lab.adele.icasa.remote.wisdom.util, fr.liglab.adele.icasa.service.loc
- ation, fr.liglab.adele.icasa.service.preferences, fr.liglab.adele.ica
- sa.service.scheduler, fr.liglab.adele.icasa.service.zone.dimension.ca
- lculator, fr.liglab.adele.icasa.service.zone.size.calculator, fr.ligl
- ab.adele.icasa.simulator, fr.liglab.adele.icasa.simulator.listener, f
- r.liglab.adele.icasa.simulator.listener.util, fr.liglab.adele.icasa.s
- imulator.remote.wisdom.util, fr.liglab.adele.icasa.simulator.script.e
- xecutor, org.apache.felix.ipojo;version="[1.8.0,2.0.0)", org.apache.f
- elix.ipojo.architecture;version="[1.8.0,2.0.0)", org.json, org.osgi.s
- ervice.cm;version=1.2, org.osgi.service.log;version=1.3
+Export-Package: org.aimas.ami.cmm.simulation, org.aimas.ami.cmm.simula
+ tion.sensors, org.aimas.ami.cmm.simulation.users
+Import-Package: com.hp.hpl.jena.datatypes;resolution:=optional, com.hp
+ .hpl.jena.datatypes.xsd;resolution:=optional, com.hp.hpl.jena.graph;r
+ esolution:=optional, com.hp.hpl.jena.query;resolution:=optional, com.
+ hp.hpl.jena.rdf.model;resolution:=optional, com.hp.hpl.jena.sparql.co
+ re;resolution:=optional, com.hp.hpl.jena.sparql.modify.request;resolu
+ tion:=optional, com.hp.hpl.jena.update;resolution:=optional, com.hp.h
+ pl.jena.vocabulary;resolution:=optional, fr.liglab.adele.icasa, fr.li
+ glab.adele.icasa.access, fr.liglab.adele.icasa.access.command, fr.lig
+ lab.adele.icasa.application, fr.liglab.adele.icasa.application.impl, 
+ fr.liglab.adele.icasa.application.impl.command, fr.liglab.adele.icasa
+ .application.remote, fr.liglab.adele.icasa.application.remote.util, f
+ r.liglab.adele.icasa.clock, fr.liglab.adele.icasa.clock.impl, fr.ligl
+ ab.adele.icasa.clock.util, fr.liglab.adele.icasa.command.handler, fr.
+ liglab.adele.icasa.commands, fr.liglab.adele.icasa.commands.impl, fr.
+ liglab.adele.icasa.common, fr.liglab.adele.icasa.common.impl, fr.ligl
+ ab.adele.icasa.common.xml.utils, fr.liglab.adele.icasa.device, fr.lig
+ lab.adele.icasa.device.bathroomscale, fr.liglab.adele.icasa.device.bo
+ x, fr.liglab.adele.icasa.device.button, fr.liglab.adele.icasa.device.
+ button.simulated, fr.liglab.adele.icasa.device.gasSensor, fr.liglab.a
+ dele.icasa.device.light, fr.liglab.adele.icasa.device.manager, fr.lig
+ lab.adele.icasa.device.motion, fr.liglab.adele.icasa.device.power, fr
+ .liglab.adele.icasa.device.presence, fr.liglab.adele.icasa.device.set
+ topbox, fr.liglab.adele.icasa.device.sound, fr.liglab.adele.icasa.dev
+ ice.sprinkler, fr.liglab.adele.icasa.device.temperature, fr.liglab.ad
+ ele.icasa.device.util, fr.liglab.adele.icasa.exception, fr.liglab.ade
+ le.icasa.frontend.services, fr.liglab.adele.icasa.frontend.services.r
+ est, fr.liglab.adele.icasa.frontend.services.utils, fr.liglab.adele.i
+ casa.listener, fr.liglab.adele.icasa.location, fr.liglab.adele.icasa.
+ location.impl, fr.liglab.adele.icasa.location.util, fr.liglab.adele.i
+ casa.remote.wisdom, fr.liglab.adele.icasa.remote.wisdom.util, fr.ligl
+ ab.adele.icasa.service.location, fr.liglab.adele.icasa.service.prefer
+ ences, fr.liglab.adele.icasa.service.scheduler, fr.liglab.adele.icasa
+ .service.zone.dimension.calculator, fr.liglab.adele.icasa.service.zon
+ e.size.calculator, fr.liglab.adele.icasa.simulator, fr.liglab.adele.i
+ casa.simulator.listener, fr.liglab.adele.icasa.simulator.listener.uti
+ l, fr.liglab.adele.icasa.simulator.remote.wisdom.util, fr.liglab.adel
+ e.icasa.simulator.script.executor, org.aimas.ami.cmm.api;resolution:=
+ optional, org.aimas.ami.cmm.sensing;resolution:=optional, org.aimas.a
+ mi.contextrep.datatype;resolution:=optional, org.aimas.ami.contextrep
+ .engine.api;resolution:=optional, org.aimas.ami.contextrep.model;reso
+ lution:=optional, org.aimas.ami.contextrep.resources;resolution:=opti
+ onal, org.aimas.ami.contextrep.utils;resolution:=optional, org.aimas.
+ ami.contextrep.vocabulary;resolution:=optional, org.apache.felix.ipoj
+ o;version="[1.8.0,2.0.0)", org.apache.felix.ipojo.architecture;versio
+ n="[1.8.0,2.0.0)", org.apache.felix.ipojo.configuration;version=1.12.
+ 0, org.json, org.osgi.framework;version=1.7.0, org.osgi.service.cm;ve
+ rsion=1.2, org.osgi.service.log;version=1.3
 iPOJO-Components: instance { $component="SmartClassroomSim" $name="Sma
- rtClassroomSim-1" }component { $classname="org.aimas.ami.cmm.simulati
- on.SmartClassroomSimImpl" $name="SmartClassroomSim" requires { $optio
- nal="true" $specification="fr.liglab.adele.icasa.device.presence.Pres
- enceSensor" $field="presenceSensor" }requires { $aggregate="true" $op
- tional="true" $specification="fr.liglab.adele.icasa.device.light.Phot
- ometer" $field="luminositySensors" callback { $method="bindLuminosity
- Sensor" $type="bind" }callback { $method="unbindLuminositySensor" $ty
- pe="unbind" }}requires { $aggregate="true" $optional="true" $specific
- ation="fr.liglab.adele.icasa.device.temperature.Thermometer" $field="
- temperatureSensors" callback { $method="bindTemperatureSensor" $type=
- "bind" }callback { $method="unbindTemperatureSensor" $type="unbind" }
- }callback { $method="start" $transition="validate" }callback { $metho
- d="stop" $transition="invalidate" }manipulation { interface { $name="
- fr.liglab.adele.icasa.device.DeviceListener" }field { $name="luminosi
- tySensorMap" $type="java.util.Map" }field { $name="luminositySensors"
-  $type="fr.liglab.adele.icasa.device.light.Photometer[]" }field { $na
- me="presenceSensor" $type="fr.liglab.adele.icasa.device.presence.Pres
- enceSensor" }field { $name="temperatureSensorMap" $type="java.util.Ma
- p" }field { $name="temperatureSensors" $type="fr.liglab.adele.icasa.d
- evice.temperature.Thermometer[]" }method { $name="bindLuminositySenso
- r" $arguments="{fr.liglab.adele.icasa.device.light.Photometer,java.ut
- il.Map}" }method { $name="unbindLuminositySensor" $arguments="{fr.lig
- lab.adele.icasa.device.light.Photometer,java.util.Map}" }method { $na
- me="bindTemperatureSensor" $arguments="{fr.liglab.adele.icasa.device.
- temperature.Thermometer,java.util.Map}" }method { $name="unbindTemper
- atureSensor" $arguments="{fr.liglab.adele.icasa.device.temperature.Th
- ermometer,java.util.Map}" }method { $name="start" }method { $name="st
- op" }method { $name="deviceAdded" $arguments="{fr.liglab.adele.icasa.
- device.GenericDevice}" }method { $name="deviceEvent" $arguments="{fr.
- liglab.adele.icasa.device.GenericDevice,java.lang.Object}" }method { 
- $name="devicePropertyAdded" $arguments="{fr.liglab.adele.icasa.device
- .GenericDevice,java.lang.String}" }method { $name="devicePropertyModi
- fied" $arguments="{fr.liglab.adele.icasa.device.GenericDevice,java.la
- ng.String,java.lang.Object,java.lang.Object}" }method { $name="device
- PropertyRemoved" $arguments="{fr.liglab.adele.icasa.device.GenericDev
- ice,java.lang.String}" }method { $name="deviceRemoved" $arguments="{f
- r.liglab.adele.icasa.device.GenericDevice}" }}}
+ rtClassroomSim-1" }instance { $component="org.aimas.ami.cmm.simulatio
+ n.CMMBundleInstaller" }instance { $component="SimulationTime" }instan
+ ce { $name="start-consert-cmm-command" $component="StartConsertComman
+ d" }instance { $name="start-users-command" $component="StartUsersComm
+ and" }instance { $name="sensor-adaptor-configurator" $component="org.
+ aimas.ami.cmm.simulation.sensors.SensorAdaptorConfiguration" }instanc
+ e { $component="org.aimas.ami.cmm.simulation.users.AirConditioningUse
+ r" }instance { $component="org.aimas.ami.cmm.simulation.users.AliceUs
+ er" }instance { $component="org.aimas.ami.cmm.simulation.users.BobUse
+ r" }instance { $component="org.aimas.ami.cmm.simulation.users.Cecille
+ User" }instance { $component="org.aimas.ami.cmm.simulation.users.Proj
+ ectorUser" }component { $classname="org.aimas.ami.cmm.simulation.Smar
+ tClassroomSimImpl" $name="SmartClassroomSim" requires { $optional="tr
+ ue" $specification="fr.liglab.adele.icasa.device.presence.PresenceSen
+ sor" $field="presenceSensor" }requires { $aggregate="true" $optional=
+ "true" $specification="fr.liglab.adele.icasa.device.light.Photometer"
+  $field="luminositySensors" callback { $method="bindLuminositySensor"
+  $type="bind" }callback { $method="unbindLuminositySensor" $type="unb
+ ind" }}requires { $aggregate="true" $optional="true" $specification="
+ fr.liglab.adele.icasa.device.temperature.Thermometer" $field="tempera
+ tureSensors" callback { $method="bindTemperatureSensor" $type="bind" 
+ }callback { $method="unbindTemperatureSensor" $type="unbind" }}callba
+ ck { $method="start" $transition="validate" }callback { $method="stop
+ " $transition="invalidate" }manipulation { interface { $name="fr.ligl
+ ab.adele.icasa.device.DeviceListener" }field { $name="luminositySenso
+ rMap" $type="java.util.Map" }field { $name="luminositySensors" $type=
+ "fr.liglab.adele.icasa.device.light.Photometer[]" }field { $name="pre
+ senceSensor" $type="fr.liglab.adele.icasa.device.presence.PresenceSen
+ sor" }field { $name="temperatureSensorMap" $type="java.util.Map" }fie
+ ld { $name="temperatureSensors" $type="fr.liglab.adele.icasa.device.t
+ emperature.Thermometer[]" }method { $name="bindLuminositySensor" $arg
+ uments="{fr.liglab.adele.icasa.device.light.Photometer,java.util.Map}
+ " }method { $name="unbindLuminositySensor" $arguments="{fr.liglab.ade
+ le.icasa.device.light.Photometer,java.util.Map}" }method { $name="bin
+ dTemperatureSensor" $arguments="{fr.liglab.adele.icasa.device.tempera
+ ture.Thermometer,java.util.Map}" }method { $name="unbindTemperatureSe
+ nsor" $arguments="{fr.liglab.adele.icasa.device.temperature.Thermomet
+ er,java.util.Map}" }method { $name="start" }method { $name="stop" }me
+ thod { $name="deviceAdded" $arguments="{fr.liglab.adele.icasa.device.
+ GenericDevice}" }method { $name="deviceEvent" $arguments="{fr.liglab.
+ adele.icasa.device.GenericDevice,java.lang.Object}" }method { $name="
+ devicePropertyAdded" $arguments="{fr.liglab.adele.icasa.device.Generi
+ cDevice,java.lang.String}" }method { $name="devicePropertyModified" $
+ arguments="{fr.liglab.adele.icasa.device.GenericDevice,java.lang.Stri
+ ng,java.lang.Object,java.lang.Object}" }method { $name="devicePropert
+ yRemoved" $arguments="{fr.liglab.adele.icasa.device.GenericDevice,jav
+ a.lang.String}" }method { $name="deviceRemoved" $arguments="{fr.ligla
+ b.adele.icasa.device.GenericDevice}" }}}component { $name="org.aimas.
+ ami.cmm.simulation.CMMBundleInstaller" $classname="org.aimas.ami.cmm.
+ simulation.CMMBundleInstaller" manipulation { }}component { $name="Si
+ mulationTime" $immediate="false" $classname="org.aimas.ami.cmm.simula
+ tion.SimulationTime" provides { property { $name="service.ranking" $t
+ ype="java.lang.Integer" $value="10" }}requires { $field="simulationCl
+ ock" }manipulation { interface { $name="org.aimas.ami.contextrep.reso
+ urces.TimeService" }field { $name="simulationClock" $type="fr.liglab.
+ adele.icasa.clock.Clock" }method { $name="getCalendarInstance" $retur
+ n="java.util.Calendar" }method { $name="getCurrentTimeMillis" $return
+ ="long" }}}component { $name="StartConsertCommand" $classname="org.ai
+ mas.ami.cmm.simulation.StartConsertCommand" provides { }requires { $f
+ ield="simulationManager" }manipulation { $super="fr.liglab.adele.icas
+ a.commands.AbstractCommand" field { $name="bundleContext" $type="org.
+ osgi.framework.BundleContext" }field { $name="simulationManager" $typ
+ e="fr.liglab.adele.icasa.ContextManager" }method { $name="getName" $r
+ eturn="java.lang.String" }method { $name="execute" $return="java.lang
+ .Object" $arguments="{java.io.InputStream,java.io.PrintStream,org.jso
+ n.JSONObject,fr.liglab.adele.icasa.commands.Signature}" }method { $na
+ me="getDescription" $return="java.lang.String" }}}component { $name="
+ StartUsersCommand" $classname="org.aimas.ami.cmm.simulation.StartUser
+ sCommand" provides { }requires { $field="aliceUserFactory" $filter="(
+ factory.name=org.aimas.ami.cmm.simulation.users.AliceUser)" }requires
+  { $field="bobUserFactory" $filter="(factory.name=org.aimas.ami.cmm.s
+ imulation.users.BobUser)" }requires { $field="cecilleUserFactory" $fi
+ lter="(factory.name=org.aimas.ami.cmm.simulation.users.CecilleUser)" 
+ }requires { $field="airConditioningUserFactory" $filter="(factory.nam
+ e=org.aimas.ami.cmm.simulation.users.AirConditioningUser)" }requires 
+ { $field="projectorUserFactory" $filter="(factory.name=org.aimas.ami.
+ cmm.simulation.users.ProjectorUser)" }manipulation { $super="fr.ligla
+ b.adele.icasa.commands.AbstractCommand" field { $name="airConditionin
+ gUserFactory" $type="org.apache.felix.ipojo.Factory" }field { $name="
+ aliceUserFactory" $type="org.apache.felix.ipojo.Factory" }field { $na
+ me="bobUserFactory" $type="org.apache.felix.ipojo.Factory" }field { $
+ name="cecilleUserFactory" $type="org.apache.felix.ipojo.Factory" }fie
+ ld { $name="projectorUserFactory" $type="org.apache.felix.ipojo.Facto
+ ry" }method { $name="getName" $return="java.lang.String" }method { $n
+ ame="execute" $return="java.lang.Object" $arguments="{java.io.InputSt
+ ream,java.io.PrintStream,org.json.JSONObject,fr.liglab.adele.icasa.co
+ mmands.Signature}" }}}component { $name="iCasa.BluetoothSensor" $clas
+ sname="org.aimas.ami.cmm.simulation.sensors.BluetoothSensorImpl" prov
+ ides { property { $name="service.description" $type="java.lang.String
+ " }property { $name="device.serialNumber" $field="serialNumber" $mand
+ atory="true" }}requires { $field="personLocationService" }requires { 
+ $field="simulationManager" }manipulation { $super="fr.liglab.adele.ic
+ asa.device.util.AbstractDevice" interface { $name="org.aimas.ami.cmm.
+ simulation.sensors.BluetoothSensor" }interface { $name="fr.liglab.ade
+ le.icasa.simulator.SimulatedDevice" }interface { $name="fr.liglab.ade
+ le.icasa.simulator.listener.PersonListener" }field { $name="personLoc
+ ationService" $type="fr.liglab.adele.icasa.service.location.PersonLoc
+ ationService" }field { $name="personToAddressMap" $type="java.util.Ma
+ p" }field { $name="sensedAddresses" $type="java.util.Set" }field { $n
+ ame="serialNumber" $type="java.lang.String" }field { $name="simulatio
+ nManager" $type="fr.liglab.adele.icasa.simulator.SimulationManager" }
+ field { $name="zone" $type="fr.liglab.adele.icasa.location.Zone" }met
+ hod { $name="getSerialNumber" $return="java.lang.String" }method { $n
+ ame="enterInZones" $arguments="{java.util.List}" }method { $name="lea
+ vingZones" $arguments="{java.util.List}" }method { $name="getSensedAd
+ dresses" $return="java.util.Set" }method { $name="updateSensedAddress
+ es" }method { $name="personAdded" $arguments="{fr.liglab.adele.icasa.
+ simulator.Person}" }method { $name="personMoved" $arguments="{fr.ligl
+ ab.adele.icasa.simulator.Person,fr.liglab.adele.icasa.location.Positi
+ on}" }method { $name="personRemoved" $arguments="{fr.liglab.adele.ica
+ sa.simulator.Person}" }method { $name="personDeviceAttached" $argumen
+ ts="{fr.liglab.adele.icasa.simulator.Person,fr.liglab.adele.icasa.loc
+ ation.LocatedDevice}" }method { $name="personDeviceDetached" $argumen
+ ts="{fr.liglab.adele.icasa.simulator.Person,fr.liglab.adele.icasa.loc
+ ation.LocatedDevice}" }method { $name="generateAddress" $return="java
+ .lang.String" }}}component { $name="org.aimas.ami.cmm.simulation.sens
+ ors.InformTeachingAdaptor" $classname="org.aimas.ami.cmm.simulation.s
+ ensors.InformTeachingAdaptor" provides { property { $name="adaptor.im
+ plementation" $field="adaptorClassNameConfig" }property { $name="adap
+ tor.sensors" $field="sensorInstanceConfig" }}requires { $policy="dyna
+ mic-priority" $id="TimeService" callback { $method="bindTimeService" 
+ $type="bind" }}manipulation { $super="org.aimas.ami.cmm.simulation.se
+ nsors.SensorAdaptorBase" field { $name="adaptorClassNameConfig" $type
+ ="java.lang.String" }field { $name="sensorInstanceConfig" $type="java
+ .lang.String[]" }field { $name="teachingActivityRes" $type="com.hp.hp
+ l.jena.rdf.model.Resource" }field { $name="teachingUpdateService" $ty
+ pe="java.util.concurrent.ScheduledExecutorService" }field { $name="te
+ achingUpdateTask" $type="java.util.concurrent.ScheduledFuture" }metho
+ d { $name="bindTimeService" $arguments="{org.aimas.ami.contextrep.res
+ ources.TimeService}" }method { $name="getTeachingDates" $return="java
+ .util.List" }method { $name="getCurrentTeachingInterval" $return="org
+ .aimas.ami.contextrep.datatype.CalendarInterval" }method { $name="cre
+ ateTeachingActivityInstance" $return="com.hp.hpl.jena.rdf.model.Model
+ " $arguments="{org.aimas.ami.contextrep.datatype.CalendarInterval}" }
+ method { $name="supportsChangeBasedUpdateMode" $return="boolean" }met
+ hod { $name="getMaxUpdateRate" $return="int" }method { $name="setUpda
+ teEnabled" $return="boolean" $arguments="{boolean}" }method { $name="
+ setUpdateMode" $return="boolean" $arguments="{java.lang.String,int}" 
+ }method { $name="getSensorInstanceMap" $return="java.util.Map" }metho
+ d { $name="deliverSensorEntityInformation" $return="org.aimas.ami.cmm
+ .simulation.sensors.SensorInstance" $arguments="{java.lang.String,jav
+ a.lang.String}" }method { $name="startUpdates" }method { $name="stopU
+ pdates" }method { $name="getDelayToClosestTeachingInterval" $return="
+ int" }method { $name="deliverAssertionUpdates" $return="java.util.Lis
+ t" $arguments="{java.lang.String}" }}}component { $name="iCasa.Kinect
+ Camera" $classname="org.aimas.ami.cmm.simulation.sensors.KinectCamera
+ Impl" provides { property { $name="service.description" $type="java.l
+ ang.String" }property { $name="device.serialNumber" $field="serialNum
+ ber" $mandatory="true" }}requires { $field="personLocationService" }m
+ anipulation { $super="fr.liglab.adele.icasa.device.util.AbstractDevic
+ e" interface { $name="org.aimas.ami.cmm.simulation.sensors.KinectCame
+ ra" }interface { $name="fr.liglab.adele.icasa.simulator.SimulatedDevi
+ ce" }field { $name="personLocationService" $type="fr.liglab.adele.ica
+ sa.service.location.PersonLocationService" }field { $name="personToSk
+ eletonMap" $type="java.util.Map" }field { $name="serialNumber" $type=
+ "java.lang.String" }field { $name="skeletonPositionMap" $type="java.u
+ til.Map" }field { $name="zone" $type="fr.liglab.adele.icasa.location.
+ Zone" }field { $name="zoneListener" $type="fr.liglab.adele.icasa.loca
+ tion.ZoneListener" }method { $name="getSerialNumber" $return="java.la
+ ng.String" }method { $name="enterInZones" $arguments="{java.util.List
+ }" }method { $name="leavingZones" $arguments="{java.util.List}" }meth
+ od { $name="getSensedSkeletons" $return="java.util.Map" }method { $na
+ me="senseSkeletons" }method { $name="generateSkeletonId" $return="jav
+ a.lang.String" }}}component { $name="org.aimas.ami.cmm.simulation.sen
+ sors.KinectSkeletonAdaptor" $classname="org.aimas.ami.cmm.simulation.
+ sensors.KinectSkeletonAdaptor" provides { property { $name="adaptor.i
+ mplementation" $field="adaptorClassNameConfig" }property { $name="ada
+ ptor.sensors" $field="sensorInstanceConfig" }}requires { $field="kine
+ ctSensors" $id="kinectSensors" callback { $method="bindKinectSensor" 
+ $type="bind" }callback { $method="unbindKinectSensor" $type="unbind" 
+ }}requires { $policy="dynamic-priority" $id="TimeService" callback { 
+ $method="bindTimeService" $type="bind" }}callback { $transition="inva
+ lidate" $method="stopAdaptor" }manipulation { $super="org.aimas.ami.c
+ mm.simulation.sensors.SensorAdaptorBase" field { $name="adaptorClassN
+ ameConfig" $type="java.lang.String" }field { $name="kinectSensors" $t
+ ype="org.aimas.ami.cmm.simulation.sensors.KinectCamera[]" }field { $n
+ ame="kinectUpdateService" $type="java.util.concurrent.ScheduledExecut
+ orService" }field { $name="kinectUpdateTask" $type="java.util.concurr
+ ent.ScheduledFuture" }field { $name="sensorInstanceConfig" $type="jav
+ a.lang.String[]" }field { $name="skeletonTracker" $type="java.util.Li
+ st" }method { $name="bindTimeService" $arguments="{org.aimas.ami.cont
+ extrep.resources.TimeService}" }method { $name="bindKinectSensor" $ar
+ guments="{org.aimas.ami.cmm.simulation.sensors.KinectCamera}" }method
+  { $name="unbindKinectSensor" $arguments="{org.aimas.ami.cmm.simulati
+ on.sensors.KinectCamera}" }method { $name="stopAdaptor" }method { $na
+ me="supportsChangeBasedUpdateMode" $return="boolean" }method { $name=
+ "getMaxUpdateRate" $return="int" }method { $name="setUpdateEnabled" $
+ return="boolean" $arguments="{boolean}" }method { $name="setUpdateMod
+ e" $return="boolean" $arguments="{java.lang.String,int}" }method { $n
+ ame="getSensorInstanceMap" $return="java.util.Map" }method { $name="d
+ eliverAssertionUpdates" $return="java.util.List" $arguments="{java.la
+ ng.String}" }method { $name="startUpdates" $arguments="{boolean}" }me
+ thod { $name="stopUpdates" }}}component { $name="iCasa.Microphone" $c
+ lassname="org.aimas.ami.cmm.simulation.sensors.MicrophoneImpl" provid
+ es { property { $name="service.description" $type="java.lang.String" 
+ }property { $name="device.serialNumber" $field="serialNumber" $mandat
+ ory="true" }}manipulation { $super="fr.liglab.adele.icasa.device.util
+ .AbstractDevice" interface { $name="org.aimas.ami.cmm.simulation.sens
+ ors.Microphone" }interface { $name="fr.liglab.adele.icasa.simulator.S
+ imulatedDevice" }field { $name="serialNumber" $type="java.lang.String
+ " }field { $name="zone" $type="fr.liglab.adele.icasa.location.Zone" }
+ field { $name="zoneListener" $type="fr.liglab.adele.icasa.location.Zo
+ neListener" }method { $name="getSerialNumber" $return="java.lang.Stri
+ ng" }method { $name="enterInZones" $arguments="{java.util.List}" }met
+ hod { $name="leavingZones" $arguments="{java.util.List}" }method { $n
+ ame="getNoiseLevel" $return="int" }method { $name="getNoiseLevelFromZ
+ one" }}}component { $name="org.aimas.ami.cmm.simulation.sensors.Noise
+ LevelAdaptor" $classname="org.aimas.ami.cmm.simulation.sensors.NoiseL
+ evelAdaptor" provides { property { $name="adaptor.implementation" $fi
+ eld="adaptorClassNameConfig" }property { $name="adaptor.sensors" $fie
+ ld="sensorInstanceConfig" }}requires { $field="microphoneSensors" $id
+ ="micSensors" callback { $method="bindMicrophoneSensor" $type="bind" 
+ }callback { $method="unbindMicrophoneSensor" $type="unbind" }}require
+ s { $policy="dynamic-priority" $id="TimeService" callback { $method="
+ bindTimeService" $type="bind" }}callback { $transition="invalidate" $
+ method="stopAdaptor" }manipulation { $super="org.aimas.ami.cmm.simula
+ tion.sensors.SensorAdaptorBase" field { $name="adaptorClassNameConfig
+ " $type="java.lang.String" }field { $name="microphoneSensors" $type="
+ org.aimas.ami.cmm.simulation.sensors.Microphone[]" }field { $name="no
+ iseLevelMap" $type="java.util.Map" }field { $name="noiseLevelUpdateSe
+ rvice" $type="java.util.concurrent.ScheduledExecutorService" }field {
+  $name="noiseLevelUpdateTask" $type="java.util.concurrent.ScheduledFu
+ ture" }field { $name="sensorInstanceConfig" $type="java.lang.String[]
+ " }method { $name="bindTimeService" $arguments="{org.aimas.ami.contex
+ trep.resources.TimeService}" }method { $name="bindMicrophoneSensor" }
+ method { $name="unbindMicrophoneSensor" }method { $name="stopAdaptor"
+  }method { $name="supportsChangeBasedUpdateMode" $return="boolean" }m
+ ethod { $name="getMaxUpdateRate" $return="int" }method { $name="setUp
+ dateEnabled" $return="boolean" $arguments="{boolean}" }method { $name
+ ="setUpdateMode" $return="boolean" $arguments="{java.lang.String,int}
+ " }method { $name="getSensorInstanceMap" $return="java.util.Map" }met
+ hod { $name="deliverAssertionUpdates" $return="java.util.List" $argum
+ ents="{java.lang.String}" }method { $name="startUpdates" $arguments="
+ {boolean}" }method { $name="stopUpdates" }}}component { $name="org.ai
+ mas.ami.cmm.simulation.sensors.SenseBluetoothAdaptor" $classname="org
+ .aimas.ami.cmm.simulation.sensors.SenseBluetoothAdaptor" provides { $
+ specifications="{org.aimas.ami.cmm.sensing.ContextAssertionAdaptor}" 
+ property { $name="adaptor.implementation" $field="adaptorClassNameCon
+ fig" }property { $name="adaptor.sensors" $field="sensorInstanceConfig
+ " }}requires { $field="presenceSensors" $id="presenceSensors" callbac
+ k { $method="bindPresenceSensor" $type="bind" }callback { $method="un
+ bindPresenceSensor" $type="unbind" }}requires { $policy="dynamic-prio
+ rity" $id="TimeService" callback { $method="bindTimeService" $type="b
+ ind" }}callback { $transition="invalidate" $method="stopAdaptor" }man
+ ipulation { $super="org.aimas.ami.cmm.simulation.sensors.SensorAdapto
+ rBase" field { $name="adaptorClassNameConfig" $type="java.lang.String
+ " }field { $name="presenceSensors" $type="org.aimas.ami.cmm.simulatio
+ n.sensors.BluetoothSensor[]" }field { $name="presenceUpdateService" $
+ type="java.util.concurrent.ScheduledExecutorService" }field { $name="
+ presenceUpdateTask" $type="java.util.concurrent.ScheduledFuture" }fie
+ ld { $name="sensedBluetoothAddresses" $type="java.util.Set" }field { 
+ $name="sensorInstanceConfig" $type="java.lang.String[]" }method { $na
+ me="bindTimeService" $arguments="{org.aimas.ami.contextrep.resources.
+ TimeService}" }method { $name="bindPresenceSensor" }method { $name="u
+ nbindPresenceSensor" }method { $name="stopAdaptor" }method { $name="s
+ upportsChangeBasedUpdateMode" $return="boolean" }method { $name="getM
+ axUpdateRate" $return="int" }method { $name="setUpdateEnabled" $retur
+ n="boolean" $arguments="{boolean}" }method { $name="setUpdateMode" $r
+ eturn="boolean" $arguments="{java.lang.String,int}" }method { $name="
+ getSensorInstanceMap" $return="java.util.Map" }method { $name="delive
+ rAssertionUpdates" $return="java.util.List" $arguments="{java.lang.St
+ ring}" }method { $name="startUpdates" $arguments="{boolean}" }method 
+ { $name="stopUpdates" }}}component { $name="org.aimas.ami.cmm.simulat
+ ion.sensors.SenseLuminosityAdaptor" $classname="org.aimas.ami.cmm.sim
+ ulation.sensors.SenseLuminosityAdaptor" provides { $specifications="{
+ org.aimas.ami.cmm.sensing.ContextAssertionAdaptor}" property { $name=
+ "adaptor.implementation" $field="adaptorClassNameConfig" }property { 
+ $name="adaptor.sensors" $field="sensorInstanceConfig" }}requires { $f
+ ield="luminositySensors" $id="lightSensors" callback { $method="bindL
+ uminositySensor" $type="bind" }callback { $method="unbindLuminositySe
+ nsor" $type="unbind" }}requires { $policy="dynamic-priority" $id="Tim
+ eService" callback { $method="bindTimeService" $type="bind" }}callbac
+ k { $transition="invalidate" $method="stopAdaptor" }manipulation { $s
+ uper="org.aimas.ami.cmm.simulation.sensors.SensorAdaptorBase" field {
+  $name="adaptorClassNameConfig" $type="java.lang.String" }field { $na
+ me="luminosityMap" $type="java.util.Map" }field { $name="luminositySe
+ nsors" $type="fr.liglab.adele.icasa.device.light.Photometer[]" }field
+  { $name="luminosityUpdateService" $type="java.util.concurrent.Schedu
+ ledExecutorService" }field { $name="luminosityUpdateTask" $type="java
+ .util.concurrent.ScheduledFuture" }field { $name="sensorInstanceConfi
+ g" $type="java.lang.String[]" }method { $name="bindTimeService" $argu
+ ments="{org.aimas.ami.contextrep.resources.TimeService}" }method { $n
+ ame="bindLuminositySensor" }method { $name="unbindLuminositySensor" }
+ method { $name="stopAdaptor" }method { $name="supportsChangeBasedUpda
+ teMode" $return="boolean" }method { $name="getMaxUpdateRate" $return=
+ "int" }method { $name="setUpdateEnabled" $return="boolean" $arguments
+ ="{boolean}" }method { $name="setUpdateMode" $return="boolean" $argum
+ ents="{java.lang.String,int}" }method { $name="getSensorInstanceMap" 
+ $return="java.util.Map" }method { $name="deliverAssertionUpdates" $re
+ turn="java.util.List" $arguments="{java.lang.String}" }method { $name
+ ="startUpdates" $arguments="{boolean}" }method { $name="stopUpdates" 
+ }}}component { $name="org.aimas.ami.cmm.simulation.sensors.SenseTempe
+ ratureAdaptor" $classname="org.aimas.ami.cmm.simulation.sensors.Sense
+ TemperatureAdaptor" provides { $specifications="{org.aimas.ami.cmm.se
+ nsing.ContextAssertionAdaptor}" property { $name="adaptor.implementat
+ ion" $field="adaptorClassNameConfig" }property { $name="adaptor.senso
+ rs" $field="sensorInstanceConfig" }}requires { $field="temperatureSen
+ sors" $id="temperatureSensors" callback { $method="bindTemperatureSen
+ sor" $type="bind" }callback { $method="unbindTemperatureSensor" $type
+ ="unbind" }}requires { $policy="dynamic-priority" $id="TimeService" c
+ allback { $method="bindTimeService" $type="bind" }}callback { $transi
+ tion="invalidate" $method="stopAdaptor" }manipulation { $super="org.a
+ imas.ami.cmm.simulation.sensors.SensorAdaptorBase" field { $name="ada
+ ptorClassNameConfig" $type="java.lang.String" }field { $name="sensorI
+ nstanceConfig" $type="java.lang.String[]" }field { $name="temperature
+ Map" $type="java.util.Map" }field { $name="temperatureSensors" $type=
+ "fr.liglab.adele.icasa.device.temperature.Thermometer[]" }field { $na
+ me="temperatureUpdateService" $type="java.util.concurrent.ScheduledEx
+ ecutorService" }field { $name="temperatureUpdateTask" $type="java.uti
+ l.concurrent.ScheduledFuture" }method { $name="bindTimeService" $argu
+ ments="{org.aimas.ami.contextrep.resources.TimeService}" }method { $n
+ ame="bindTemperatureSensor" }method { $name="unbindTemperatureSensor"
+  }method { $name="stopAdaptor" }method { $name="supportsChangeBasedUp
+ dateMode" $return="boolean" }method { $name="getMaxUpdateRate" $retur
+ n="int" }method { $name="setUpdateEnabled" $return="boolean" $argumen
+ ts="{boolean}" }method { $name="setUpdateMode" $return="boolean" $arg
+ uments="{java.lang.String,int}" }method { $name="getSensorInstanceMap
+ " $return="java.util.Map" }method { $name="deliverAssertionUpdates" $
+ return="java.util.List" $arguments="{java.lang.String}" }method { $na
+ me="startUpdates" $arguments="{boolean}" }method { $name="stopUpdates
+ " }}}component { $public="false" $name="org.aimas.ami.cmm.simulation.
+ sensors.SensorAdaptorConfiguration" $classname="org.aimas.ami.cmm.sim
+ ulation.sensors.SensorAdaptorConfiguration" requires { $field="teachi
+ ngAdaptorFactory" $filter="(factory.name=org.aimas.ami.cmm.simulation
+ .sensors.InformTeachingAdaptor)" }requires { $field="kinectSkeletonFa
+ ctory" $filter="(factory.name=org.aimas.ami.cmm.simulation.sensors.Ki
+ nectSkeletonAdaptor)" }requires { $field="noiseLevelAdaptorFactory" $
+ filter="(factory.name=org.aimas.ami.cmm.simulation.sensors.NoiseLevel
+ Adaptor)" }requires { $field="presenceAdaptorFactory" $filter="(facto
+ ry.name=org.aimas.ami.cmm.simulation.sensors.SenseBluetoothAdaptor)" 
+ }requires { $field="luminosityAdaptorFactory" $filter="(factory.name=
+ org.aimas.ami.cmm.simulation.sensors.SenseLuminosityAdaptor)" }requir
+ es { $field="temperatureAdaptorFactory" $filter="(factory.name=org.ai
+ mas.ami.cmm.simulation.sensors.SenseTemperatureAdaptor)" }manipulatio
+ n { field { $name="kinectSkeletonFactory" $type="org.apache.felix.ipo
+ jo.Factory" }field { $name="luminosityAdaptorFactory" $type="org.apac
+ he.felix.ipojo.Factory" }field { $name="noiseLevelAdaptorFactory" $ty
+ pe="org.apache.felix.ipojo.Factory" }field { $name="presenceAdaptorFa
+ ctory" $type="org.apache.felix.ipojo.Factory" }field { $name="teachin
+ gAdaptorFactory" $type="org.apache.felix.ipojo.Factory" }field { $nam
+ e="temperatureAdaptorFactory" $type="org.apache.felix.ipojo.Factory" 
+ }method { $name="configureSensorAdaptors" }}}component { $public="fal
+ se" $name="org.aimas.ami.cmm.simulation.users.AirConditioningUser" $c
+ lassname="org.aimas.ami.cmm.simulation.users.AirConditioningUser" req
+ uires { $field="applicationAdaptor" $filter="(&(useradaptor.app-ident
+ ifier=SmartClassroomSpec)(useradaptor.name=CtxUser_AirConditioning))"
+  }requires { $field="simulationManager" }manipulation { interface { $
+ name="fr.liglab.adele.icasa.simulator.listener.PersonListener" }field
+  { $name="applicationAdaptor" $type="org.aimas.ami.cmm.api.Applicatio
+ nUserAdaptor" }field { $name="simulationManager" $type="fr.liglab.ade
+ le.icasa.ContextManager" }field { $name="temperatureSubscription" $ty
+ pe="java.util.Map" }field { $name="usersPresentSubscription" $type="j
+ ava.util.Map" }method { $name="subscribeUsersPresent" }method { $name
+ ="subscribeTemperatureUpdates" }method { $name="cancelTemperatureUpda
+ tes" }method { $name="personAdded" $arguments="{fr.liglab.adele.icasa
+ .simulator.Person}" }method { $name="personRemoved" $arguments="{fr.l
+ iglab.adele.icasa.simulator.Person}" }method { $name="personMoved" $a
+ rguments="{fr.liglab.adele.icasa.simulator.Person,fr.liglab.adele.ica
+ sa.location.Position}" }method { $name="personDeviceAttached" $argume
+ nts="{fr.liglab.adele.icasa.simulator.Person,fr.liglab.adele.icasa.lo
+ cation.LocatedDevice}" }method { $name="personDeviceDetached" $argume
+ nts="{fr.liglab.adele.icasa.simulator.Person,fr.liglab.adele.icasa.lo
+ cation.LocatedDevice}" }}}component { $public="false" $name="org.aima
+ s.ami.cmm.simulation.users.AliceUser" $classname="org.aimas.ami.cmm.s
+ imulation.users.AliceUser" requires { $id="SimulationManager" callbac
+ k { $method="bindSimulationManager" $type="bind" }callback { $method=
+ "unbindSimulationManager" $type="unbind" }}requires { $filter="(&(use
+ radaptor.app-identifier=SmartClassroomSpec)(useradaptor.name=CtxUser_
+ Alice))" $id="ApplicationAdaptor" callback { $method="bindApplication
+ Adaptor" $type="bind" }callback { $method="unbindApplicationAdaptor" 
+ $type="unbind" }}requires { $id="BootstrapInsertionAdaptor" callback 
+ { $method="bindBootstrapInsertionAdaptor" $type="bind" }callback { $m
+ ethod="unbindBootstrapInsertionAdaptor" $type="unbind" }}manipulation
+  { $super="org.aimas.ami.cmm.simulation.users.PersonUser" method { $n
+ ame="bindSimulationManager" $arguments="{fr.liglab.adele.icasa.simula
+ tor.SimulationManager}" }method { $name="unbindSimulationManager" $ar
+ guments="{fr.liglab.adele.icasa.simulator.SimulationManager}" }method
+  { $name="bindApplicationAdaptor" $arguments="{org.aimas.ami.cmm.api.
+ ApplicationUserAdaptor}" }method { $name="unbindApplicationAdaptor" $
+ arguments="{org.aimas.ami.cmm.api.ApplicationUserAdaptor}" }method { 
+ $name="bindBootstrapInsertionAdaptor" $arguments="{org.aimas.ami.cont
+ extrep.engine.api.InsertionHandler}" }method { $name="unbindBootstrap
+ InsertionAdaptor" $arguments="{org.aimas.ami.contextrep.engine.api.In
+ sertionHandler}" }}}component { $public="false" $name="org.aimas.ami.
+ cmm.simulation.users.BobUser" $classname="org.aimas.ami.cmm.simulatio
+ n.users.BobUser" requires { $id="SimulationManager" callback { $metho
+ d="bindSimulationManager" $type="bind" }callback { $method="unbindSim
+ ulationManager" $type="unbind" }}requires { $filter="(&(useradaptor.a
+ pp-identifier=SmartClassroomSpec)(useradaptor.name=CtxUser_Bob))" $id
+ ="ApplicationAdaptor" callback { $method="bindApplicationAdaptor" $ty
+ pe="bind" }callback { $method="unbindApplicationAdaptor" $type="unbin
+ d" }}requires { $id="BootstrapInsertionAdaptor" callback { $method="b
+ indBootstrapInsertionAdaptor" $type="bind" }callback { $method="unbin
+ dBootstrapInsertionAdaptor" $type="unbind" }}manipulation { $super="o
+ rg.aimas.ami.cmm.simulation.users.PersonUser" method { $name="bindSim
+ ulationManager" $arguments="{fr.liglab.adele.icasa.simulator.Simulati
+ onManager}" }method { $name="unbindSimulationManager" $arguments="{fr
+ .liglab.adele.icasa.simulator.SimulationManager}" }method { $name="bi
+ ndApplicationAdaptor" $arguments="{org.aimas.ami.cmm.api.ApplicationU
+ serAdaptor}" }method { $name="unbindApplicationAdaptor" $arguments="{
+ org.aimas.ami.cmm.api.ApplicationUserAdaptor}" }method { $name="bindB
+ ootstrapInsertionAdaptor" $arguments="{org.aimas.ami.contextrep.engin
+ e.api.InsertionHandler}" }method { $name="unbindBootstrapInsertionAda
+ ptor" $arguments="{org.aimas.ami.contextrep.engine.api.InsertionHandl
+ er}" }}}component { $public="false" $name="org.aimas.ami.cmm.simulati
+ on.users.CecilleUser" $classname="org.aimas.ami.cmm.simulation.users.
+ CecilleUser" requires { $id="SimulationManager" callback { $method="b
+ indSimulationManager" $type="bind" }callback { $method="unbindSimulat
+ ionManager" $type="unbind" }}requires { $filter="(&(useradaptor.app-i
+ dentifier=SmartClassroomSpec)(useradaptor.name=CtxUser_Cecille))" $id
+ ="ApplicationAdaptor" callback { $method="bindApplicationAdaptor" $ty
+ pe="bind" }callback { $method="unbindApplicationAdaptor" $type="unbin
+ d" }}requires { $id="BootstrapInsertionAdaptor" callback { $method="b
+ indBootstrapInsertionAdaptor" $type="bind" }callback { $method="unbin
+ dBootstrapInsertionAdaptor" $type="unbind" }}manipulation { $super="o
+ rg.aimas.ami.cmm.simulation.users.PersonUser" method { $name="bindSim
+ ulationManager" $arguments="{fr.liglab.adele.icasa.simulator.Simulati
+ onManager}" }method { $name="unbindSimulationManager" $arguments="{fr
+ .liglab.adele.icasa.simulator.SimulationManager}" }method { $name="bi
+ ndApplicationAdaptor" $arguments="{org.aimas.ami.cmm.api.ApplicationU
+ serAdaptor}" }method { $name="unbindApplicationAdaptor" $arguments="{
+ org.aimas.ami.cmm.api.ApplicationUserAdaptor}" }method { $name="bindB
+ ootstrapInsertionAdaptor" $arguments="{org.aimas.ami.contextrep.engin
+ e.api.InsertionHandler}" }method { $name="unbindBootstrapInsertionAda
+ ptor" $arguments="{org.aimas.ami.contextrep.engine.api.InsertionHandl
+ er}" }}}component { $public="false" $name="org.aimas.ami.cmm.simulati
+ on.users.ProjectorUser" $classname="org.aimas.ami.cmm.simulation.user
+ s.ProjectorUser" requires { $field="applicationAdaptor" $filter="(&(u
+ seradaptor.app-identifier=SmartClassroomSpec)(useradaptor.name=CtxUse
+ r_Projector))" }requires { $field="simulationManager" }manipulation {
+  interface { $name="fr.liglab.adele.icasa.simulator.listener.PersonLi
+ stener" }field { $name="applicationAdaptor" $type="org.aimas.ami.cmm.
+ api.ApplicationUserAdaptor" }field { $name="luminositySubscription" $
+ type="java.util.Map" }field { $name="simulationManager" $type="fr.lig
+ lab.adele.icasa.ContextManager" }field { $name="usersPresentSubscript
+ ion" $type="java.util.Map" }method { $name="subscribeUsersPresent" }m
+ ethod { $name="subscribeLuminosityUpdates" }method { $name="cancelLum
+ inosityUpdates" }method { $name="personAdded" $arguments="{fr.liglab.
+ adele.icasa.simulator.Person}" }method { $name="personRemoved" $argum
+ ents="{fr.liglab.adele.icasa.simulator.Person}" }method { $name="pers
+ onMoved" $arguments="{fr.liglab.adele.icasa.simulator.Person,fr.ligla
+ b.adele.icasa.location.Position}" }method { $name="personDeviceAttach
+ ed" $arguments="{fr.liglab.adele.icasa.simulator.Person,fr.liglab.ade
+ le.icasa.location.LocatedDevice}" }method { $name="personDeviceDetach
+ ed" $arguments="{fr.liglab.adele.icasa.simulator.Person,fr.liglab.ade
+ le.icasa.location.LocatedDevice}" }}}
 

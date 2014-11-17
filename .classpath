@@ -4,5 +4,11 @@
 	<classpathentry kind="con" path="org.eclipse.pde.core.requiredPlugins"/>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.ow2.chameleon.ipojo.CLASSPATH_CONTAINER"/>
+	<classpathentry kind="lib" path="/jena-bundle-2.7.2/generated/jena-bundle-2.7.2.jar"/>
+	<classpathentry kind="lib" path="/consert-model/generated/consert-model.jar"/>
+	<classpathentry kind="lib" path="/consert-engine/generated/consert-engine.engine.jar" sourcepath="/home/alex/eclipse-workspace/consert-engine/src"/>
+	<classpathentry kind="lib" path="/consert-engine/generated/consert-engine.resources.jar"/>
+	<classpathentry kind="lib" path="/consert-middleware/generated/consert-middleware.agent-bundle.jar"/>
+	<classpathentry kind="lib" path="/consert-middleware/generated/consert-middleware.sensing.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

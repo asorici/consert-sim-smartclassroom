@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<behavior startdate="08/09/2014-14:00:00" factor="10">
+
+	<!-- ======================== Zone Section ======================== -->
+    <create-zone  id ="EF210" leftX ="3" topY ="62" bottomZ ="0" X-Length ="626" Y-Length ="364" Z-Length ="100"/>
+    
+    <create-zone  id ="EF210_PresenterArea" leftX ="10" topY ="202" bottomZ ="0" X-Length ="181" Y-Length ="218" Z-Length ="100"/>
+    <add-zone-variable zoneId="EF210_PresenterArea" variable="Illuminance" />
+    <modify-zone-variable zoneId="EF210_PresenterArea" variable="Illuminance" value="600.0" />
+    <add-zone-variable zoneId="EF210_PresenterArea" variable="Temperature" />
+    <modify-zone-variable zoneId="EF210_PresenterArea" variable="Temperature" value="293.15" />
+    <add-zone-variable zoneId="EF210_PresenterArea" variable="NoiseLevel" />
+    <modify-zone-variable zoneId="EF210_PresenterArea" variable="NoiseLevel" value="0" />
+    <set-zone-parent zone="EF210_PresenterArea" parentZone="EF210" useParentVariables="false" />
+    
+    
+	<create-zone  id ="EF210_Section1_Left" leftX ="229" topY ="78" bottomZ ="0" X-Length ="134" Y-Length ="153" Z-Length ="100"/>
+	<add-zone-variable zoneId="EF210_Section1_Left" variable="Illuminance" />
+	<modify-zone-variable zoneId="EF210_Section1_Left" variable="Illuminance" value="700.0" />
+	<add-zone-variable zoneId="EF210_Section1_Left" variable="Temperature" />
+	<modify-zone-variable zoneId="EF210_Section1_Left" variable="Temperature" value="293.15" />
+	<add-zone-variable zoneId="EF210_Section1_Left" variable="NoiseLevel" />
+    <modify-zone-variable zoneId="EF210_Section1_Left" variable="NoiseLevel" value="0" />
+	<set-zone-parent zone="EF210_Section1_Left" parentZone="EF210" useParentVariables="false" />
+	
+	<create-zone  id ="EF210_Section2_Left" leftX ="382" topY ="75" bottomZ ="0" X-Length ="134" Y-Length ="154" Z-Length ="100"/>
+	<add-zone-variable zoneId="EF210_Section2_Left" variable="Illuminance" />
+	<modify-zone-variable zoneId="EF210_Section2_Left" variable="Illuminance" value="700.0" />
+	<add-zone-variable zoneId="EF210_Section2_Left" variable="Temperature" />
+	<modify-zone-variable zoneId="EF210_Section2_Left" variable="Temperature" value="293.15" />
+	<add-zone-variable zoneId="EF210_Section2_Left" variable="NoiseLevel" />
+    <modify-zone-variable zoneId="EF210_Section2_Left" variable="NoiseLevel" value="0" />
+	<set-zone-parent zone="EF210_Section2_Left" parentZone="EF210" useParentVariables="false" />
+	
+	<create-zone  id ="EF210_Section3_Left" leftX ="528" topY ="77" bottomZ ="0" X-Length ="86" Y-Length ="152" Z-Length ="100"/>
+    <add-zone-variable zoneId="EF210_Section3_Left" variable="Illuminance" />
+    <modify-zone-variable zoneId="EF210_Section3_Left" variable="Illuminance" value="700.0" />
+    <add-zone-variable zoneId="EF210_Section3_Left" variable="Temperature" />
+    <modify-zone-variable zoneId="EF210_Section3_Left" variable="Temperature" value="293.15" />
+    <add-zone-variable zoneId="EF210_Section3_Left" variable="NoiseLevel" />
+    <modify-zone-variable zoneId="EF210_Section3_Left" variable="NoiseLevel" value="0" />
+    <set-zone-parent zone="EF210_Section3_Left" parentZone="EF210" useParentVariables="false" />
+    
+	<create-zone  id ="EF210_Section1_Right" leftX ="226" topY ="260" bottomZ ="0" X-Length ="135" Y-Length ="153" Z-Length ="100"/>
+	<add-zone-variable zoneId="EF210_Section1_Right" variable="Illuminance" />
+	<modify-zone-variable zoneId="EF210_Section1_Right" variable="Illuminance" value="800.0" />
+	<add-zone-variable zoneId="EF210_Section1_Right" variable="Temperature" />
+	<modify-zone-variable zoneId="EF210_Section1_Right" variable="Temperature" value="293.15" />
+	<add-zone-variable zoneId="EF210_Section1_Right" variable="NoiseLevel" />
+    <modify-zone-variable zoneId="EF210_Section1_Right" variable="NoiseLevel" value="0" />
+    <set-zone-parent zone="EF210_Section1_Right" parentZone="EF210" useParentVariables="false" />
+	
+	<create-zone  id ="EF210_Section2_Right" leftX ="378" topY ="260" bottomZ ="0" X-Length ="139" Y-Length ="154" Z-Length ="100"/>
+    <add-zone-variable zoneId="EF210_Section2_Right" variable="Illuminance" />
+    <modify-zone-variable zoneId="EF210_Section2_Right" variable="Illuminance" value="800.0" />
+    <add-zone-variable zoneId="EF210_Section2_Right" variable="Temperature" />
+    <modify-zone-variable zoneId="EF210_Section2_Right" variable="Temperature" value="293.15" />
+    <add-zone-variable zoneId="EF210_Section2_Right" variable="NoiseLevel" />
+    <modify-zone-variable zoneId="EF210_Section2_Right" variable="NoiseLevel" value="0" />
+    <set-zone-parent zone="EF210_Section2_Right" parentZone="EF210" useParentVariables="false" />
+    
+	<create-zone  id ="EF210_Section3_Right" leftX ="532" topY ="257" bottomZ ="0" X-Length ="84" Y-Length ="160" Z-Length ="100"/>
+	<add-zone-variable zoneId="EF210_Section3_Right" variable="Illuminance" />
+	<modify-zone-variable zoneId="EF210_Section3_Right" variable="Illuminance" value="800.0" />
+	<add-zone-variable zoneId="EF210_Section3_Right" variable="Temperature" />
+	<modify-zone-variable zoneId="EF210_Section3_Right" variable="Temperature" value="293.15" />
+	<add-zone-variable zoneId="EF210_Section3_Right" variable="NoiseLevel" />
+    <modify-zone-variable zoneId="EF210_Section3_Right" variable="NoiseLevel" value="0" />
+    <set-zone-parent zone="EF210_Section3_Right" parentZone="EF210" useParentVariables="false" />
+	
+	<!-- ======================== Device Section ======================== -->
+	<!-- Microphones -->
+	<create-device id="Mic_EF210_Section1_Right" type="iCasa.Microphone" />
+    <move-device-zone deviceId="Mic_EF210_Section1_Right" zoneId="EF210_Section1_Right" />
+    
+    <create-device id="Mic_EF210_Section2_Right" type="iCasa.Microphone" />
+    <move-device-zone deviceId="Mic_EF210_Section2_Right" zoneId="EF210_Section2_Right" />
+    
+	<create-device id="Mic_EF210_Section3_Right" type="iCasa.Microphone" />
+	<move-device-zone deviceId="Mic_EF210_Section3_Right" zoneId="EF210_Section3_Right" />
+
+    <create-device id="Mic_EF210_Section1_Left" type="iCasa.Microphone" />
+    <move-device-zone deviceId="Mic_EF210_Section1_Left" zoneId="EF210_Section1_Left" />
+    
+	<create-device id="Mic_EF210_Section2_Left" type="iCasa.Microphone" />
+	<move-device-zone deviceId="Mic_EF210_Section2_Left" zoneId="EF210_Section2_Left" />
+    
+    <create-device id="Mic_EF210_Section3_Left" type="iCasa.Microphone" />
+    <move-device-zone deviceId="Mic_EF210_Section3_Left" zoneId="EF210_Section3_Left" />
+    
+    <create-device id="Mic_EF210_PresenterArea" type="iCasa.Microphone" />
+    <move-device-zone deviceId="Mic_EF210_PresenterArea" zoneId="EF210_PresenterArea" />
+    
+    <!-- Thermometers -->
+    <create-device id="Temp_EF210_Section1_Right" type="iCasa.Thermometer" />
+    <move-device-zone deviceId="Temp_EF210_Section1_Right" zoneId="EF210_Section1_Right" />
+    
+	<create-device id="Temp_EF210_Section3_Right" type="iCasa.Thermometer" />
+	<move-device-zone deviceId="Temp_EF210_Section3_Right" zoneId="EF210_Section3_Right" />
+    
+    <create-device id="Temp_EF210_Section1_Left" type="iCasa.Thermometer" />
+    <move-device-zone deviceId="Temp_EF210_Section1_Left" zoneId="EF210_Section1_Left" />
+    
+	<create-device id="Temp_EF210_Section3_Left" type="iCasa.Thermometer" />
+	<move-device-zone deviceId="Temp_EF210_Section3_Left" zoneId="EF210_Section3_Left" />
+
+	<!-- KinectCameras -->
+	<create-device id="Kinect_EF210_PresenterArea" type="iCasa.KinectCamera" />
+    <move-device-zone deviceId="Kinect_EF210_PresenterArea" zoneId="EF210_PresenterArea" />
+	
+	<create-device id="Kinect_EF210_Section1_Left" type="iCasa.KinectCamera" />
+    <move-device-zone deviceId="Kinect_EF210_Section1_Left" zoneId="EF210_Section1_Left" />
+	
+	<create-device id="Kinect_EF210_Section2_Left" type="iCasa.KinectCamera" />
+    <move-device-zone deviceId="Kinect_EF210_Section2_Left" zoneId="EF210_Section2_Left" />
+    
+	<create-device id="Kinect_EF210_Section3_Left" type="iCasa.KinectCamera" />
+	<move-device-zone deviceId="Kinect_EF210_Section3_Left" zoneId="EF210_Section3_Left" />
+
+	<create-device id="Kinect_EF210_Section1_Right" type="iCasa.KinectCamera" />
+	<move-device-zone deviceId="Kinect_EF210_Section1_Right" zoneId="EF210_Section1_Right" />
+
+    <create-device id="Kinect_EF210_Section2_Right" type="iCasa.KinectCamera" />
+    <move-device-zone deviceId="Kinect_EF210_Section2_Right" zoneId="EF210_Section2_Right" />
+        
+    <create-device id="Kinect_EF210_Section3_Right" type="iCasa.KinectCamera" />
+    <move-device-zone deviceId="Kinect_EF210_Section3_Right" zoneId="EF210_Section3_Right" />
+    
+    <!-- Luminosity -->
+	<create-device id="Lum_EF210_PresenterArea" type="iCasa.Photometer" />
+	<move-device-zone deviceId="Lum_EF210_PresenterArea" zoneId="EF210_PresenterArea" />
+
+	<create-device id="Lum_EF210_Section1_Right" type="iCasa.Photometer" />
+	<move-device-zone deviceId="Lum_EF210_Section1_Right" zoneId="EF210_Section1_Right" />
+    
+    <create-device id="Lum_EF210_Section2_Right" type="iCasa.Photometer" />
+    <move-device-zone deviceId="Lum_EF210_Section2_Right" zoneId="EF210_Section2_Right" />
+    
+	<create-device id="Lum_EF210_Section3_Right" type="iCasa.Photometer" />
+	<move-device-zone deviceId="Lum_EF210_Section3_Right" zoneId="EF210_Section3_Right" />
+    
+    <!-- Presence -->
+	<create-device id="PresenceSensor_EF210" type="iCasa.BluetoothSensor" />
+	<move-device-zone deviceId="PresenceSensor_EF210" zoneId="EF210" />
+
+	<!-- ======================== Person Section ======================== -->
+
+	<create-person id="Alice" type="Woman" />
+	<create-person id="Cecille" type="Old woman" />
+	<create-person id="Bob" type="Man" />
+    
+    <!-- ======================== Init CMM Section ======================== -->
+    <start-consert-cmm />
+    <delay value="1" unit="m" />
+    
+    <!-- ======================== Play Scenario Section ======================== -->
+    <move-person-zone personId="Alice" zoneId="EF210_Section1_Right" />
+    <delay value="1" unit="m" />
+    
+    <move-person-zone personId="Bob" zoneId="EF210_Section1_Right" />
+    <move-person-zone personId="Cecille" zoneId="EF210_Section1_Right" />
+    <delay value="1" unit="m" />
+    
+    <modify-zone-variable zoneId="EF210_Section1_Right" variable="NoiseLevel" value="75" />
+    <add-zone-variable zoneId="EF210_Section1_Right" variable="skel-position-Alice" />
+    <modify-zone-variable zoneId="EF210_Section1_Right" variable="skel-position-Alice" value="SkeletonSitting" />
+    <add-zone-variable zoneId="EF210_Section1_Right" variable="skel-position-Bob" />
+    <modify-zone-variable zoneId="EF210_Section1_Right" variable="skel-position-Bob" value="SkeletonSitting" />
+    <add-zone-variable zoneId="EF210_Section1_Right" variable="skel-position-Cecille" />
+    <modify-zone-variable zoneId="EF210_Section1_Right" variable="skel-position-Cecille" value="SkeletonSitting" />
+    <delay value="10" unit="m" />
+    
+    <modify-zone-variable zoneId="EF210_Section1_Right" variable="Temperature" value="296.15" />
+    <modify-zone-variable zoneId="EF210_Section3_Right" variable="Temperature" value="296.15" />
+    <modify-zone-variable zoneId="EF210_Section1_Left" variable="Temperature" value="294.15" />
+    <modify-zone-variable zoneId="EF210_Section3_Left" variable="Temperature" value="294.15" />
+    
+    <modify-zone-variable zoneId="EF210_Section1_Right" variable="Illuminance" value="1000.0" />
+    <modify-zone-variable zoneId="EF210_Section2_Right" variable="Illuminance" value="1000.0" />
+    <modify-zone-variable zoneId="EF210_Section3_Right" variable="Illuminance" value="1000.0" />
+    <modify-zone-variable zoneId="EF210_PresenterArea" variable="Illuminance" value="700.0" />
+    <delay value="5" unit="m" />
+    
+    <modify-zone-variable zoneId="EF210_Section1_Right" variable="skel-position-Alice" value="SkeletonStanding" />
+    <modify-zone-variable zoneId="EF210_Section1_Right" variable="skel-position-Bob" value="SkeletonStanding" />
+    <modify-zone-variable zoneId="EF210_Section1_Right" variable="skel-position-Cecille" value="SkeletonStanding" />
+    <move-person personId="Alice" newX="-1" newY="-1"/>
+    <move-person personId="Bob" newX="-1" newY="-1"/>
+    
+    <move-person-zone personId="Cecille" zoneId="EF210_PresenterArea" />
+    <add-zone-variable zoneId="EF210_PresenterArea" variable="skel-position-Cecille" />
+    <modify-zone-variable zoneId="EF210_PresenterArea" variable="skel-position-Cecille" value="SkeletonStanding" />
+    
+    <delay value="1" unit="m" />
+    <move-person personId="Cecille" newX="-1" newY="-1"/>
+    
+    <delay value="3" unit="m" />
+    
+    <!-- Here we must create a command to show the state of all devices - we want to see it they are deactivated -->
+    <reset-context />
+</behavior>
