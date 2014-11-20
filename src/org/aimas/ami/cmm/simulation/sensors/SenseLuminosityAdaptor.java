@@ -37,18 +37,24 @@ import com.hp.hpl.jena.update.UpdateRequest;
 import fr.liglab.adele.icasa.device.light.Photometer;
 
 @Component
-@Provides(specifications={ContextAssertionAdaptor.class})
+@Provides
 public class SenseLuminosityAdaptor extends SensorAdaptorBase {
+	public static final String SENSOR_AGENT_NAME = "CtxSensor_Luminosity" + "__" + "SmartClassroom";
+	
+	/* ContextAssertionAdaptor Service Properties used to identify the adaptor instance */
+	@ServiceProperty(name=ContextAssertionAdaptor.ADAPTOR_IMPL_CLASS)
+	protected String adaptorClassNameConfig;
+	
+	@ServiceProperty(name=ContextAssertionAdaptor.ADAPTOR_ASSERTION)
+	protected String adaptorContextAssertion;
+	
+	@ServiceProperty(name=ContextAssertionAdaptor.ADAPTOR_CMM_AGENT)
+	protected String adaptorSensorAgentName;
+	
 	private Map<String, Integer> luminosityMap;
 	
 	private ScheduledExecutorService luminosityUpdateService;
 	private ScheduledFuture<?> luminosityUpdateTask;
-	
-	@ServiceProperty(name=ContextAssertionAdaptor.ADAPTOR_IMPL_CLASS)
-	private String adaptorClassNameConfig;
-	
-	@ServiceProperty(name=ContextAssertionAdaptor.ADAPTOR_HANDLED_SENSORS)
-	private String[] sensorInstanceConfig;
 	
 	@Requires(id="lightSensors")
 	private Photometer[] luminositySensors;
@@ -57,7 +63,8 @@ public class SenseLuminosityAdaptor extends SensorAdaptorBase {
 	    super(SmartClassroom.sensesLuminosity.getURI());
 	    
 	    adaptorClassNameConfig = getClass().getName();
-	    sensorInstanceConfig = prepareSensorInstanceConfig();
+	    adaptorContextAssertion = contextAssertionURI;
+	    adaptorSensorAgentName = SENSOR_AGENT_NAME;
 	    
 	    luminosityMap = new HashMap<String, Integer>();
 	}

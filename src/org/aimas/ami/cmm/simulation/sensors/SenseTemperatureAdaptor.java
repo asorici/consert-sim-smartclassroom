@@ -39,17 +39,22 @@ import fr.liglab.adele.icasa.device.temperature.Thermometer;
 @Component
 @Provides(specifications={ContextAssertionAdaptor.class})
 public class SenseTemperatureAdaptor extends SensorAdaptorBase {
+	public static final String SENSOR_AGENT_NAME = "CtxSensor_Temperature" + "__" + "SmartClassroom";
+	
+	/* ContextAssertionAdaptor Service Properties used to identify the adaptor instance */
+	@ServiceProperty(name=ContextAssertionAdaptor.ADAPTOR_IMPL_CLASS)
+	protected String adaptorClassNameConfig;
+	
+	@ServiceProperty(name=ContextAssertionAdaptor.ADAPTOR_ASSERTION)
+	protected String adaptorContextAssertion;
+	
+	@ServiceProperty(name=ContextAssertionAdaptor.ADAPTOR_CMM_AGENT)
+	protected String adaptorSensorAgentName;
 	
 	private Map<String, Integer> temperatureMap;
 	
 	private ScheduledExecutorService temperatureUpdateService;
 	private ScheduledFuture<?> temperatureUpdateTask;
-	
-	@ServiceProperty(name=ContextAssertionAdaptor.ADAPTOR_IMPL_CLASS)
-	private String adaptorClassNameConfig;
-	
-	@ServiceProperty(name=ContextAssertionAdaptor.ADAPTOR_HANDLED_SENSORS)
-	private String[] sensorInstanceConfig;
 	
 	@Requires(id="temperatureSensors")
 	private Thermometer[] temperatureSensors;
@@ -58,7 +63,8 @@ public class SenseTemperatureAdaptor extends SensorAdaptorBase {
 	    super(SmartClassroom.sensesTemperature.getURI());
 	    
 	    adaptorClassNameConfig = getClass().getName();
-	    sensorInstanceConfig = prepareSensorInstanceConfig();
+	    adaptorContextAssertion = contextAssertionURI;
+	    adaptorSensorAgentName = SENSOR_AGENT_NAME;
 	    
 	    temperatureMap = new HashMap<String, Integer>();
     }

@@ -38,22 +38,27 @@ import com.hp.hpl.jena.update.UpdateRequest;
 @Component
 @Provides
 public class InformTeachingAdaptor extends SensorAdaptorBase {
+	public static final String SENSOR_AGENT_NAME = "CtxSensor_Teaching" + "__" + "SmartClassroom";
+	
+	/* ContextAssertionAdaptor Service Properties used to identify the adaptor instance */
+	@ServiceProperty(name=ContextAssertionAdaptor.ADAPTOR_IMPL_CLASS)
+	protected String adaptorClassNameConfig;
+	
+	@ServiceProperty(name=ContextAssertionAdaptor.ADAPTOR_ASSERTION)
+	protected String adaptorContextAssertion;
+	
+	@ServiceProperty(name=ContextAssertionAdaptor.ADAPTOR_CMM_AGENT)
+	protected String adaptorSensorAgentName;
 	
 	private ScheduledExecutorService teachingUpdateService;
 	private ScheduledFuture<?> teachingUpdateTask;
-	
-	@ServiceProperty(name=ContextAssertionAdaptor.ADAPTOR_IMPL_CLASS)
-	private String adaptorClassNameConfig;
-	
-	@ServiceProperty(name=ContextAssertionAdaptor.ADAPTOR_HANDLED_SENSORS)
-	private String[] sensorInstanceConfig;
-	
 	
 	public InformTeachingAdaptor() {
 	    super(SmartClassroom.takesPlaceIn.getURI());
 	    
 	    adaptorClassNameConfig = getClass().getName();
-	    sensorInstanceConfig = prepareSensorInstanceConfig();
+	    adaptorContextAssertion = contextAssertionURI;
+	    adaptorSensorAgentName = SENSOR_AGENT_NAME;
 	}
 	
 	@Bind(policy="dynamic-priority")

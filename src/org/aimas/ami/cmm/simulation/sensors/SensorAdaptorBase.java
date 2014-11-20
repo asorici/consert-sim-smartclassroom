@@ -193,18 +193,6 @@ public abstract class SensorAdaptorBase implements ContextAssertionAdaptor {
 		return sensorInstance;
 	}
 	
-	protected String[] prepareSensorInstanceConfig() {
-		Map<String, String> sensorInstanceMap = getSensorInstanceMap();
-	    String[] sensorInstanceConfig = new String[sensorInstanceMap.size()];
-	    
-	    int i = 0;
-	    for (String sensorIdURI : sensorInstanceMap.keySet()) {
-	    	sensorInstanceConfig[i++] = sensorIdURI + " " + sensorInstanceMap.get(sensorIdURI);
-	    }
-	    
-	    return sensorInstanceConfig;
-	}
-	
 	/**
 	 * @return The list of {@link Update} statements (EntityStore updates, Assertion ID creation, 
 	 * Assertion content and annotations) that make up a ContextAssertion update request.

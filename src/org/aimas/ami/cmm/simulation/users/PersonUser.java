@@ -121,7 +121,7 @@ public class PersonUser implements PersonListener {
 		//System.out.println("[" + PersonUser.class.getName() + " " + name + "] Describing myself");
 		
 		// == STEP 4: insert the new statement
-		bootstrapInsertionAdaptor.insert(personProfiledUpdate);
+		bootstrapInsertionAdaptor.insert(personProfiledUpdate, InsertionHandler.CHANGE_BASED_UPDATE_MODE);
 		
 		describedSelf = true;
 	}

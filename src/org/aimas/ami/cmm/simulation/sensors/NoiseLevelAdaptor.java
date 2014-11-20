@@ -37,16 +37,22 @@ import com.hp.hpl.jena.update.UpdateRequest;
 @Component
 @Provides
 public class NoiseLevelAdaptor extends SensorAdaptorBase {
+	public static final String SENSOR_AGENT_NAME = "CtxSensor_Microphones" + "__" + "SmartClassroom";
+	
+	/* ContextAssertionAdaptor Service Properties used to identify the adaptor instance */
+	@ServiceProperty(name=ContextAssertionAdaptor.ADAPTOR_IMPL_CLASS)
+	protected String adaptorClassNameConfig;
+	
+	@ServiceProperty(name=ContextAssertionAdaptor.ADAPTOR_ASSERTION)
+	protected String adaptorContextAssertion;
+	
+	@ServiceProperty(name=ContextAssertionAdaptor.ADAPTOR_CMM_AGENT)
+	protected String adaptorSensorAgentName;
+	
 	private Map<String, Integer> noiseLevelMap;
 	
 	private ScheduledExecutorService noiseLevelUpdateService;
 	private ScheduledFuture<?> noiseLevelUpdateTask;
-	
-	@ServiceProperty(name=ContextAssertionAdaptor.ADAPTOR_IMPL_CLASS)
-	private String adaptorClassNameConfig;
-	
-	@ServiceProperty(name=ContextAssertionAdaptor.ADAPTOR_HANDLED_SENSORS)
-	private String[] sensorInstanceConfig;
 	
 	@Requires(id="micSensors")
 	private Microphone[] microphoneSensors;
@@ -55,7 +61,8 @@ public class NoiseLevelAdaptor extends SensorAdaptorBase {
 	    super(SmartClassroom.hasNoiseLevel.getURI());
 	    
 	    adaptorClassNameConfig = getClass().getName();
-	    sensorInstanceConfig = prepareSensorInstanceConfig();
+	    adaptorContextAssertion = contextAssertionURI;
+	    adaptorSensorAgentName = SENSOR_AGENT_NAME;
 	    
 	    noiseLevelMap = new HashMap<String, Integer>();
     }
