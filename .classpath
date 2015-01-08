@@ -10,5 +10,8 @@
 	<classpathentry kind="lib" path="/consert-middleware/generated/consert-middleware.sensing.jar"/>
 	<classpathentry kind="lib" path="/consert-engine/generated/consert-engine.cmm-resources.jar"/>
 	<classpathentry kind="lib" path="/jena-bundle-2.7.2/generated/jena-bundle-2.7.2.jar"/>
+	<classpathentry kind="lib" path="lib/gson-2.2.4.jar"/>
+	<classpathentry kind="lib" path="lib/jcommon-1.0.21.jar"/>
+	<classpathentry kind="lib" path="lib/jfreechart-1.0.17.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

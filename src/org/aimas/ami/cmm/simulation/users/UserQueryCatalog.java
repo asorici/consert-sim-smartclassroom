@@ -22,7 +22,7 @@ public class UserQueryCatalog {
     		+ "		?assertionID ctxann:hasCertainty ?certAnn ."
     		+ "		?certAnn ctxann:hasStructuredValue ?certainty ."
     		+ "  }"
-    		+ "	 FILTER ((?time >= functions:datetimeDelay(functions:now(), -5)) && (?certainty >= 0.8))"
+    		+ "	 FILTER ((?time >= functions:datetimeDelay(functions:now(), -2)) && (?certainty >= 0.8))"
     		+ "}"; 
 	
 	
