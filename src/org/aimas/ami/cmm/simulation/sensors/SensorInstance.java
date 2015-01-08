@@ -49,7 +49,13 @@ public class SensorInstance {
 		sensorLocationMap.put(SmartClassroom.Temp_EF210_Section3_Left, SmartClassroom.EF210_Section3_Left);
 		sensorLocationMap.put(SmartClassroom.Temp_EF210_Section3_Right, SmartClassroom.EF210_Section3_Right);
 		
-		sensorLocationMap.put(SmartClassroom.PresenceSensor_EF210, SmartClassroom.EF210);
+		sensorLocationMap.put(SmartClassroom.PresenceSensor_EF210_PresenterArea, SmartClassroom.EF210_PresenterArea);
+		sensorLocationMap.put(SmartClassroom.PresenceSensor_EF210_Section1_Left, SmartClassroom.EF210_Section1_Left);
+		sensorLocationMap.put(SmartClassroom.PresenceSensor_EF210_Section1_Right, SmartClassroom.EF210_Section1_Right);
+		sensorLocationMap.put(SmartClassroom.PresenceSensor_EF210_Section2_Left, SmartClassroom.EF210_Section2_Left);
+		sensorLocationMap.put(SmartClassroom.PresenceSensor_EF210_Section2_Right, SmartClassroom.EF210_Section2_Right);
+		sensorLocationMap.put(SmartClassroom.PresenceSensor_EF210_Section3_Left, SmartClassroom.EF210_Section3_Left);
+		sensorLocationMap.put(SmartClassroom.PresenceSensor_EF210_Section3_Right, SmartClassroom.EF210_Section3_Right);
 	}
 	
 	private Resource idResource;

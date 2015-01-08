@@ -11,7 +11,7 @@ public class SmartClassroom {
 	/** <p>The RDF model that holds the vocabulary terms</p> */
     private static Model m_model = ModelFactory.createDefaultModel();
     
-    public final static String BASE_URI = "http://pervasive.semanticweb.org/ont/2014/07/smartclassroom";
+    public final static String BASE_URI = "http://pervasive.semanticweb.org/ont/2014/07/smartclassroom/core";
 	public final static String NS = BASE_URI + "#";
 	
 	public final static String BOOTSTRAP_BASE = "http://pervasive.semanticweb.org/ont/2014/07/smartclassroom/bootstrap";
@@ -125,7 +125,15 @@ public class SmartClassroom {
  	public final static Resource Mic_EF210_Section3_Right = m_model.createResource( BOOTSTRAP_NS + "Mic_EF210_Section3_Right", Microphone);
  	
  	public final static Resource TeachingActivitySensor = m_model.createResource( BOOTSTRAP_NS + "TeachingActivitySensor", ConsertCore.CONTEXT_AGENT);
- 	public final static Resource PresenceSensor_EF210 = m_model.createResource( BOOTSTRAP_NS + "PresenceSensor_EF210", PresenceSensor);
+ 	
+ 	public final static Resource PresenceSensor_EF210_PresenterArea = m_model.createResource( BOOTSTRAP_NS + "PresenceSensor_EF210_PresenterArea", PresenceSensor);
+ 	public final static Resource PresenceSensor_EF210_Section1_Left = m_model.createResource( BOOTSTRAP_NS + "PresenceSensor_EF210_Section1_Left", PresenceSensor);
+ 	public final static Resource PresenceSensor_EF210_Section1_Right = m_model.createResource( BOOTSTRAP_NS + "PresenceSensor_EF210_Section1_Right", PresenceSensor);
+ 	public final static Resource PresenceSensor_EF210_Section2_Left = m_model.createResource( BOOTSTRAP_NS + "PresenceSensor_EF210_Section2_Left", PresenceSensor);
+ 	public final static Resource PresenceSensor_EF210_Section2_Right = m_model.createResource( BOOTSTRAP_NS + "PresenceSensor_EF210_Section2_Right", PresenceSensor);
+ 	public final static Resource PresenceSensor_EF210_Section3_Left = m_model.createResource( BOOTSTRAP_NS + "PresenceSensor_EF210_Section3_Left", PresenceSensor);
+ 	public final static Resource PresenceSensor_EF210_Section3_Right = m_model.createResource( BOOTSTRAP_NS + "PresenceSensor_EF210_Section3_Right", PresenceSensor);
+ 	
  	
  	public final static Resource SkeletonSitting = m_model.createResource( NS + "SkeletonSitting", SkeletonPosition);
  	public final static Resource SkeletonStanding = m_model.createResource( NS + "SkeletonStanding", SkeletonPosition);

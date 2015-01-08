@@ -4,21 +4,44 @@ import org.aimas.ami.cmm.api.ApplicationUserAdaptor;
 import org.aimas.ami.contextrep.engine.api.InsertionHandler;
 import org.apache.felix.ipojo.annotations.Bind;
 import org.apache.felix.ipojo.annotations.Component;
-import org.apache.felix.ipojo.annotations.Instantiate;
+import org.apache.felix.ipojo.annotations.Invalidate;
 import org.apache.felix.ipojo.annotations.Unbind;
+import org.apache.felix.ipojo.annotations.Validate;
 
 import fr.liglab.adele.icasa.simulator.SimulationManager;
 
-@Component(publicFactory=false)
-@Instantiate
+@Component
+//@Instantiate
 public class CecilleUser extends PersonUser {
+	public static final String APP_ID_NAME = "CecilleUsage";
 	public static final String CECILLE_NAME = "Cecille";
 	public static final String CECILLE_SMARTPHONE_ADDRESS = "01:23:45:67:89:ad";
-	public static final String CECILLE_ADAPTOR_NAME = "CtxUser_Cecille";
+	public static final String CECILLE_ADAPTOR_NAME = "CtxUser" + "__" + APP_ID_NAME;
 	
 	public CecilleUser() {
 	    super(CECILLE_NAME, CECILLE_SMARTPHONE_ADDRESS);
     }
+	
+	@Validate
+	private void start() {
+		// describe myself
+		describeSelf();
+		
+		// start presence task
+		startPresenceTask();
+	}
+	
+	@Invalidate
+	private void stop() {
+		// cancel the ad-hoc subscription
+		cancelAdHocSubscription();
+		
+		// cancel user presence task and shutdown the presence request executor
+		if (userPresenceRequestTask != null) {
+			userPresenceRequestTask.cancel(false);
+			userPresenceRequestExecutor.shutdown();
+		}
+	}
 	
 	@Bind
 	private void bindSimulationManager(SimulationManager simulationManager) {

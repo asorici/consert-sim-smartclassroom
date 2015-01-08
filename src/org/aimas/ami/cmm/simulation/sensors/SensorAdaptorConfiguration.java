@@ -62,7 +62,7 @@ public class SensorAdaptorConfiguration {
 		Dictionary<String, Object> props = new Hashtable<String, Object>();
 		props.put(ContextAssertionAdaptor.ADAPTOR_IMPL_CLASS, InformTeachingAdaptor.class.getName());
 		props.put(ContextAssertionAdaptor.ADAPTOR_ASSERTION, SmartClassroom.takesPlaceIn.getURI());
-		props.put(ContextAssertionAdaptor.ADAPTOR_ASSERTION, InformTeachingAdaptor.SENSOR_AGENT_NAME);
+		props.put(ContextAssertionAdaptor.ADAPTOR_CMM_AGENT, InformTeachingAdaptor.SENSOR_AGENT_NAME);
 		
 		ComponentInstance teachingAdaptorInstance = teachingAdaptorFactory.createComponentInstance(props);
 		teachingAdaptorInstance.start();
@@ -73,7 +73,7 @@ public class SensorAdaptorConfiguration {
 		props = new Hashtable<String, Object>();
 		props.put(ContextAssertionAdaptor.ADAPTOR_IMPL_CLASS, KinectSkeletonAdaptor.class.getName());
 		props.put(ContextAssertionAdaptor.ADAPTOR_ASSERTION, SmartClassroom.sensesSkeletonInPosition.getURI());
-		props.put(ContextAssertionAdaptor.ADAPTOR_ASSERTION, KinectSkeletonAdaptor.SENSOR_AGENT_NAME);
+		props.put(ContextAssertionAdaptor.ADAPTOR_CMM_AGENT, KinectSkeletonAdaptor.SENSOR_AGENT_NAME);
 		
 		ComponentInstance kinectAdaptorInstance = kinectSkeletonFactory.createComponentInstance(props);
 		kinectAdaptorInstance.start();
@@ -84,7 +84,7 @@ public class SensorAdaptorConfiguration {
 		props = new Hashtable<String, Object>();
 		props.put(ContextAssertionAdaptor.ADAPTOR_IMPL_CLASS, NoiseLevelAdaptor.class.getName());
 		props.put(ContextAssertionAdaptor.ADAPTOR_ASSERTION, SmartClassroom.hasNoiseLevel.getURI());
-		props.put(ContextAssertionAdaptor.ADAPTOR_ASSERTION, NoiseLevelAdaptor.SENSOR_AGENT_NAME);
+		props.put(ContextAssertionAdaptor.ADAPTOR_CMM_AGENT, NoiseLevelAdaptor.SENSOR_AGENT_NAME);
 		ComponentInstance micAdaptorInstance = noiseLevelAdaptorFactory.createComponentInstance(props);
 		micAdaptorInstance.start();
 		//System.out.println("[" + SensorAdaptorConfiguration.class.getName() + "] " + micAdaptorInstance.getInstanceDescription().getDescription());
@@ -94,7 +94,7 @@ public class SensorAdaptorConfiguration {
 		props = new Hashtable<String, Object>();
 		props.put(ContextAssertionAdaptor.ADAPTOR_IMPL_CLASS, SenseBluetoothAdaptor.class.getName());
 		props.put(ContextAssertionAdaptor.ADAPTOR_ASSERTION, SmartClassroom.sensesBluetoothAddress.getURI());
-		props.put(ContextAssertionAdaptor.ADAPTOR_ASSERTION, SenseBluetoothAdaptor.SENSOR_AGENT_NAME);
+		props.put(ContextAssertionAdaptor.ADAPTOR_CMM_AGENT, SenseBluetoothAdaptor.SENSOR_AGENT_NAME);
 		ComponentInstance presenceAdaptorInstance = presenceAdaptorFactory.createComponentInstance(props);
 		presenceAdaptorInstance.start();
 		//System.out.println("[" + SensorAdaptorConfiguration.class.getName() + "] " + presenceAdaptorInstance.getInstanceDescription().getDescription());
@@ -105,7 +105,7 @@ public class SensorAdaptorConfiguration {
 		props = new Hashtable<String, Object>();
 		props.put(ContextAssertionAdaptor.ADAPTOR_IMPL_CLASS, SenseLuminosityAdaptor.class.getName());
 		props.put(ContextAssertionAdaptor.ADAPTOR_ASSERTION, SmartClassroom.sensesLuminosity.getURI());
-		props.put(ContextAssertionAdaptor.ADAPTOR_ASSERTION, SenseLuminosityAdaptor.SENSOR_AGENT_NAME);
+		props.put(ContextAssertionAdaptor.ADAPTOR_CMM_AGENT, SenseLuminosityAdaptor.SENSOR_AGENT_NAME);
 		ComponentInstance luminosityAdaptorInstance = luminosityAdaptorFactory.createComponentInstance(props);
 		luminosityAdaptorInstance.start();
 		//System.out.println("[" + SensorAdaptorConfiguration.class.getName() + "] " + luminosityAdaptorInstance.getInstanceDescription().getDescription());
@@ -115,7 +115,7 @@ public class SensorAdaptorConfiguration {
 		props = new Hashtable<String, Object>();
 		props.put(ContextAssertionAdaptor.ADAPTOR_IMPL_CLASS, SenseTemperatureAdaptor.class.getName());
 		props.put(ContextAssertionAdaptor.ADAPTOR_ASSERTION, SmartClassroom.sensesTemperature.getURI());
-		props.put(ContextAssertionAdaptor.ADAPTOR_ASSERTION, SenseTemperatureAdaptor.SENSOR_AGENT_NAME);
+		props.put(ContextAssertionAdaptor.ADAPTOR_CMM_AGENT, SenseTemperatureAdaptor.SENSOR_AGENT_NAME);
 		ComponentInstance temperatureAdaptorInstance = temperatureAdaptorFactory.createComponentInstance(props);
 		temperatureAdaptorInstance.start();
 		//System.out.println("[" + SensorAdaptorConfiguration.class.getName() + "] " + temperatureAdaptorInstance.getInstanceDescription().getDescription());

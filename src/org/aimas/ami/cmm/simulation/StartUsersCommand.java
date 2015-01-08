@@ -14,7 +14,7 @@ import org.json.JSONObject;
 import fr.liglab.adele.icasa.commands.AbstractCommand;
 import fr.liglab.adele.icasa.commands.Signature;
 
-@Component(name = "StartUsersCommand")
+@Component(name="StartUsersCommand")
 @Provides
 @Instantiate(name = "start-users-command")
 public class StartUsersCommand extends AbstractCommand {
@@ -23,11 +23,13 @@ public class StartUsersCommand extends AbstractCommand {
 	@Requires(filter="(factory.name=org.aimas.ami.cmm.simulation.users.AliceUser)")
 	private Factory aliceUserFactory;
 	
+	
 	@Requires(filter="(factory.name=org.aimas.ami.cmm.simulation.users.BobUser)")
 	private Factory bobUserFactory;
 	
 	@Requires(filter="(factory.name=org.aimas.ami.cmm.simulation.users.CecilleUser)")
 	private Factory cecilleUserFactory;
+	
 	
 	@Requires(filter="(factory.name=org.aimas.ami.cmm.simulation.users.AirConditioningUser)")
 	private Factory airConditioningUserFactory;
@@ -49,20 +51,27 @@ public class StartUsersCommand extends AbstractCommand {
     public Object execute(InputStream arg0, PrintStream arg1, JSONObject arg2, Signature arg3) throws Exception {
 		ComponentInstance aliceUserInstance = aliceUserFactory.createComponentInstance(null);
 		aliceUserInstance.start();
-		System.out.println(aliceUserInstance.getInstanceDescription().getDescription());
+		SimulationUsers.userComponentInstanceMap.put(SimulationUsers.ALICE_NAME, aliceUserInstance);
+		
 		
 		ComponentInstance bobUserInstance = bobUserFactory.createComponentInstance(null);
 		bobUserInstance.start();
+		SimulationUsers.userComponentInstanceMap.put(SimulationUsers.BOB_NAME, bobUserInstance);
 		
 		ComponentInstance cecilleUserInstance = cecilleUserFactory.createComponentInstance(null);
 		cecilleUserInstance.start();
+		SimulationUsers.userComponentInstanceMap.put(SimulationUsers.CECILLE_NAME, cecilleUserInstance);
+		
+		
 		
 		ComponentInstance airConditioningUserInstance = airConditioningUserFactory.createComponentInstance(null);
 		airConditioningUserInstance.start();
+		SimulationUsers.userComponentInstanceMap.put(SimulationUsers.AIRCONDITIONING_NAME, airConditioningUserInstance);
 		
 		ComponentInstance projectorUserInstance = projectorUserFactory.createComponentInstance(null);
 		projectorUserInstance.start();
-		System.out.println(projectorUserInstance.getInstanceDescription().getDescription());
+		SimulationUsers.userComponentInstanceMap.put(SimulationUsers.PROJECTOR_NAME, projectorUserInstance);
+		
 		
 	    return null;
     }

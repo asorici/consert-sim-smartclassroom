@@ -2,6 +2,10 @@ package org.aimas.ami.cmm.simulation.users;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.Executors;
+import java.util.concurrent.ScheduledExecutorService;
+import java.util.concurrent.ScheduledFuture;
+import java.util.concurrent.TimeUnit;
 
 import org.aimas.ami.cmm.api.ApplicationUserAdaptor;
 import org.aimas.ami.cmm.api.DisconnectedQueryHandlerException;
@@ -37,7 +41,7 @@ import fr.liglab.adele.icasa.simulator.SimulationManager;
 import fr.liglab.adele.icasa.simulator.listener.PersonListener;
 
 public class PersonUser implements PersonListener {
-	public static final String APP_ID_NAME = "SmartClassroomSpec";
+	static final int PRESENCE_REQUEST_SECONDS_INTERVAL = 5;
 	
 	protected boolean firstMove = true;
 	protected Object guard = new Object();
@@ -52,7 +56,9 @@ public class PersonUser implements PersonListener {
 	protected Model personModel;
 	protected boolean describedSelf = false;
 	
-	protected Map<String, Query> numUsersSubscription;
+	protected ScheduledExecutorService userPresenceRequestExecutor;
+	protected ScheduledFuture<?> userPresenceRequestTask;
+	
 	protected Map<String, Query> adhocMeetingSubscription;
 	
 	protected PersonUser(String name, String smartphoneAddress) {
@@ -73,9 +79,15 @@ public class PersonUser implements PersonListener {
 		this.bootstrapInsertionAdaptor = bootstrapInsertionAdaptor;
 	}
 	
+	protected void startPresenceTask() {
+		userPresenceRequestExecutor = Executors.newSingleThreadScheduledExecutor();
+		userPresenceRequestTask = userPresenceRequestExecutor.scheduleAtFixedRate(
+					new UserPresenceTask(), 0, PRESENCE_REQUEST_SECONDS_INTERVAL, TimeUnit.SECONDS);
+	}
+	
 	// SELF DESCRIPTION
 	////////////////////////////////////////////////////////////////////////////////////////////
-	private void describeSelf() {
+	protected void describeSelf() {
 		// Compose the EntityStore + profiled device ownership update request for the Person and Smartphone ContextEntities
 		UpdateRequest personProfiledUpdate = new UpdateRequest();
 		Node entityStoreNode = Node.createURI(ConsertCore.ENTITY_STORE_URI);
@@ -118,36 +130,23 @@ public class PersonUser implements PersonListener {
 				ConsertCore.CONTEXT_ASSERTION_TYPE_PROPERTY.asNode(), ConsertCore.TYPE_PROFILED.asNode()));
 		personProfiledUpdate.add(new UpdateDataInsert(annotationContent));
 		
-		//System.out.println("[" + PersonUser.class.getName() + " " + name + "] Describing myself");
+		System.out.println("[" + PersonUser.class.getName() + " " + name + "] Describing myself");
 		
 		// == STEP 4: insert the new statement
-		bootstrapInsertionAdaptor.insert(personProfiledUpdate, InsertionHandler.CHANGE_BASED_UPDATE_MODE);
+		bootstrapInsertionAdaptor.insertAssertion(personProfiledUpdate, InsertionHandler.TIME_BASED_UPDATE_MODE);
+		//applicationAdaptor.sendProfiledAssertion(assertionDescription, profiledAssertionUpdate);
 		
 		describedSelf = true;
 	}
 	
-	private void subscribeForNumUsers() {
-		synchronized(guard) {
-			if (numUsersSubscription == null) {
-				Query subscribeQuery = QueryFactory.create(UserQueryCatalog.numUsersQuery);
-				try {
-		            String subscriptionId = applicationAdaptor.localSubscribe(subscribeQuery, new NumUsersNotifier(), 0);
-		            numUsersSubscription = new HashMap<String, Query>();
-		            numUsersSubscription.put(subscriptionId, subscribeQuery);
-	            }
-	            catch (DisconnectedQueryHandlerException e) {
-		            e.printStackTrace();
-	            }
-			}
-		}
-	}
-	
-	private void subscribeForAdHocDiscussion() {
+	protected void subscribeForAdHocDiscussion() {
 		synchronized(guard) {
 			if (adhocMeetingSubscription == null) {
 				Query subscribeQuery = QueryFactory.create(UserQueryCatalog.adHocMeetingQuery);
 				try {
 		            String subscriptionId = applicationAdaptor.localSubscribe(subscribeQuery, new AdhocDiscussionNotifier(), 0);
+		            System.out.println("[INFO "+ getClass().getSimpleName() +"] SUBSCRIBING FOR AD-HOC MEETING QUERY WITH ID: " + subscriptionId);
+		            
 		            adhocMeetingSubscription = new HashMap<String, Query>();
 		            adhocMeetingSubscription.put(subscriptionId, subscribeQuery);
 	            }
@@ -158,17 +157,13 @@ public class PersonUser implements PersonListener {
 		}
 	}
 	
-	private void cancelSubscriptions() {
+	protected void cancelAdHocSubscription() {
 		if (adhocMeetingSubscription != null) {
 			String subscriptionId = adhocMeetingSubscription.keySet().iterator().next();
+			System.out.println("[INFO "+ getClass().getSimpleName() +"] CANCELING SUBSCRIPTION FOR AD-HOC MEETING: " + subscriptionId);
+			
 			applicationAdaptor.cancelSubscription(subscriptionId);
 			adhocMeetingSubscription = null;
-		}
-		
-		if (numUsersSubscription != null) {
-			String subscriptionId = numUsersSubscription.keySet().iterator().next();
-			applicationAdaptor.cancelSubscription(subscriptionId);
-			numUsersSubscription = null;
 		}
 	}
 	
@@ -185,6 +180,7 @@ public class PersonUser implements PersonListener {
 	
 	@Override
     public void personMoved(Person person, Position position) {
+		/*
 		if (person.getName().equals(name)) {
 			//System.out.println("[" + PersonUser.class.getName() + " " + name + "] Received personMoved notification to (" + position.x + ", " + position.y + ")");
 			
@@ -196,59 +192,25 @@ public class PersonUser implements PersonListener {
 				
 				// register to be notified of how many users there are in the room
 				subscribeForNumUsers();
+				
+				firstMove = false;
 			}
 			else {
-				cancelSubscriptions();
+				if (position.x < 0 && position.y < 0) {
+					cancelAdHocSubscription();
+				}
 				//System.out.println("[INFO "+ PersonUser.class.getName() +"]: User " + name + " has left the room.");
 			}
 		}
+		*/
 	}
 	
 	@Override
     public void personRemoved(Person person) {}
 	
+	
 	// SUBSCRIPTION RESULT NOTIFIERS
 	////////////////////////////////////////////////////////////////////////////////////////////
-	private class NumUsersNotifier implements QueryNotificationHandler {
-		@Override
-        public void handleResultNotification(Query query, QueryResult queryResult) {
-			if (!queryResult.hasError()) {
-				ResultSet resultSet = queryResult.getResultSet();
-				if (resultSet.hasNext()) {
-					QuerySolution solution = resultSet.nextSolution();
-					int numUsers = solution.getLiteral("numUsers").getInt();
-					
-					//System.out.println("["+getClass().getSimpleName() + " " + name + " ] Received notification for numUsers : " + numUsers);
-					if (numUsers > 1) {
-						subscribeForAdHocDiscussion();
-					}
-					else {
-						synchronized(guard) {
-							if (adhocMeetingSubscription != null) {
-								String subscriptionId = adhocMeetingSubscription.keySet().iterator().next();
-								applicationAdaptor.cancelSubscription(subscriptionId);
-								adhocMeetingSubscription = null;
-							}
-						}
-					}
-				}
-				else {
-					System.out.println("[INFO "+ PersonUser.class.getName() +"] NO RESULTS FOR numUsers QUERY");
-				}
-			}
-			else {
-				System.out.println("[INFO "+ PersonUser.class.getName() +"] Error executing numUsers query!!!");
-				queryResult.getError().printStackTrace();
-			}
-        }
-
-		@Override
-        public void handleRefuse(Query query) {
-	        System.out.println("[INFO "+ PersonUser.class.getName() +"] The num users query got refused!!!");
-        }
-	}
-	
-	
 	private class AdhocDiscussionNotifier implements QueryNotificationHandler {
 		@Override
         public void handleResultNotification(Query query, QueryResult queryResult) {
@@ -267,6 +229,53 @@ public class PersonUser implements PersonListener {
 		@Override
         public void handleRefuse(Query query) {
 	        System.out.println("[INFO "+ PersonUser.class.getName() +"] The ad-hoc discussion query got refused!!!");
+        }
+	}
+	
+	private class UserPresenceTask implements Runnable, QueryNotificationHandler {
+		@Override
+        public void run() {
+			Query presenceQuery = QueryFactory.create(UserQueryCatalog.numUsersQuery);
+			try {
+	            applicationAdaptor.submitLocalQuery(presenceQuery, this);
+            }
+            catch (DisconnectedQueryHandlerException e) {
+	            e.printStackTrace();
+            }
+        }
+
+		@Override
+        public void handleResultNotification(Query query, QueryResult queryResult) {
+			if (!queryResult.hasError()) {
+				ResultSet resultSet = queryResult.getResultSet();
+				
+				if (resultSet.hasNext()) {
+					QuerySolution solution = resultSet.nextSolution();
+					int numUsers = solution.getLiteral("numUsers").getInt();
+					
+					//System.out.println("["+PersonUser.this.getClass().getSimpleName() +"] Received notification for numUsers : " + numUsers);
+					if (numUsers > 1) {
+						subscribeForAdHocDiscussion();
+					}
+					else {
+						synchronized(guard) {
+							cancelAdHocSubscription();
+						}
+					}
+				}
+				else {
+					System.out.println("[INFO "+ AirConditioningUser.class.getName() +"] NO RESULTS FOR numUsers QUERY");
+				}
+			}
+			else {
+				System.out.println("[INFO "+ AirConditioningUser.class.getName() +"] Error executing numUsers query!!!");
+				queryResult.getError().printStackTrace();
+			}
+        }
+
+		@Override
+        public void handleRefuse(Query query) {
+			System.out.println("[INFO "+ PersonUser.class.getName() +"] The num users query got refused!!!");
         }
 	}
 }

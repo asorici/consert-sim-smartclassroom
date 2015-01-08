@@ -18,9 +18,11 @@ import org.aimas.ami.cmm.sensing.ContextAssertionAdaptor;
 import org.aimas.ami.contextrep.datatype.CalendarInterval;
 import org.aimas.ami.contextrep.datatype.CalendarIntervalList;
 import org.aimas.ami.contextrep.model.ContextAssertion.ContextAssertionType;
+import org.aimas.ami.contextrep.resources.CMMConstants;
 import org.aimas.ami.contextrep.resources.TimeService;
 import org.aimas.ami.contextrep.utils.ContextModelUtils;
 import org.apache.felix.ipojo.annotations.Bind;
+import org.apache.felix.ipojo.annotations.BindingPolicy;
 import org.apache.felix.ipojo.annotations.Component;
 import org.apache.felix.ipojo.annotations.Invalidate;
 import org.apache.felix.ipojo.annotations.Provides;
@@ -72,7 +74,8 @@ public class SenseBluetoothAdaptor extends SensorAdaptorBase {
 	    this.sensedBluetoothAddresses = new HashSet<String>();
     }
 	
-	@Bind(policy="dynamic-priority")
+	@Bind(policy=BindingPolicy.DYNAMIC_PRIORITY,
+		  filter="(" + CMMConstants.CONSERT_APPLICATION_ID_PROP + "=" + "SmartClassroom" + ")")
 	private void bindTimeService(TimeService timeService) {
 		setTimeService(timeService);
 	}
@@ -150,7 +153,13 @@ public class SenseBluetoothAdaptor extends SensorAdaptorBase {
     protected Map<String, String> getSensorInstanceMap() {
 		Map<String, String> instances = new HashMap<String, String>();
 		
-		instances.put(SmartClassroom.PresenceSensor_EF210.getURI(), SmartClassroom.PresenceSensor.getURI());
+		instances.put(SmartClassroom.PresenceSensor_EF210_PresenterArea.getURI(), SmartClassroom.PresenceSensor.getURI());
+		instances.put(SmartClassroom.PresenceSensor_EF210_Section1_Left.getURI(), SmartClassroom.PresenceSensor.getURI());
+		instances.put(SmartClassroom.PresenceSensor_EF210_Section1_Right.getURI(), SmartClassroom.PresenceSensor.getURI());
+		instances.put(SmartClassroom.PresenceSensor_EF210_Section2_Left.getURI(), SmartClassroom.PresenceSensor.getURI());
+		instances.put(SmartClassroom.PresenceSensor_EF210_Section2_Right.getURI(), SmartClassroom.PresenceSensor.getURI());
+		instances.put(SmartClassroom.PresenceSensor_EF210_Section3_Left.getURI(), SmartClassroom.PresenceSensor.getURI());
+		instances.put(SmartClassroom.PresenceSensor_EF210_Section3_Right.getURI(), SmartClassroom.PresenceSensor.getURI());
 		
 		return instances;
     }
@@ -163,7 +172,7 @@ public class SenseBluetoothAdaptor extends SensorAdaptorBase {
 		
 		for (String sensedAddress : sensedBluetoothAddresses) {
 			//System.out.println("[" + getClass().getSimpleName() + "::" + sensorIdURI + "] "
-			//		+ "Sensed bluetoothAddresses: " + sensedBluetoothAddresses);
+			//		+ "Sensed bluetoothAddress: " + sensedAddress);
 			
 			Map<Integer, Update> assertionUpdate = new HashMap<Integer, Update>();
 			

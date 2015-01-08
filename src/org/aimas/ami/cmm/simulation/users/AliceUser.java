@@ -4,25 +4,48 @@ import org.aimas.ami.cmm.api.ApplicationUserAdaptor;
 import org.aimas.ami.contextrep.engine.api.InsertionHandler;
 import org.apache.felix.ipojo.annotations.Bind;
 import org.apache.felix.ipojo.annotations.Component;
-import org.apache.felix.ipojo.annotations.Instantiate;
+import org.apache.felix.ipojo.annotations.Invalidate;
 import org.apache.felix.ipojo.annotations.Unbind;
+import org.apache.felix.ipojo.annotations.Validate;
 
 import fr.liglab.adele.icasa.simulator.SimulationManager;
 
-@Component(publicFactory=false)
-@Instantiate
+@Component
+//@Instantiate
 public class AliceUser extends PersonUser {
+	public static final String APP_ID_NAME = "AliceUsage";
 	public static final String ALICE_NAME = "Alice";
 	public static final String ALICE_SMARTPHONE_ADDRESS = "01:23:45:67:89:ab";
-	public static final String ALICE_ADAPTOR_NAME = "CtxUser_Alice";
+	public static final String ALICE_ADAPTOR_NAME = "CtxUser" + "__" + APP_ID_NAME;
 	
 	public AliceUser() {
 	    super(ALICE_NAME, ALICE_SMARTPHONE_ADDRESS);
     }
 	
+	@Validate
+	private void start() {
+		// describe myself
+		describeSelf();
+		
+		// start presence task
+		startPresenceTask();
+	}
+	
+	@Invalidate
+	private void stop() {
+		// cancel the ad-hoc subscription
+		cancelAdHocSubscription();
+		
+		// cancel user presence task and shutdown the presence request executor
+		if (userPresenceRequestTask != null) {
+			userPresenceRequestTask.cancel(false);
+			userPresenceRequestExecutor.shutdown();
+		}
+	}
+	
 	@Bind
 	private void bindSimulationManager(SimulationManager simulationManager) {
-		System.out.println("[" + AliceUser.class.getName() + "] Simulation Manager dependency resolved.");
+		System.out.println("[" + AliceUser.class.getSimpleName() + "] Simulation Manager dependency resolved.");
 		super.setSimulationManager(simulationManager);
 	}
 	
@@ -30,6 +53,7 @@ public class AliceUser extends PersonUser {
 	private void unbindSimulationManager(SimulationManager simulationManager) {
 		super.setSimulationManager(null);
 	}
+	
 	
 	@Bind(filter=""
 			+ "(&(" + ApplicationUserAdaptor.APP_IDENTIFIER_PROPERTY + "=" + APP_ID_NAME + ")"
@@ -54,4 +78,5 @@ public class AliceUser extends PersonUser {
 	private void unbindBootstrapInsertionAdaptor(InsertionHandler insertionAdaptor) {
 		super.setBootstrapInsertionAdaptor(null);
 	}
+	
 }

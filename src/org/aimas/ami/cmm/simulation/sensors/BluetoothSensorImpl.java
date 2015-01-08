@@ -65,11 +65,13 @@ public class BluetoothSensorImpl extends AbstractDevice implements BluetoothSens
 	@Override
 	public void enterInZones(List<Zone> zones) {
 		if (!zones.isEmpty()) {
+			// Since a bluetooth sensor is static, and is attached to only one zone, 
+			// the required one is the most specific (i.e. small one)
 			for (Zone z : zones) {
 				if (zone == null) {
 					zone = z;
 				}
-				else if (z.getXLength() * z.getYLength() > zone.getXLength() * zone.getYLength()) {
+				else if (z.getXLength() * z.getYLength() < zone.getXLength() * zone.getYLength()) {
 					zone = z;
 				}
 			}
@@ -93,12 +95,9 @@ public class BluetoothSensorImpl extends AbstractDevice implements BluetoothSens
 		if (zone != null) {
 			sensedAddresses.clear();
 			
-			Set<String> allDetectedPersons = new HashSet<String>();
 			Set<String> detectedPersons = personLocationService.getPersonInZone(zone.getId());
-			if (detectedPersons != null) {
-				allDetectedPersons.addAll(detectedPersons);
-			}
 			
+			/*
 			for (Zone z : zone.getChildren()) {
 				detectedPersons = personLocationService.getPersonInZone(z.getId());
 				
@@ -106,8 +105,9 @@ public class BluetoothSensorImpl extends AbstractDevice implements BluetoothSens
 					allDetectedPersons.addAll(detectedPersons);
 				}
 			}
+			*/
 			
-			for (String personId : allDetectedPersons) {
+			for (String personId : detectedPersons) {
 				if (staticBluetoothMap.containsKey(personId)) {
 					personToAddressMap.put(personId, staticBluetoothMap.get(personId));
 					sensedAddresses.add(staticBluetoothMap.get(personId));

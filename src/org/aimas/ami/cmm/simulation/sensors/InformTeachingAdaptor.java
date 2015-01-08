@@ -14,10 +14,12 @@ import org.aimas.ami.cmm.sensing.ContextAssertionAdaptor;
 import org.aimas.ami.contextrep.datatype.CalendarInterval;
 import org.aimas.ami.contextrep.datatype.CalendarIntervalList;
 import org.aimas.ami.contextrep.model.ContextAssertion.ContextAssertionType;
+import org.aimas.ami.contextrep.resources.CMMConstants;
 import org.aimas.ami.contextrep.resources.TimeService;
 import org.aimas.ami.contextrep.utils.ContextModelUtils;
 import org.aimas.ami.contextrep.vocabulary.ConsertCore;
 import org.apache.felix.ipojo.annotations.Bind;
+import org.apache.felix.ipojo.annotations.BindingPolicy;
 import org.apache.felix.ipojo.annotations.Component;
 import org.apache.felix.ipojo.annotations.Provides;
 import org.apache.felix.ipojo.annotations.ServiceProperty;
@@ -61,7 +63,8 @@ public class InformTeachingAdaptor extends SensorAdaptorBase {
 	    adaptorSensorAgentName = SENSOR_AGENT_NAME;
 	}
 	
-	@Bind(policy="dynamic-priority")
+	@Bind(policy=BindingPolicy.DYNAMIC_PRIORITY,
+		  filter="(" + CMMConstants.CONSERT_APPLICATION_ID_PROP + "=" + "SmartClassroom" + ")")
 	private void bindTimeService(TimeService timeService) {
 		setTimeService(timeService);
 	}

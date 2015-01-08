@@ -3,6 +3,7 @@ package org.aimas.ami.cmm.simulation;
 import java.util.Calendar;
 import java.util.TimeZone;
 
+import org.aimas.ami.contextrep.resources.CMMConstants;
 import org.aimas.ami.contextrep.resources.TimeService;
 import org.apache.felix.ipojo.annotations.Component;
 import org.apache.felix.ipojo.annotations.Instantiate;
@@ -12,10 +13,13 @@ import org.apache.felix.ipojo.annotations.StaticServiceProperty;
 
 import fr.liglab.adele.icasa.clock.Clock;
 
-@Component(name="SimulationTime", immediate=false)
-@Provides(properties = {@StaticServiceProperty(name="service.ranking", type="java.lang.Integer", value="10")})
+@Component(name="SimulationTime-SmartClassroom", immediate=false, publicFactory = false)
+@Provides(properties = {
+		@StaticServiceProperty(name="service.ranking", type="java.lang.Integer", value="10"),
+		@StaticServiceProperty(name=CMMConstants.CONSERT_APPLICATION_ID_PROP, type="java.lang.String", value="SmartClassroom"),
+})
 @Instantiate
-public class SimulationTime implements TimeService {
+public class SimulationTimeSmartClassroom implements TimeService {
 	
 	@Requires
 	private Clock simulationClock;
