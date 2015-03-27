@@ -1,0 +1,7059 @@
+{
+  "enginePerformanceResult": {
+    "minInsertionDelay": 0,
+    "averageInsertionDelay": 80,
+    "maxInsertionDelay": 525,
+    "numInsertions": 541,
+    "minInferenceDelay": 0,
+    "averageInferenceDelay": 27,
+    "maxInferenceDelay": 223,
+    "numInferences": 253,
+    "minDeductionCycleDuration": 23,
+    "averageDeductionCycleDuration": 159,
+    "maxDeductionCycleDuration": 450,
+    "numDeductionCycles": 178,
+    "minInsertionDuration": 5,
+    "averageInsertionDuration": 22,
+    "maxInsertionDuration": 795,
+    "minInferenceCheckDuration": 2,
+    "averageInferenceCheckDuration": 6,
+    "maxInferenceCheckDuration": 66,
+    "minContinuityCheckDuration": 0,
+    "averageContinuityCheckDuration": 9,
+    "maxContinuityCheckDuration": 36,
+    "minConstraintCheckDuration": 0,
+    "averageConstraintCheckDuration": 0,
+    "maxConstraintCheckDuration": 1,
+    "insertionDelayHistory": {
+      "7": 0,
+      "8": 270,
+      "9": 390,
+      "10": 0,
+      "11": 0,
+      "12": 0,
+      "13": 0,
+      "14": 0,
+      "15": 135,
+      "17": 297,
+      "16": 156,
+      "19": 468,
+      "18": 329,
+      "20": 504,
+      "31": 0,
+      "30": 0,
+      "34": 0,
+      "35": 24,
+      "32": 1,
+      "33": 0,
+      "38": 13,
+      "39": 27,
+      "36": 37,
+      "37": 51,
+      "42": 0,
+      "43": 0,
+      "40": 39,
+      "41": 54,
+      "46": 0,
+      "47": 23,
+      "44": 0,
+      "45": 0,
+      "51": 46,
+      "50": 39,
+      "49": 45,
+      "48": 32,
+      "55": 0,
+      "54": 0,
+      "53": 74,
+      "52": 62,
+      "59": 21,
+      "58": 0,
+      "57": 0,
+      "56": 1,
+      "63": 17,
+      "62": 2,
+      "61": 40,
+      "60": 29,
+      "68": 32,
+      "69": 31,
+      "70": 0,
+      "71": 0,
+      "64": 23,
+      "65": 35,
+      "66": 0,
+      "67": 11,
+      "76": 0,
+      "77": 0,
+      "78": 1,
+      "79": 66,
+      "72": 0,
+      "73": 0,
+      "74": 0,
+      "75": 0,
+      "85": 457,
+      "84": 404,
+      "87": 479,
+      "86": 512,
+      "81": 209,
+      "80": 137,
+      "83": 385,
+      "82": 297,
+      "93": 499,
+      "92": 492,
+      "95": 0,
+      "94": 503,
+      "89": 517,
+      "88": 500,
+      "91": 485,
+      "90": 525,
+      "102": 0,
+      "103": 0,
+      "100": 0,
+      "101": 0,
+      "98": 25,
+      "99": 0,
+      "96": 21,
+      "97": 27,
+      "110": 153,
+      "111": 123,
+      "108": 74,
+      "109": 89,
+      "106": 0,
+      "107": 0,
+      "104": 0,
+      "105": 0,
+      "119": 0,
+      "118": 129,
+      "117": 122,
+      "116": 115,
+      "115": 106,
+      "114": 157,
+      "113": 150,
+      "112": 126,
+      "127": 1,
+      "126": 0,
+      "125": 0,
+      "124": 0,
+      "123": 0,
+      "122": 23,
+      "121": 24,
+      "120": 8,
+      "137": 306,
+      "136": 281,
+      "139": 266,
+      "138": 315,
+      "141": 280,
+      "140": 273,
+      "143": 0,
+      "142": 286,
+      "129": 0,
+      "128": 0,
+      "131": 5,
+      "130": 0,
+      "133": 228,
+      "132": 120,
+      "135": 267,
+      "134": 336,
+      "152": 0,
+      "153": 1,
+      "154": 0,
+      "155": 0,
+      "156": 15,
+      "157": 101,
+      "158": 181,
+      "159": 159,
+      "144": 16,
+      "145": 20,
+      "146": 25,
+      "147": 0,
+      "148": 0,
+      "149": 0,
+      "150": 0,
+      "151": 0,
+      "171": 1,
+      "170": 20,
+      "169": 13,
+      "168": 7,
+      "175": 0,
+      "174": 0,
+      "173": 0,
+      "172": 0,
+      "163": 137,
+      "162": 188,
+      "161": 182,
+      "160": 164,
+      "167": 0,
+      "166": 153,
+      "165": 148,
+      "164": 142,
+      "186": 202,
+      "187": 148,
+      "184": 186,
+      "185": 193,
+      "190": 169,
+      "191": 0,
+      "188": 155,
+      "189": 159,
+      "178": 0,
+      "179": 0,
+      "176": 0,
+      "177": 0,
+      "182": 265,
+      "183": 168,
+      "180": 72,
+      "181": 167,
+      "205": 158,
+      "204": 68,
+      "207": 169,
+      "206": 221,
+      "201": 0,
+      "200": 0,
+      "203": 0,
+      "202": 1,
+      "197": 0,
+      "196": 0,
+      "199": 0,
+      "198": 0,
+      "193": 27,
+      "192": 14,
+      "195": 0,
+      "194": 20,
+      "220": 87,
+      "221": 37,
+      "222": 23,
+      "223": 1,
+      "216": 171,
+      "217": 134,
+      "218": 135,
+      "219": 87,
+      "212": 146,
+      "213": 152,
+      "214": 156,
+      "215": 161,
+      "208": 142,
+      "209": 145,
+      "210": 153,
+      "211": 161,
+      "239": 152,
+      "238": 161,
+      "237": 149,
+      "236": 83,
+      "235": 0,
+      "234": 0,
+      "233": 0,
+      "232": 0,
+      "231": 0,
+      "230": 0,
+      "229": 1,
+      "228": 0,
+      "227": 7,
+      "226": 44,
+      "225": 39,
+      "224": 7,
+      "254": 16,
+      "255": 0,
+      "252": 67,
+      "253": 27,
+      "250": 109,
+      "251": 95,
+      "248": 149,
+      "249": 134,
+      "246": 137,
+      "247": 143,
+      "244": 135,
+      "245": 129,
+      "242": 163,
+      "243": 167,
+      "240": 138,
+      "241": 142,
+      "275": 144,
+      "274": 137,
+      "273": 116,
+      "272": 110,
+      "279": 108,
+      "278": 103,
+      "277": 100,
+      "276": 134,
+      "283": 85,
+      "282": 106,
+      "281": 117,
+      "280": 111,
+      "287": 0,
+      "286": 23,
+      "285": 54,
+      "284": 65,
+      "258": 29,
+      "259": 0,
+      "256": 15,
+      "257": 35,
+      "262": 0,
+      "263": 0,
+      "260": 0,
+      "261": 0,
+      "266": 0,
+      "267": 0,
+      "264": 0,
+      "265": 0,
+      "270": 140,
+      "271": 145,
+      "268": 63,
+      "269": 129,
+      "305": 152,
+      "304": 146,
+      "307": 160,
+      "306": 157,
+      "309": 122,
+      "308": 147,
+      "311": 130,
+      "310": 126,
+      "313": 105,
+      "312": 137,
+      "315": 70,
+      "314": 95,
+      "317": 31,
+      "316": 67,
+      "319": 0,
+      "318": 21,
+      "288": 6,
+      "289": 27,
+      "290": 32,
+      "291": 0,
+      "292": 0,
+      "293": 0,
+      "294": 0,
+      "295": 0,
+      "296": 0,
+      "297": 1,
+      "298": 0,
+      "299": 0,
+      "300": 64,
+      "301": 130,
+      "302": 208,
+      "303": 165,
+      "343": 100,
+      "342": 96,
+      "341": 91,
+      "340": 111,
+      "339": 122,
+      "338": 115,
+      "337": 110,
+      "336": 105,
+      "351": 0,
+      "350": 16,
+      "349": 24,
+      "348": 51,
+      "347": 61,
+      "346": 92,
+      "345": 95,
+      "344": 101,
+      "326": 0,
+      "327": 0,
+      "324": 0,
+      "325": 0,
+      "322": 17,
+      "323": 0,
+      "320": 12,
+      "321": 24,
+      "334": 187,
+      "335": 129,
+      "332": 61,
+      "333": 127,
+      "330": 0,
+      "331": 0,
+      "328": 0,
+      "329": 0,
+      "373": 92,
+      "372": 121,
+      "375": 100,
+      "374": 96,
+      "369": 123,
+      "368": 119,
+      "371": 132,
+      "370": 128,
+      "381": 23,
+      "380": 55,
+      "383": 0,
+      "382": 15,
+      "377": 94,
+      "376": 105,
+      "379": 53,
+      "378": 89,
+      "356": 0,
+      "357": 0,
+      "358": 0,
+      "359": 0,
+      "352": 5,
+      "353": 17,
+      "354": 17,
+      "355": 0,
+      "364": 66,
+      "365": 131,
+      "366": 204,
+      "367": 153,
+      "360": 0,
+      "361": 0,
+      "362": 0,
+      "363": 0,
+      "410": 97,
+      "411": 63,
+      "408": 98,
+      "409": 99,
+      "414": 18,
+      "415": 0,
+      "412": 62,
+      "413": 29,
+      "402": 107,
+      "403": 113,
+      "400": 97,
+      "401": 102,
+      "406": 88,
+      "407": 93,
+      "404": 107,
+      "405": 82,
+      "395": 0,
+      "394": 0,
+      "393": 0,
+      "392": 0,
+      "399": 132,
+      "398": 186,
+      "397": 127,
+      "396": 67,
+      "387": 0,
+      "386": 18,
+      "385": 24,
+      "384": 12,
+      "391": 0,
+      "390": 0,
+      "389": 0,
+      "388": 0,
+      "440": 166,
+      "441": 162,
+      "442": 162,
+      "443": 117,
+      "444": 96,
+      "445": 39,
+      "446": 9,
+      "447": 0,
+      "432": 102,
+      "433": 108,
+      "434": 113,
+      "435": 130,
+      "436": 121,
+      "437": 91,
+      "438": 142,
+      "439": 155,
+      "425": 0,
+      "424": 0,
+      "427": 0,
+      "426": 0,
+      "429": 130,
+      "428": 61,
+      "431": 138,
+      "430": 190,
+      "417": 26,
+      "416": 13,
+      "419": 0,
+      "418": 17,
+      "421": 0,
+      "420": 0,
+      "423": 0,
+      "422": 0,
+      "478": 0,
+      "479": 60,
+      "476": 0,
+      "477": 0,
+      "474": 0,
+      "475": 0,
+      "472": 37,
+      "473": 30,
+      "470": 69,
+      "471": 36,
+      "468": 109,
+      "469": 98,
+      "466": 180,
+      "467": 139,
+      "464": 168,
+      "465": 176,
+      "463": 160,
+      "462": 156,
+      "461": 184,
+      "460": 199,
+      "459": 193,
+      "458": 176,
+      "457": 173,
+      "456": 202,
+      "455": 196,
+      "454": 139,
+      "453": 131,
+      "452": 62,
+      "451": 0,
+      "450": 0,
+      "449": 1,
+      "448": 0,
+      "508": 0,
+      "509": 0,
+      "510": 0,
+      "511": 0,
+      "504": 123,
+      "505": 128,
+      "506": 135,
+      "507": 139,
+      "500": 169,
+      "501": 173,
+      "502": 177,
+      "503": 182,
+      "496": 62,
+      "497": 116,
+      "498": 203,
+      "499": 209,
+      "493": 0,
+      "492": 0,
+      "495": 0,
+      "494": 0,
+      "489": 148,
+      "488": 143,
+      "491": 0,
+      "490": 154,
+      "485": 185,
+      "484": 180,
+      "487": 137,
+      "486": 189,
+      "481": 137,
+      "480": 72,
+      "483": 166,
+      "482": 201,
+      "550": 10,
+      "551": 11,
+      "548": 13,
+      "549": 0,
+      "546": 13,
+      "547": 8,
+      "544": 22,
+      "545": 0,
+      "556": 13,
+      "554": 10,
+      "555": 12,
+      "552": 13,
+      "553": 0,
+      "516": 203,
+      "517": 153,
+      "518": 154,
+      "519": 157,
+      "512": 0,
+      "513": 86,
+      "514": 152,
+      "515": 153,
+      "524": 139,
+      "525": 0,
+      "526": 12,
+      "527": 16,
+      "520": 161,
+      "521": 118,
+      "522": 124,
+      "523": 132,
+      "533": 0,
+      "532": 13,
+      "535": 9,
+      "534": 5,
+      "529": 0,
+      "528": 20,
+      "531": 10,
+      "530": 10,
+      "541": 0,
+      "540": 16,
+      "543": 18,
+      "542": 14,
+      "537": 0,
+      "536": 13,
+      "539": 9,
+      "538": 5
+    },
+    "insertionTypeHistory": {
+      "7": "hasUser",
+      "8": "hasUser",
+      "9": "hasUser",
+      "10": "sensesBluetoothAddress",
+      "11": "hasDerivedLocation",
+      "12": "locatedIn",
+      "13": "locatedIn",
+      "14": "hasProfiledLocation",
+      "15": "sensesTemperature",
+      "17": "sensesTemperature",
+      "16": "hasProfiledLocation",
+      "19": "sensesTemperature",
+      "18": "hasProfiledLocation",
+      "20": "hasProfiledLocation",
+      "31": "hasDerivedLocation",
+      "30": "sensesBluetoothAddress",
+      "34": "sensesTemperature",
+      "35": "sensesTemperature",
+      "32": "locatedIn",
+      "33": "locatedIn",
+      "38": "sensesLuminosity",
+      "39": "sensesLuminosity",
+      "36": "sensesTemperature",
+      "37": "sensesTemperature",
+      "42": "sensesBluetoothAddress",
+      "43": "hasDerivedLocation",
+      "40": "sensesLuminosity",
+      "41": "sensesLuminosity",
+      "46": "sensesTemperature",
+      "47": "sensesTemperature",
+      "44": "locatedIn",
+      "45": "locatedIn",
+      "51": "sensesLuminosity",
+      "50": "sensesLuminosity",
+      "49": "sensesTemperature",
+      "48": "sensesTemperature",
+      "55": "hasDerivedLocation",
+      "54": "sensesBluetoothAddress",
+      "53": "sensesLuminosity",
+      "52": "sensesLuminosity",
+      "59": "sensesTemperature",
+      "58": "sensesTemperature",
+      "57": "locatedIn",
+      "56": "locatedIn",
+      "63": "sensesLuminosity",
+      "62": "sensesLuminosity",
+      "61": "sensesTemperature",
+      "60": "sensesTemperature",
+      "68": "sensesBluetoothAddress",
+      "69": "hasDerivedLocation",
+      "70": "locatedIn",
+      "71": "locatedIn",
+      "64": "sensesLuminosity",
+      "65": "sensesLuminosity",
+      "66": "sensesBluetoothAddress",
+      "67": "sensesBluetoothAddress",
+      "76": "locatedIn",
+      "77": "locatedIn",
+      "78": "hasProfiledLocation",
+      "79": "hasProfiledLocation",
+      "72": "hasDerivedLocation",
+      "73": "locatedIn",
+      "74": "locatedIn",
+      "75": "hasDerivedLocation",
+      "85": "hasProfiledLocation",
+      "84": "hasProfiledLocation",
+      "87": "sensesTemperature",
+      "86": "hasProfiledLocation",
+      "81": "hasProfiledLocation",
+      "80": "hasProfiledLocation",
+      "83": "hasNoiseLevel",
+      "82": "hasProfiledLocation",
+      "93": "sensesLuminosity",
+      "92": "sensesLuminosity",
+      "95": "sensesBluetoothAddress",
+      "94": "sensesLuminosity",
+      "89": "sensesTemperature",
+      "88": "sensesTemperature",
+      "91": "sensesLuminosity",
+      "90": "sensesTemperature",
+      "102": "locatedIn",
+      "103": "locatedIn",
+      "100": "locatedIn",
+      "101": "locatedIn",
+      "98": "hasDerivedLocation",
+      "99": "hasDerivedLocation",
+      "96": "sensesBluetoothAddress",
+      "97": "sensesBluetoothAddress",
+      "110": "sensesSkeletonInPosition",
+      "111": "sensesTemperature",
+      "108": "hasNoiseLevel",
+      "109": "sensesSkeletonInPosition",
+      "106": "locatedIn",
+      "107": "sensesSkeletonInPosition",
+      "104": "hasDerivedLocation",
+      "105": "locatedIn",
+      "119": "sensesBluetoothAddress",
+      "118": "sensesLuminosity",
+      "117": "sensesLuminosity",
+      "116": "sensesLuminosity",
+      "115": "sensesLuminosity",
+      "114": "sensesTemperature",
+      "113": "sensesTemperature",
+      "112": "sensesTemperature",
+      "127": "locatedIn",
+      "126": "locatedIn",
+      "125": "locatedIn",
+      "124": "locatedIn",
+      "123": "hasDerivedLocation",
+      "122": "hasDerivedLocation",
+      "121": "sensesBluetoothAddress",
+      "120": "sensesBluetoothAddress",
+      "137": "sensesTemperature",
+      "136": "sensesTemperature",
+      "139": "sensesLuminosity",
+      "138": "sensesTemperature",
+      "141": "sensesLuminosity",
+      "140": "sensesLuminosity",
+      "143": "sensesBluetoothAddress",
+      "142": "sensesLuminosity",
+      "129": "locatedIn",
+      "128": "hasDerivedLocation",
+      "131": "sensesSkeletonInPosition",
+      "130": "locatedIn",
+      "133": "sensesSkeletonInPosition",
+      "132": "sensesSkeletonInPosition",
+      "135": "sensesTemperature",
+      "134": "hasNoiseLevel",
+      "152": "hasDerivedLocation",
+      "153": "locatedIn",
+      "154": "locatedIn",
+      "155": "hasNoiseLevel",
+      "156": "sensesSkeletonInPosition",
+      "157": "sensesSkeletonInPosition",
+      "158": "sensesSkeletonInPosition",
+      "159": "sensesTemperature",
+      "144": "sensesBluetoothAddress",
+      "145": "sensesBluetoothAddress",
+      "146": "hasDerivedLocation",
+      "147": "hasDerivedLocation",
+      "148": "locatedIn",
+      "149": "locatedIn",
+      "150": "locatedIn",
+      "151": "locatedIn",
+      "171": "locatedIn",
+      "170": "hasDerivedLocation",
+      "169": "sensesBluetoothAddress",
+      "168": "sensesBluetoothAddress",
+      "175": "locatedIn",
+      "174": "locatedIn",
+      "173": "hasDerivedLocation",
+      "172": "locatedIn",
+      "163": "sensesLuminosity",
+      "162": "sensesTemperature",
+      "161": "sensesTemperature",
+      "160": "sensesTemperature",
+      "167": "sensesBluetoothAddress",
+      "166": "sensesLuminosity",
+      "165": "sensesLuminosity",
+      "164": "sensesLuminosity",
+      "186": "sensesTemperature",
+      "187": "sensesLuminosity",
+      "184": "sensesTemperature",
+      "185": "sensesTemperature",
+      "190": "sensesLuminosity",
+      "191": "sensesBluetoothAddress",
+      "188": "sensesLuminosity",
+      "189": "sensesLuminosity",
+      "178": "locatedIn",
+      "179": "sensesSkeletonInPosition",
+      "176": "hasDerivedLocation",
+      "177": "locatedIn",
+      "182": "hasNoiseLevel",
+      "183": "sensesTemperature",
+      "180": "sensesSkeletonInPosition",
+      "181": "sensesSkeletonInPosition",
+      "205": "sensesSkeletonInPosition",
+      "204": "sensesSkeletonInPosition",
+      "207": "HostsAdHocDiscussion",
+      "206": "hasNoiseLevel",
+      "201": "locatedIn",
+      "200": "hasDerivedLocation",
+      "203": "sensesSkeletonInPosition",
+      "202": "locatedIn",
+      "197": "locatedIn",
+      "196": "locatedIn",
+      "199": "locatedIn",
+      "198": "locatedIn",
+      "193": "sensesBluetoothAddress",
+      "192": "sensesBluetoothAddress",
+      "195": "hasDerivedLocation",
+      "194": "hasDerivedLocation",
+      "220": "HostsTimedActivity",
+      "221": "HostsTimedActivity",
+      "222": "HostsTimedActivity",
+      "223": "sensesBluetoothAddress",
+      "216": "sensesLuminosity",
+      "217": "HostsAdHocDiscussion",
+      "218": "HostsTimedActivity",
+      "219": "HostsAdHocDiscussion",
+      "212": "HostsAdHocDiscussion",
+      "213": "sensesLuminosity",
+      "214": "sensesLuminosity",
+      "215": "sensesLuminosity",
+      "208": "sensesTemperature",
+      "209": "sensesTemperature",
+      "210": "sensesTemperature",
+      "211": "sensesTemperature",
+      "239": "HostsAdHocDiscussion",
+      "238": "sensesSkeletonInPosition",
+      "237": "hasNoiseLevel",
+      "236": "sensesSkeletonInPosition",
+      "235": "sensesSkeletonInPosition",
+      "234": "locatedIn",
+      "233": "locatedIn",
+      "232": "hasDerivedLocation",
+      "231": "locatedIn",
+      "230": "locatedIn",
+      "229": "locatedIn",
+      "228": "locatedIn",
+      "227": "hasDerivedLocation",
+      "226": "hasDerivedLocation",
+      "225": "sensesBluetoothAddress",
+      "224": "sensesBluetoothAddress",
+      "254": "HostsTimedActivity",
+      "255": "sensesBluetoothAddress",
+      "252": "HostsTimedActivity",
+      "253": "HostsTimedActivity",
+      "250": "HostsTimedActivity",
+      "251": "HostsAdHocDiscussion",
+      "248": "sensesLuminosity",
+      "249": "HostsAdHocDiscussion",
+      "246": "sensesLuminosity",
+      "247": "sensesLuminosity",
+      "244": "HostsAdHocDiscussion",
+      "245": "sensesLuminosity",
+      "242": "sensesTemperature",
+      "243": "sensesTemperature",
+      "240": "sensesTemperature",
+      "241": "sensesTemperature",
+      "275": "sensesTemperature",
+      "274": "sensesTemperature",
+      "273": "sensesTemperature",
+      "272": "sensesTemperature",
+      "279": "HostsAdHocDiscussion",
+      "278": "sensesLuminosity",
+      "277": "sensesLuminosity",
+      "276": "HostsAdHocDiscussion",
+      "283": "HostsAdHocDiscussion",
+      "282": "HostsTimedActivity",
+      "281": "sensesLuminosity",
+      "280": "sensesLuminosity",
+      "287": "sensesBluetoothAddress",
+      "286": "HostsTimedActivity",
+      "285": "HostsTimedActivity",
+      "284": "HostsTimedActivity",
+      "258": "hasDerivedLocation",
+      "259": "hasDerivedLocation",
+      "256": "sensesBluetoothAddress",
+      "257": "sensesBluetoothAddress",
+      "262": "locatedIn",
+      "263": "locatedIn",
+      "260": "locatedIn",
+      "261": "locatedIn",
+      "266": "locatedIn",
+      "267": "sensesSkeletonInPosition",
+      "264": "hasDerivedLocation",
+      "265": "locatedIn",
+      "270": "sensesSkeletonInPosition",
+      "271": "HostsAdHocDiscussion",
+      "268": "sensesSkeletonInPosition",
+      "269": "hasNoiseLevel",
+      "305": "sensesTemperature",
+      "304": "sensesTemperature",
+      "307": "sensesTemperature",
+      "306": "sensesTemperature",
+      "309": "sensesLuminosity",
+      "308": "HostsAdHocDiscussion",
+      "311": "sensesLuminosity",
+      "310": "sensesLuminosity",
+      "313": "HostsAdHocDiscussion",
+      "312": "sensesLuminosity",
+      "315": "HostsAdHocDiscussion",
+      "314": "HostsTimedActivity",
+      "317": "HostsTimedActivity",
+      "316": "HostsTimedActivity",
+      "319": "sensesBluetoothAddress",
+      "318": "HostsTimedActivity",
+      "288": "sensesBluetoothAddress",
+      "289": "sensesBluetoothAddress",
+      "290": "hasDerivedLocation",
+      "291": "hasDerivedLocation",
+      "292": "locatedIn",
+      "293": "locatedIn",
+      "294": "locatedIn",
+      "295": "locatedIn",
+      "296": "hasDerivedLocation",
+      "297": "locatedIn",
+      "298": "locatedIn",
+      "299": "sensesSkeletonInPosition",
+      "300": "sensesSkeletonInPosition",
+      "301": "sensesSkeletonInPosition",
+      "302": "hasNoiseLevel",
+      "303": "HostsAdHocDiscussion",
+      "343": "sensesLuminosity",
+      "342": "sensesLuminosity",
+      "341": "sensesLuminosity",
+      "340": "HostsAdHocDiscussion",
+      "339": "sensesTemperature",
+      "338": "sensesTemperature",
+      "337": "sensesTemperature",
+      "336": "sensesTemperature",
+      "351": "sensesBluetoothAddress",
+      "350": "HostsTimedActivity",
+      "349": "HostsTimedActivity",
+      "348": "HostsTimedActivity",
+      "347": "HostsAdHocDiscussion",
+      "346": "HostsTimedActivity",
+      "345": "HostsAdHocDiscussion",
+      "344": "sensesLuminosity",
+      "326": "locatedIn",
+      "327": "locatedIn",
+      "324": "locatedIn",
+      "325": "hasDerivedLocation",
+      "322": "hasDerivedLocation",
+      "323": "locatedIn",
+      "320": "sensesBluetoothAddress",
+      "321": "sensesBluetoothAddress",
+      "334": "hasNoiseLevel",
+      "335": "HostsAdHocDiscussion",
+      "332": "sensesSkeletonInPosition",
+      "333": "sensesSkeletonInPosition",
+      "330": "locatedIn",
+      "331": "sensesSkeletonInPosition",
+      "328": "hasDerivedLocation",
+      "329": "locatedIn",
+      "373": "sensesLuminosity",
+      "372": "HostsAdHocDiscussion",
+      "375": "sensesLuminosity",
+      "374": "sensesLuminosity",
+      "369": "sensesTemperature",
+      "368": "sensesTemperature",
+      "371": "sensesTemperature",
+      "370": "sensesTemperature",
+      "381": "HostsTimedActivity",
+      "380": "HostsTimedActivity",
+      "383": "sensesBluetoothAddress",
+      "382": "HostsTimedActivity",
+      "377": "HostsAdHocDiscussion",
+      "376": "sensesLuminosity",
+      "379": "HostsAdHocDiscussion",
+      "378": "HostsTimedActivity",
+      "356": "locatedIn",
+      "357": "locatedIn",
+      "358": "locatedIn",
+      "359": "locatedIn",
+      "352": "sensesBluetoothAddress",
+      "353": "sensesBluetoothAddress",
+      "354": "hasDerivedLocation",
+      "355": "hasDerivedLocation",
+      "364": "sensesSkeletonInPosition",
+      "365": "sensesSkeletonInPosition",
+      "366": "hasNoiseLevel",
+      "367": "HostsAdHocDiscussion",
+      "360": "hasDerivedLocation",
+      "361": "locatedIn",
+      "362": "locatedIn",
+      "363": "sensesSkeletonInPosition",
+      "410": "HostsTimedActivity",
+      "411": "HostsAdHocDiscussion",
+      "408": "sensesLuminosity",
+      "409": "HostsAdHocDiscussion",
+      "414": "HostsTimedActivity",
+      "415": "sensesBluetoothAddress",
+      "412": "HostsTimedActivity",
+      "413": "HostsTimedActivity",
+      "402": "sensesTemperature",
+      "403": "sensesTemperature",
+      "400": "sensesTemperature",
+      "401": "sensesTemperature",
+      "406": "sensesLuminosity",
+      "407": "sensesLuminosity",
+      "404": "HostsAdHocDiscussion",
+      "405": "sensesLuminosity",
+      "395": "sensesSkeletonInPosition",
+      "394": "locatedIn",
+      "393": "locatedIn",
+      "392": "hasDerivedLocation",
+      "399": "HostsAdHocDiscussion",
+      "398": "hasNoiseLevel",
+      "397": "sensesSkeletonInPosition",
+      "396": "sensesSkeletonInPosition",
+      "387": "locatedIn",
+      "386": "hasDerivedLocation",
+      "385": "sensesBluetoothAddress",
+      "384": "sensesBluetoothAddress",
+      "391": "locatedIn",
+      "390": "locatedIn",
+      "389": "hasDerivedLocation",
+      "388": "locatedIn",
+      "440": "sensesLuminosity",
+      "441": "HostsAdHocDiscussion",
+      "442": "HostsTimedActivity",
+      "443": "HostsTimedActivity",
+      "444": "HostsAdHocDiscussion",
+      "445": "HostsTimedActivity",
+      "446": "HostsTimedActivity",
+      "447": "sensesBluetoothAddress",
+      "432": "sensesTemperature",
+      "433": "sensesTemperature",
+      "434": "sensesTemperature",
+      "435": "sensesTemperature",
+      "436": "HostsAdHocDiscussion",
+      "437": "sensesLuminosity",
+      "438": "sensesLuminosity",
+      "439": "sensesLuminosity",
+      "425": "locatedIn",
+      "424": "hasDerivedLocation",
+      "427": "sensesSkeletonInPosition",
+      "426": "locatedIn",
+      "429": "sensesSkeletonInPosition",
+      "428": "sensesSkeletonInPosition",
+      "431": "HostsAdHocDiscussion",
+      "430": "hasNoiseLevel",
+      "417": "sensesBluetoothAddress",
+      "416": "sensesBluetoothAddress",
+      "419": "hasDerivedLocation",
+      "418": "hasDerivedLocation",
+      "421": "locatedIn",
+      "420": "locatedIn",
+      "423": "locatedIn",
+      "422": "locatedIn",
+      "478": "sensesSkeletonInPosition",
+      "479": "hasNoiseLevel",
+      "476": "locatedIn",
+      "477": "locatedIn",
+      "474": "sensesBluetoothAddress",
+      "475": "hasDerivedLocation",
+      "472": "HostsTimedActivity",
+      "473": "HostsTimedActivity",
+      "470": "HostsTimedActivity",
+      "471": "HostsTimedActivity",
+      "468": "HostsTimedActivity",
+      "469": "HostsAdHocDiscussion",
+      "466": "HostsAdHocDiscussion",
+      "467": "HostsAdHocDiscussion",
+      "464": "sensesLuminosity",
+      "465": "sensesLuminosity",
+      "463": "sensesLuminosity",
+      "462": "sensesLuminosity",
+      "461": "HostsAdHocDiscussion",
+      "460": "sensesTemperature",
+      "459": "sensesTemperature",
+      "458": "sensesTemperature",
+      "457": "sensesTemperature",
+      "456": "HostsAdHocDiscussion",
+      "455": "sensesSkeletonInPosition",
+      "454": "sensesSkeletonInPosition",
+      "453": "hasNoiseLevel",
+      "452": "sensesSkeletonInPosition",
+      "451": "sensesSkeletonInPosition",
+      "450": "locatedIn",
+      "449": "locatedIn",
+      "448": "hasDerivedLocation",
+      "508": "sensesBluetoothAddress",
+      "509": "hasDerivedLocation",
+      "510": "locatedIn",
+      "511": "locatedIn",
+      "504": "sensesLuminosity",
+      "505": "sensesLuminosity",
+      "506": "sensesLuminosity",
+      "507": "sensesLuminosity",
+      "500": "sensesTemperature",
+      "501": "sensesTemperature",
+      "502": "sensesTemperature",
+      "503": "sensesTemperature",
+      "496": "sensesSkeletonInPosition",
+      "497": "sensesSkeletonInPosition",
+      "498": "hasNoiseLevel",
+      "499": "sensesSkeletonInPosition",
+      "493": "locatedIn",
+      "492": "hasDerivedLocation",
+      "495": "sensesSkeletonInPosition",
+      "494": "locatedIn",
+      "489": "sensesLuminosity",
+      "488": "sensesLuminosity",
+      "491": "sensesBluetoothAddress",
+      "490": "sensesLuminosity",
+      "485": "sensesTemperature",
+      "484": "sensesTemperature",
+      "487": "sensesLuminosity",
+      "486": "sensesTemperature",
+      "481": "sensesSkeletonInPosition",
+      "480": "sensesSkeletonInPosition",
+      "483": "sensesTemperature",
+      "482": "sensesSkeletonInPosition",
+      "550": "sensesTemperature",
+      "551": "sensesTemperature",
+      "548": "sensesLuminosity",
+      "549": "sensesTemperature",
+      "546": "sensesLuminosity",
+      "547": "sensesLuminosity",
+      "544": "sensesTemperature",
+      "545": "sensesLuminosity",
+      "556": "sensesLuminosity",
+      "554": "sensesLuminosity",
+      "555": "sensesLuminosity",
+      "552": "sensesTemperature",
+      "553": "sensesLuminosity",
+      "516": "sensesSkeletonInPosition",
+      "517": "sensesTemperature",
+      "518": "sensesTemperature",
+      "519": "sensesTemperature",
+      "512": "sensesSkeletonInPosition",
+      "513": "sensesSkeletonInPosition",
+      "514": "hasNoiseLevel",
+      "515": "sensesSkeletonInPosition",
+      "524": "sensesLuminosity",
+      "525": "sensesTemperature",
+      "526": "sensesTemperature",
+      "527": "sensesTemperature",
+      "520": "sensesTemperature",
+      "521": "sensesLuminosity",
+      "522": "sensesLuminosity",
+      "523": "sensesLuminosity",
+      "533": "sensesTemperature",
+      "532": "sensesLuminosity",
+      "535": "sensesTemperature",
+      "534": "sensesTemperature",
+      "529": "sensesLuminosity",
+      "528": "sensesTemperature",
+      "531": "sensesLuminosity",
+      "530": "sensesLuminosity",
+      "541": "sensesTemperature",
+      "540": "sensesLuminosity",
+      "543": "sensesTemperature",
+      "542": "sensesTemperature",
+      "537": "sensesLuminosity",
+      "536": "sensesTemperature",
+      "539": "sensesLuminosity",
+      "538": "sensesLuminosity"
+    },
+    "inferenceDelayHistory": {
+      "0": 1,
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 0,
+      "5": 0,
+      "6": 0,
+      "7": 0,
+      "8": 0,
+      "9": 0,
+      "10": 1,
+      "11": 15,
+      "12": 19,
+      "13": 17,
+      "14": 3,
+      "16": 0,
+      "18": 0,
+      "20": 0,
+      "22": 0,
+      "24": 0,
+      "26": 2,
+      "28": 0,
+      "31": 17,
+      "30": 0,
+      "32": 17,
+      "33": 14,
+      "42": 0,
+      "43": 0,
+      "44": 9,
+      "45": 12,
+      "55": 27,
+      "54": 0,
+      "57": 27,
+      "56": 27,
+      "69": 4,
+      "70": 24,
+      "71": 21,
+      "66": 0,
+      "67": 175,
+      "76": 19,
+      "77": 28,
+      "72": 24,
+      "73": 28,
+      "74": 19,
+      "75": 10,
+      "86": 151,
+      "83": 21,
+      "95": 1,
+      "102": 29,
+      "103": 21,
+      "100": 29,
+      "101": 23,
+      "98": 209,
+      "99": 19,
+      "97": 21,
+      "110": 1,
+      "108": 31,
+      "109": 14,
+      "106": 26,
+      "107": 0,
+      "104": 23,
+      "105": 20,
+      "119": 0,
+      "127": 23,
+      "126": 19,
+      "125": 24,
+      "124": 28,
+      "123": 20,
+      "122": 214,
+      "121": 23,
+      "143": 1,
+      "129": 21,
+      "128": 18,
+      "131": 0,
+      "130": 18,
+      "133": 0,
+      "132": 0,
+      "134": 21,
+      "152": 24,
+      "153": 23,
+      "154": 22,
+      "155": 0,
+      "156": 1,
+      "157": 0,
+      "158": 0,
+      "145": 21,
+      "146": 212,
+      "147": 29,
+      "148": 23,
+      "149": 28,
+      "150": 25,
+      "151": 29,
+      "171": 29,
+      "170": 18,
+      "169": 177,
+      "175": 29,
+      "174": 31,
+      "173": 31,
+      "172": 32,
+      "167": 0,
+      "191": 0,
+      "178": 30,
+      "179": 0,
+      "176": 25,
+      "177": 21,
+      "182": 40,
+      "180": 1,
+      "181": 1,
+      "205": 0,
+      "204": 1,
+      "206": 28,
+      "201": 23,
+      "200": 31,
+      "203": 0,
+      "202": 26,
+      "197": 16,
+      "196": 18,
+      "199": 32,
+      "198": 32,
+      "193": 26,
+      "195": 31,
+      "194": 220,
+      "223": 2,
+      "238": 12,
+      "237": 30,
+      "236": 0,
+      "235": 0,
+      "234": 24,
+      "233": 22,
+      "232": 28,
+      "231": 27,
+      "230": 28,
+      "229": 32,
+      "228": 33,
+      "227": 21,
+      "226": 189,
+      "225": 4,
+      "255": 0,
+      "287": 0,
+      "258": 209,
+      "259": 25,
+      "257": 17,
+      "262": 33,
+      "263": 24,
+      "260": 31,
+      "261": 32,
+      "266": 26,
+      "267": 0,
+      "264": 26,
+      "265": 32,
+      "270": 15,
+      "268": 0,
+      "269": 35,
+      "319": 0,
+      "289": 13,
+      "290": 203,
+      "291": 33,
+      "292": 34,
+      "293": 30,
+      "294": 25,
+      "295": 25,
+      "296": 18,
+      "297": 30,
+      "298": 31,
+      "299": 0,
+      "300": 0,
+      "301": 1,
+      "302": 27,
+      "351": 1,
+      "326": 25,
+      "327": 34,
+      "324": 24,
+      "325": 34,
+      "322": 23,
+      "323": 25,
+      "320": 187,
+      "334": 44,
+      "332": 0,
+      "333": 0,
+      "330": 34,
+      "331": 0,
+      "328": 34,
+      "329": 34,
+      "383": 0,
+      "356": 31,
+      "357": 30,
+      "358": 32,
+      "359": 26,
+      "352": 36,
+      "354": 223,
+      "355": 29,
+      "364": 0,
+      "365": 0,
+      "366": 33,
+      "360": 26,
+      "361": 25,
+      "362": 34,
+      "363": 0,
+      "415": 0,
+      "395": 0,
+      "394": 28,
+      "393": 29,
+      "392": 25,
+      "398": 37,
+      "397": 0,
+      "396": 0,
+      "387": 25,
+      "386": 22,
+      "384": 187,
+      "391": 24,
+      "390": 28,
+      "389": 29,
+      "388": 25,
+      "447": 0,
+      "425": 26,
+      "424": 34,
+      "427": 0,
+      "426": 25,
+      "429": 0,
+      "428": 0,
+      "430": 36,
+      "417": 29,
+      "419": 34,
+      "418": 223,
+      "421": 35,
+      "420": 35,
+      "423": 28,
+      "422": 24,
+      "478": 0,
+      "479": 32,
+      "476": 34,
+      "477": 34,
+      "474": 0,
+      "475": 34,
+      "455": 9,
+      "454": 26,
+      "453": 38,
+      "452": 0,
+      "451": 0,
+      "450": 25,
+      "449": 30,
+      "448": 36,
+      "508": 1,
+      "509": 35,
+      "510": 32,
+      "511": 25,
+      "493": 24,
+      "492": 34,
+      "494": 25,
+      "491": 6,
+      "481": 0,
+      "480": 16,
+      "482": 0
+    },
+    "inferenceTypeHistory": {
+      "0": "hasDerivedLocation",
+      "1": "hasDerivedLocation",
+      "2": "hasDerivedLocation",
+      "3": "hasDerivedLocation",
+      "4": "hasDerivedLocation",
+      "5": "hasDerivedLocation",
+      "6": "hasDerivedLocation",
+      "7": "locatedIn",
+      "8": "locatedIn",
+      "9": "locatedIn",
+      "10": "hasDerivedLocation",
+      "11": "locatedIn",
+      "12": "locatedIn",
+      "13": "locatedIn",
+      "14": "hasDerivedLocation",
+      "16": "hasDerivedLocation",
+      "18": "hasDerivedLocation",
+      "20": "hasDerivedLocation",
+      "22": "hasDerivedLocation",
+      "24": "hasDerivedLocation",
+      "26": "hasDerivedLocation",
+      "28": "hasDerivedLocation",
+      "31": "locatedIn",
+      "30": "hasDerivedLocation",
+      "32": "locatedIn",
+      "33": "locatedIn",
+      "42": "hasDerivedLocation",
+      "43": "locatedIn",
+      "44": "locatedIn",
+      "45": "locatedIn",
+      "55": "locatedIn",
+      "54": "hasDerivedLocation",
+      "57": "locatedIn",
+      "56": "locatedIn",
+      "69": "locatedIn",
+      "70": "locatedIn",
+      "71": "locatedIn",
+      "66": "hasDerivedLocation",
+      "67": "hasDerivedLocation",
+      "76": "locatedIn",
+      "77": "locatedIn",
+      "72": "locatedIn",
+      "73": "locatedIn",
+      "74": "locatedIn",
+      "75": "locatedIn",
+      "86": "hasDerivedLocation",
+      "83": "HostsAdHocDiscussion",
+      "95": "hasDerivedLocation",
+      "102": "locatedIn",
+      "103": "locatedIn",
+      "100": "locatedIn",
+      "101": "locatedIn",
+      "98": "locatedIn",
+      "99": "locatedIn",
+      "97": "hasDerivedLocation",
+      "110": "HostsAdHocDiscussion",
+      "108": "HostsAdHocDiscussion",
+      "109": "HostsAdHocDiscussion",
+      "106": "locatedIn",
+      "107": "HostsAdHocDiscussion",
+      "104": "locatedIn",
+      "105": "locatedIn",
+      "119": "hasDerivedLocation",
+      "127": "locatedIn",
+      "126": "locatedIn",
+      "125": "locatedIn",
+      "124": "locatedIn",
+      "123": "locatedIn",
+      "122": "locatedIn",
+      "121": "hasDerivedLocation",
+      "143": "hasDerivedLocation",
+      "129": "locatedIn",
+      "128": "locatedIn",
+      "131": "HostsAdHocDiscussion",
+      "130": "locatedIn",
+      "133": "HostsAdHocDiscussion",
+      "132": "HostsAdHocDiscussion",
+      "134": "HostsAdHocDiscussion",
+      "152": "locatedIn",
+      "153": "locatedIn",
+      "154": "locatedIn",
+      "155": "HostsAdHocDiscussion",
+      "156": "HostsAdHocDiscussion",
+      "157": "HostsAdHocDiscussion",
+      "158": "HostsAdHocDiscussion",
+      "145": "hasDerivedLocation",
+      "146": "locatedIn",
+      "147": "locatedIn",
+      "148": "locatedIn",
+      "149": "locatedIn",
+      "150": "locatedIn",
+      "151": "locatedIn",
+      "171": "locatedIn",
+      "170": "locatedIn",
+      "169": "hasDerivedLocation",
+      "175": "locatedIn",
+      "174": "locatedIn",
+      "173": "locatedIn",
+      "172": "locatedIn",
+      "167": "hasDerivedLocation",
+      "191": "hasDerivedLocation",
+      "178": "locatedIn",
+      "179": "HostsAdHocDiscussion",
+      "176": "locatedIn",
+      "177": "locatedIn",
+      "182": "HostsAdHocDiscussion",
+      "180": "HostsAdHocDiscussion",
+      "181": "HostsAdHocDiscussion",
+      "205": "HostsAdHocDiscussion",
+      "204": "HostsAdHocDiscussion",
+      "206": "HostsAdHocDiscussion",
+      "201": "locatedIn",
+      "200": "locatedIn",
+      "203": "HostsAdHocDiscussion",
+      "202": "locatedIn",
+      "197": "locatedIn",
+      "196": "locatedIn",
+      "199": "locatedIn",
+      "198": "locatedIn",
+      "193": "hasDerivedLocation",
+      "195": "locatedIn",
+      "194": "locatedIn",
+      "223": "hasDerivedLocation",
+      "238": "HostsAdHocDiscussion",
+      "237": "HostsAdHocDiscussion",
+      "236": "HostsAdHocDiscussion",
+      "235": "HostsAdHocDiscussion",
+      "234": "locatedIn",
+      "233": "locatedIn",
+      "232": "locatedIn",
+      "231": "locatedIn",
+      "230": "locatedIn",
+      "229": "locatedIn",
+      "228": "locatedIn",
+      "227": "locatedIn",
+      "226": "locatedIn",
+      "225": "hasDerivedLocation",
+      "255": "hasDerivedLocation",
+      "287": "hasDerivedLocation",
+      "258": "locatedIn",
+      "259": "locatedIn",
+      "257": "hasDerivedLocation",
+      "262": "locatedIn",
+      "263": "locatedIn",
+      "260": "locatedIn",
+      "261": "locatedIn",
+      "266": "locatedIn",
+      "267": "HostsAdHocDiscussion",
+      "264": "locatedIn",
+      "265": "locatedIn",
+      "270": "HostsAdHocDiscussion",
+      "268": "HostsAdHocDiscussion",
+      "269": "HostsAdHocDiscussion",
+      "319": "hasDerivedLocation",
+      "289": "hasDerivedLocation",
+      "290": "locatedIn",
+      "291": "locatedIn",
+      "292": "locatedIn",
+      "293": "locatedIn",
+      "294": "locatedIn",
+      "295": "locatedIn",
+      "296": "locatedIn",
+      "297": "locatedIn",
+      "298": "locatedIn",
+      "299": "HostsAdHocDiscussion",
+      "300": "HostsAdHocDiscussion",
+      "301": "HostsAdHocDiscussion",
+      "302": "HostsAdHocDiscussion",
+      "351": "hasDerivedLocation",
+      "326": "locatedIn",
+      "327": "locatedIn",
+      "324": "locatedIn",
+      "325": "locatedIn",
+      "322": "locatedIn",
+      "323": "locatedIn",
+      "320": "hasDerivedLocation",
+      "334": "HostsAdHocDiscussion",
+      "332": "HostsAdHocDiscussion",
+      "333": "HostsAdHocDiscussion",
+      "330": "locatedIn",
+      "331": "HostsAdHocDiscussion",
+      "328": "locatedIn",
+      "329": "locatedIn",
+      "383": "hasDerivedLocation",
+      "356": "locatedIn",
+      "357": "locatedIn",
+      "358": "locatedIn",
+      "359": "locatedIn",
+      "352": "hasDerivedLocation",
+      "354": "locatedIn",
+      "355": "locatedIn",
+      "364": "HostsAdHocDiscussion",
+      "365": "HostsAdHocDiscussion",
+      "366": "HostsAdHocDiscussion",
+      "360": "locatedIn",
+      "361": "locatedIn",
+      "362": "locatedIn",
+      "363": "HostsAdHocDiscussion",
+      "415": "hasDerivedLocation",
+      "395": "HostsAdHocDiscussion",
+      "394": "locatedIn",
+      "393": "locatedIn",
+      "392": "locatedIn",
+      "398": "HostsAdHocDiscussion",
+      "397": "HostsAdHocDiscussion",
+      "396": "HostsAdHocDiscussion",
+      "387": "locatedIn",
+      "386": "locatedIn",
+      "384": "hasDerivedLocation",
+      "391": "locatedIn",
+      "390": "locatedIn",
+      "389": "locatedIn",
+      "388": "locatedIn",
+      "447": "hasDerivedLocation",
+      "425": "locatedIn",
+      "424": "locatedIn",
+      "427": "HostsAdHocDiscussion",
+      "426": "locatedIn",
+      "429": "HostsAdHocDiscussion",
+      "428": "HostsAdHocDiscussion",
+      "430": "HostsAdHocDiscussion",
+      "417": "hasDerivedLocation",
+      "419": "locatedIn",
+      "418": "locatedIn",
+      "421": "locatedIn",
+      "420": "locatedIn",
+      "423": "locatedIn",
+      "422": "locatedIn",
+      "478": "HostsAdHocDiscussion",
+      "479": "HostsAdHocDiscussion",
+      "476": "locatedIn",
+      "477": "locatedIn",
+      "474": "hasDerivedLocation",
+      "475": "locatedIn",
+      "455": "HostsAdHocDiscussion",
+      "454": "HostsAdHocDiscussion",
+      "453": "HostsAdHocDiscussion",
+      "452": "HostsAdHocDiscussion",
+      "451": "HostsAdHocDiscussion",
+      "450": "locatedIn",
+      "449": "locatedIn",
+      "448": "locatedIn",
+      "508": "hasDerivedLocation",
+      "509": "locatedIn",
+      "510": "locatedIn",
+      "511": "locatedIn",
+      "493": "locatedIn",
+      "492": "locatedIn",
+      "494": "locatedIn",
+      "491": "hasDerivedLocation",
+      "481": "HostsAdHocDiscussion",
+      "480": "HostsAdHocDiscussion",
+      "482": "HostsAdHocDiscussion"
+    },
+    "insertionDurationHistory": {
+      "7": 298,
+      "8": 148,
+      "9": 111,
+      "10": 30,
+      "11": 22,
+      "12": 26,
+      "13": 28,
+      "14": 140,
+      "15": 30,
+      "17": 36,
+      "16": 168,
+      "19": 39,
+      "18": 145,
+      "20": 135,
+      "31": 28,
+      "30": 36,
+      "34": 28,
+      "35": 18,
+      "32": 28,
+      "33": 32,
+      "38": 18,
+      "39": 17,
+      "36": 18,
+      "37": 13,
+      "42": 32,
+      "43": 48,
+      "40": 20,
+      "41": 20,
+      "46": 29,
+      "47": 14,
+      "44": 34,
+      "45": 33,
+      "51": 21,
+      "50": 23,
+      "49": 48,
+      "48": 19,
+      "55": 20,
+      "54": 26,
+      "53": 22,
+      "52": 16,
+      "59": 13,
+      "58": 25,
+      "57": 19,
+      "56": 19,
+      "63": 18,
+      "62": 23,
+      "61": 18,
+      "60": 15,
+      "68": 11,
+      "69": 9,
+      "70": 22,
+      "71": 25,
+      "64": 17,
+      "65": 19,
+      "66": 15,
+      "67": 26,
+      "76": 28,
+      "77": 18,
+      "78": 77,
+      "79": 73,
+      "72": 22,
+      "73": 18,
+      "74": 21,
+      "75": 26,
+      "85": 57,
+      "84": 55,
+      "87": 23,
+      "86": 58,
+      "81": 89,
+      "80": 73,
+      "83": 20,
+      "82": 92,
+      "93": 15,
+      "92": 11,
+      "95": 24,
+      "94": 21,
+      "89": 10,
+      "88": 20,
+      "91": 12,
+      "90": 25,
+      "102": 17,
+      "103": 26,
+      "100": 18,
+      "101": 23,
+      "98": 12,
+      "99": 27,
+      "96": 12,
+      "97": 18,
+      "110": 70,
+      "111": 8,
+      "108": 20,
+      "109": 67,
+      "106": 21,
+      "107": 80,
+      "104": 23,
+      "105": 19,
+      "119": 11,
+      "118": 12,
+      "117": 11,
+      "116": 11,
+      "115": 13,
+      "114": 12,
+      "113": 10,
+      "112": 27,
+      "127": 23,
+      "126": 27,
+      "125": 22,
+      "124": 18,
+      "123": 26,
+      "122": 10,
+      "121": 9,
+      "120": 18,
+      "137": 13,
+      "136": 29,
+      "139": 11,
+      "138": 11,
+      "141": 11,
+      "140": 11,
+      "143": 20,
+      "142": 12,
+      "129": 26,
+      "128": 22,
+      "131": 120,
+      "130": 27,
+      "133": 112,
+      "132": 114,
+      "135": 20,
+      "134": 29,
+      "152": 22,
+      "153": 23,
+      "154": 20,
+      "155": 21,
+      "156": 90,
+      "157": 83,
+      "158": 74,
+      "159": 8,
+      "144": 9,
+      "145": 20,
+      "146": 9,
+      "147": 17,
+      "148": 23,
+      "149": 18,
+      "150": 22,
+      "151": 18,
+      "171": 17,
+      "170": 9,
+      "169": 15,
+      "168": 9,
+      "175": 18,
+      "174": 16,
+      "173": 16,
+      "172": 15,
+      "163": 8,
+      "162": 9,
+      "161": 11,
+      "160": 22,
+      "167": 9,
+      "166": 9,
+      "165": 9,
+      "164": 10,
+      "186": 26,
+      "187": 11,
+      "184": 10,
+      "185": 11,
+      "190": 14,
+      "191": 16,
+      "188": 11,
+      "189": 14,
+      "178": 17,
+      "179": 75,
+      "176": 16,
+      "177": 27,
+      "182": 11,
+      "183": 22,
+      "180": 99,
+      "181": 101,
+      "205": 68,
+      "204": 95,
+      "207": 6,
+      "206": 22,
+      "201": 24,
+      "200": 16,
+      "203": 71,
+      "202": 19,
+      "197": 31,
+      "196": 26,
+      "199": 15,
+      "198": 15,
+      "193": 8,
+      "192": 16,
+      "195": 15,
+      "194": 7,
+      "220": 11,
+      "221": 9,
+      "222": 14,
+      "223": 11,
+      "216": 14,
+      "217": 14,
+      "218": 6,
+      "219": 18,
+      "212": 18,
+      "213": 7,
+      "214": 7,
+      "215": 12,
+      "208": 7,
+      "209": 12,
+      "210": 12,
+      "211": 31,
+      "239": 9,
+      "238": 69,
+      "237": 20,
+      "236": 75,
+      "235": 86,
+      "234": 22,
+      "233": 24,
+      "232": 15,
+      "231": 19,
+      "230": 19,
+      "229": 15,
+      "228": 14,
+      "227": 17,
+      "226": 15,
+      "225": 15,
+      "224": 35,
+      "254": 8,
+      "255": 17,
+      "252": 8,
+      "253": 7,
+      "250": 9,
+      "251": 8,
+      "248": 11,
+      "249": 9,
+      "246": 8,
+      "247": 9,
+      "244": 10,
+      "245": 10,
+      "242": 8,
+      "243": 8,
+      "240": 8,
+      "241": 25,
+      "275": 9,
+      "274": 9,
+      "273": 24,
+      "272": 9,
+      "279": 8,
+      "278": 7,
+      "277": 7,
+      "276": 11,
+      "283": 11,
+      "282": 10,
+      "281": 11,
+      "280": 9,
+      "287": 13,
+      "286": 9,
+      "285": 10,
+      "284": 11,
+      "258": 8,
+      "259": 22,
+      "256": 23,
+      "257": 11,
+      "262": 14,
+      "263": 23,
+      "260": 16,
+      "261": 15,
+      "266": 21,
+      "267": 66,
+      "264": 21,
+      "265": 15,
+      "270": 70,
+      "271": 7,
+      "268": 70,
+      "269": 15,
+      "305": 8,
+      "304": 9,
+      "307": 16,
+      "306": 7,
+      "309": 7,
+      "308": 7,
+      "311": 10,
+      "310": 8,
+      "313": 11,
+      "312": 10,
+      "315": 13,
+      "314": 7,
+      "317": 9,
+      "316": 9,
+      "319": 14,
+      "318": 8,
+      "288": 25,
+      "289": 12,
+      "290": 11,
+      "291": 13,
+      "292": 14,
+      "293": 18,
+      "294": 22,
+      "295": 22,
+      "296": 30,
+      "297": 16,
+      "298": 16,
+      "299": 71,
+      "300": 70,
+      "301": 82,
+      "302": 23,
+      "303": 10,
+      "343": 5,
+      "342": 8,
+      "341": 7,
+      "340": 25,
+      "339": 6,
+      "338": 9,
+      "337": 7,
+      "336": 8,
+      "351": 9,
+      "350": 6,
+      "349": 6,
+      "348": 9,
+      "347": 6,
+      "346": 8,
+      "345": 8,
+      "344": 6,
+      "326": 23,
+      "327": 13,
+      "324": 24,
+      "325": 14,
+      "322": 7,
+      "323": 22,
+      "320": 14,
+      "321": 6,
+      "334": 7,
+      "335": 17,
+      "332": 70,
+      "333": 63,
+      "330": 14,
+      "331": 66,
+      "328": 14,
+      "329": 14,
+      "373": 9,
+      "372": 20,
+      "375": 8,
+      "374": 7,
+      "369": 7,
+      "368": 7,
+      "371": 8,
+      "370": 6,
+      "381": 6,
+      "380": 7,
+      "383": 14,
+      "382": 5,
+      "377": 8,
+      "376": 8,
+      "379": 7,
+      "378": 7,
+      "356": 17,
+      "357": 17,
+      "358": 16,
+      "359": 22,
+      "352": 14,
+      "353": 6,
+      "354": 7,
+      "355": 19,
+      "364": 68,
+      "365": 76,
+      "366": 18,
+      "367": 6,
+      "360": 19,
+      "361": 22,
+      "362": 14,
+      "363": 69,
+      "410": 9,
+      "411": 8,
+      "408": 9,
+      "409": 10,
+      "414": 6,
+      "415": 15,
+      "412": 9,
+      "413": 7,
+      "402": 8,
+      "403": 8,
+      "400": 7,
+      "401": 7,
+      "406": 8,
+      "407": 7,
+      "404": 24,
+      "405": 8,
+      "395": 70,
+      "394": 20,
+      "393": 19,
+      "392": 23,
+      "399": 6,
+      "398": 15,
+      "397": 63,
+      "396": 63,
+      "387": 14,
+      "386": 7,
+      "385": 7,
+      "384": 14,
+      "391": 23,
+      "390": 20,
+      "389": 19,
+      "388": 23,
+      "440": 8,
+      "441": 12,
+      "442": 10,
+      "443": 20,
+      "444": 7,
+      "445": 8,
+      "446": 6,
+      "447": 21,
+      "432": 9,
+      "433": 7,
+      "434": 19,
+      "435": 10,
+      "436": 15,
+      "437": 53,
+      "438": 15,
+      "439": 12,
+      "425": 22,
+      "424": 14,
+      "427": 64,
+      "426": 23,
+      "429": 63,
+      "428": 73,
+      "431": 6,
+      "430": 14,
+      "417": 6,
+      "416": 15,
+      "419": 13,
+      "418": 7,
+      "421": 13,
+      "420": 13,
+      "423": 19,
+      "422": 18,
+      "478": 67,
+      "479": 18,
+      "476": 13,
+      "477": 14,
+      "474": 7,
+      "475": 14,
+      "472": 6,
+      "473": 5,
+      "470": 14,
+      "471": 8,
+      "468": 6,
+      "469": 7,
+      "466": 9,
+      "467": 7,
+      "464": 12,
+      "465": 10,
+      "463": 10,
+      "462": 7,
+      "461": 9,
+      "460": 8,
+      "459": 9,
+      "458": 20,
+      "457": 6,
+      "456": 7,
+      "455": 67,
+      "454": 62,
+      "453": 12,
+      "452": 73,
+      "451": 66,
+      "450": 17,
+      "449": 17,
+      "448": 12,
+      "508": 15,
+      "509": 13,
+      "510": 16,
+      "511": 23,
+      "504": 7,
+      "505": 9,
+      "506": 7,
+      "507": 8,
+      "500": 6,
+      "501": 7,
+      "502": 7,
+      "503": 7,
+      "496": 61,
+      "497": 89,
+      "498": 9,
+      "499": 62,
+      "493": 23,
+      "492": 14,
+      "495": 67,
+      "494": 23,
+      "489": 8,
+      "488": 8,
+      "491": 15,
+      "490": 7,
+      "485": 6,
+      "484": 7,
+      "487": 8,
+      "486": 11,
+      "481": 67,
+      "480": 68,
+      "483": 17,
+      "482": 65,
+      "550": 6,
+      "551": 6,
+      "548": 6,
+      "549": 12,
+      "546": 6,
+      "547": 7,
+      "544": 7,
+      "545": 15,
+      "556": 6,
+      "554": 7,
+      "555": 6,
+      "552": 6,
+      "553": 12,
+      "516": 53,
+      "517": 5,
+      "518": 7,
+      "519": 8,
+      "512": 91,
+      "513": 68,
+      "514": 6,
+      "515": 55,
+      "524": 8,
+      "525": 15,
+      "526": 6,
+      "527": 7,
+      "520": 7,
+      "521": 9,
+      "522": 10,
+      "523": 10,
+      "533": 8,
+      "532": 6,
+      "535": 6,
+      "534": 6,
+      "529": 13,
+      "528": 7,
+      "531": 7,
+      "530": 6,
+      "541": 16,
+      "540": 8,
+      "543": 6,
+      "542": 7,
+      "537": 7,
+      "536": 7,
+      "539": 9,
+      "538": 6
+    },
+    "inferenceDurationHistory": {
+      "0": 30,
+      "1": 5,
+      "2": 5,
+      "3": 3,
+      "4": 4,
+      "5": 6,
+      "6": 4,
+      "7": 6,
+      "8": 6,
+      "9": 4,
+      "10": 14,
+      "11": 6,
+      "12": 6,
+      "13": 4,
+      "14": 14,
+      "16": 7,
+      "18": 13,
+      "20": 7,
+      "22": 7,
+      "24": 7,
+      "26": 6,
+      "28": 6,
+      "31": 5,
+      "30": 6,
+      "32": 6,
+      "33": 3,
+      "42": 14,
+      "43": 13,
+      "44": 6,
+      "45": 4,
+      "55": 4,
+      "54": 5,
+      "57": 3,
+      "56": 4,
+      "69": 5,
+      "70": 5,
+      "71": 4,
+      "66": 6,
+      "67": 6,
+      "76": 4,
+      "77": 3,
+      "72": 5,
+      "73": 10,
+      "74": 3,
+      "75": 4,
+      "86": 4,
+      "83": 11,
+      "95": 4,
+      "102": 4,
+      "103": 3,
+      "100": 4,
+      "101": 3,
+      "98": 5,
+      "99": 4,
+      "97": 5,
+      "110": 24,
+      "108": 9,
+      "109": 14,
+      "106": 3,
+      "107": 13,
+      "104": 12,
+      "105": 5,
+      "119": 4,
+      "127": 3,
+      "126": 4,
+      "125": 3,
+      "124": 4,
+      "123": 4,
+      "122": 5,
+      "121": 5,
+      "143": 4,
+      "129": 5,
+      "128": 5,
+      "131": 17,
+      "130": 3,
+      "133": 26,
+      "132": 20,
+      "134": 21,
+      "152": 4,
+      "153": 9,
+      "154": 3,
+      "155": 21,
+      "156": 15,
+      "157": 17,
+      "158": 17,
+      "145": 4,
+      "146": 4,
+      "147": 5,
+      "148": 4,
+      "149": 3,
+      "150": 4,
+      "151": 3,
+      "171": 4,
+      "170": 4,
+      "169": 4,
+      "175": 3,
+      "174": 4,
+      "173": 4,
+      "172": 2,
+      "167": 4,
+      "191": 4,
+      "178": 4,
+      "179": 18,
+      "176": 3,
+      "177": 4,
+      "182": 23,
+      "180": 37,
+      "181": 19,
+      "205": 14,
+      "204": 13,
+      "206": 32,
+      "201": 5,
+      "200": 4,
+      "203": 17,
+      "202": 3,
+      "197": 2,
+      "196": 4,
+      "199": 3,
+      "198": 4,
+      "193": 5,
+      "195": 9,
+      "194": 3,
+      "223": 5,
+      "238": 18,
+      "237": 12,
+      "236": 12,
+      "235": 13,
+      "234": 3,
+      "233": 4,
+      "232": 5,
+      "231": 3,
+      "230": 4,
+      "229": 2,
+      "228": 3,
+      "227": 4,
+      "226": 4,
+      "225": 5,
+      "255": 5,
+      "287": 5,
+      "258": 3,
+      "259": 3,
+      "257": 3,
+      "262": 4,
+      "263": 2,
+      "260": 3,
+      "261": 2,
+      "266": 4,
+      "267": 10,
+      "264": 3,
+      "265": 3,
+      "270": 21,
+      "268": 10,
+      "269": 10,
+      "319": 3,
+      "289": 5,
+      "290": 3,
+      "291": 3,
+      "292": 3,
+      "293": 2,
+      "294": 4,
+      "295": 6,
+      "296": 4,
+      "297": 3,
+      "298": 2,
+      "299": 10,
+      "300": 9,
+      "301": 10,
+      "302": 13,
+      "351": 3,
+      "326": 3,
+      "327": 2,
+      "324": 2,
+      "325": 3,
+      "322": 3,
+      "323": 3,
+      "320": 3,
+      "334": 11,
+      "332": 8,
+      "333": 11,
+      "330": 2,
+      "331": 11,
+      "328": 3,
+      "329": 3,
+      "383": 3,
+      "356": 3,
+      "357": 3,
+      "358": 2,
+      "359": 4,
+      "352": 3,
+      "354": 3,
+      "355": 3,
+      "364": 7,
+      "365": 10,
+      "366": 16,
+      "360": 3,
+      "361": 3,
+      "362": 2,
+      "363": 9,
+      "415": 4,
+      "395": 9,
+      "394": 2,
+      "393": 3,
+      "392": 3,
+      "398": 12,
+      "397": 8,
+      "396": 8,
+      "387": 3,
+      "386": 12,
+      "384": 3,
+      "391": 2,
+      "390": 3,
+      "389": 3,
+      "388": 2,
+      "447": 3,
+      "425": 3,
+      "424": 3,
+      "427": 12,
+      "426": 2,
+      "429": 7,
+      "428": 7,
+      "430": 66,
+      "417": 3,
+      "419": 3,
+      "418": 9,
+      "421": 2,
+      "420": 2,
+      "423": 3,
+      "422": 3,
+      "478": 10,
+      "479": 10,
+      "476": 3,
+      "477": 2,
+      "474": 3,
+      "475": 3,
+      "455": 13,
+      "454": 9,
+      "453": 9,
+      "452": 8,
+      "451": 12,
+      "450": 3,
+      "449": 9,
+      "448": 3,
+      "508": 2,
+      "509": 3,
+      "510": 3,
+      "511": 2,
+      "493": 3,
+      "492": 3,
+      "494": 2,
+      "491": 3,
+      "481": 10,
+      "480": 10,
+      "482": 9
+    },
+    "deductionCycleHistory": {
+      "10": 66,
+      "11": 68,
+      "287": 61,
+      "12": 78,
+      "258": 263,
+      "259": 66,
+      "256": 441,
+      "257": 88,
+      "262": 74,
+      "260": 65,
+      "267": 228,
+      "264": 65,
+      "265": 71,
+      "270": 342,
+      "31": 78,
+      "268": 287,
+      "30": 69,
+      "269": 305,
+      "32": 83,
+      "42": 92,
+      "43": 84,
+      "319": 41,
+      "44": 81,
+      "288": 440,
+      "289": 70,
+      "290": 271,
+      "291": 62,
+      "292": 68,
+      "55": 70,
+      "54": 50,
+      "294": 72,
+      "296": 68,
+      "297": 66,
+      "299": 256,
+      "56": 70,
+      "300": 296,
+      "301": 338,
+      "302": 354,
+      "68": 448,
+      "69": 70,
+      "70": 75,
+      "66": 61,
+      "67": 238,
+      "351": 36,
+      "76": 69,
+      "72": 68,
+      "73": 77,
+      "75": 67,
+      "326": 64,
+      "325": 73,
+      "322": 72,
+      "323": 74,
+      "320": 229,
+      "321": 428,
+      "334": 315,
+      "332": 274,
+      "95": 66,
+      "333": 304,
+      "331": 223,
+      "328": 64,
+      "329": 64,
+      "102": 75,
+      "100": 74,
+      "98": 268,
+      "99": 67,
+      "96": 450,
+      "97": 97,
+      "383": 42,
+      "104": 76,
+      "105": 64,
+      "356": 68,
+      "119": 48,
+      "358": 72,
+      "352": 76,
+      "353": 428,
+      "354": 266,
+      "355": 67,
+      "364": 282,
+      "365": 319,
+      "126": 73,
+      "366": 330,
+      "124": 72,
+      "360": 70,
+      "123": 68,
+      "361": 64,
+      "122": 278,
+      "121": 86,
+      "363": 237,
+      "120": 441,
+      "415": 43,
+      "143": 58,
+      "129": 79,
+      "128": 70,
+      "395": 217,
+      "152": 73,
+      "153": 76,
+      "393": 70,
+      "392": 69,
+      "398": 320,
+      "397": 307,
+      "396": 268,
+      "387": 65,
+      "144": 443,
+      "386": 72,
+      "145": 82,
+      "385": 437,
+      "146": 272,
+      "384": 234,
+      "147": 73,
+      "148": 68,
+      "390": 74,
+      "389": 70,
+      "150": 68,
+      "171": 66,
+      "170": 67,
+      "169": 224,
+      "168": 434,
+      "174": 68,
+      "173": 66,
+      "447": 35,
+      "167": 42,
+      "425": 73,
+      "424": 72,
+      "427": 220,
+      "429": 374,
+      "428": 277,
+      "191": 47,
+      "430": 408,
+      "417": 77,
+      "416": 431,
+      "419": 63,
+      "176": 71,
+      "418": 273,
+      "177": 67,
+      "420": 63,
+      "422": 64,
+      "205": 388,
+      "204": 339,
+      "476": 64,
+      "206": 407,
+      "474": 23,
+      "201": 71,
+      "475": 64,
+      "200": 74,
+      "203": 262,
+      "196": 78,
+      "198": 65,
+      "193": 80,
+      "192": 435,
+      "195": 79,
+      "194": 265,
+      "223": 78,
+      "455": 390,
+      "454": 382,
+      "453": 379,
+      "452": 335,
+      "451": 287,
+      "449": 73,
+      "448": 68,
+      "508": 31,
+      "509": 66,
+      "238": 363,
+      "510": 73,
+      "237": 354,
+      "236": 315,
+      "235": 259,
+      "233": 72,
+      "232": 71,
+      "230": 70,
+      "228": 65,
+      "227": 63,
+      "226": 270,
+      "225": 87,
+      "224": 435,
+      "493": 72,
+      "492": 74,
+      "255": 59,
+      "491": 38
+    }
+  },
+  "seningPerformanceResult": {
+    "sensingEventHistory": [
+      {
+        "timestamp": 1420818583990,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818584012,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818584022,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818584029,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818584047,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818584052,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818584062,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818588983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818588983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818588983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818588983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818588983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818588983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818588983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818593982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818593982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818593983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818593983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818593983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818593983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818593983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818598982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818598982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818598982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818598982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818598983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818598983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818598983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818603982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818603982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818603982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818603982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818603982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818603982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818603983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818608983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818608983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818608983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818608992,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818608992,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818608992,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818608992,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818609779,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818609782,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818609799,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818609802,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818609848,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818609863,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818609875,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818609879,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818613983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818613983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818613983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818613987,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818613987,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818613987,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818613987,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818614776,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818614778,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818614779,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818614783,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818614848,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818614849,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818614851,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818614856,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818618982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818618983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818618983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818618985,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818618985,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818618985,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818618985,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818619776,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818619778,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818619780,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818619785,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818619848,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818619849,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818619855,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818619860,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818623982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818623982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818623982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818623984,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818623984,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818623984,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818623984,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818624776,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818624778,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818624779,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818624780,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818624848,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818624850,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818624855,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818624858,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818628983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818628983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818628994,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818628994,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818628994,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818628994,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818628994,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818629659,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818629660,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818629661,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818629661,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818629662,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818629662,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818629662,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818629662,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818629663,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818629663,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818629664,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818629664,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818629664,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818629776,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818629778,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818629779,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818629780,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818629848,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818629850,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818629851,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818629852,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818633982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818633982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818633985,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818633985,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818633985,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818633985,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818633985,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818634658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818634658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818634658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818634658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818634658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818634658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818634660,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818634660,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818634660,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818634660,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818634661,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818634661,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818634661,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818634662,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818634776,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818634777,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818634779,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818634783,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818634848,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818634849,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818634850,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818634851,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818638983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818638983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818638991,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818638991,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818638991,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818638991,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818638991,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818639658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818639658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818639658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818639658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818639658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818639658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818639661,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818639661,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818639661,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818639661,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818639663,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818639663,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818639663,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818639663,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818639776,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818639778,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818639779,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818639785,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818639850,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818639852,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818639853,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818639854,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818643983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818643983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818643990,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818643990,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818643990,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818643990,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818643990,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818644658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818644658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818644658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818644658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818644659,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818644659,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818644660,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818644660,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818644660,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818644660,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818644663,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818644663,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818644663,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818644668,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818644776,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818644778,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818644779,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818644780,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818644848,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818644849,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818644850,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818644851,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818648983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818648983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818648989,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818648989,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818648989,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818648989,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818648989,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818649658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818649658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818649658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818649658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818649658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818649658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818649660,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818649660,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818649660,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818649660,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818649660,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818649661,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818649661,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818649661,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818649776,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818649778,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818649779,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818649780,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818649848,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818649849,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818649850,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818649851,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818653982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818653982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818653984,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818653984,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818653984,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818653984,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818653984,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818654658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818654658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818654658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818654658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818654658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818654658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818654660,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818654660,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818654660,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818654660,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818654660,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818654661,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818654661,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818654661,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818654776,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818654777,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818654779,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818654780,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818654848,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818654849,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818654849,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818654850,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818658982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818658982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818658985,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818658985,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818658985,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818658985,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818658985,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818659658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818659658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818659658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818659658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818659658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818659658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818659660,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818659660,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818659660,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818659660,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818659660,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818659661,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818659661,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818659661,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818659776,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818659777,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818659778,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818659779,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818659848,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818659849,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818659849,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818659850,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818663983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818663983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818663988,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818663989,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818663989,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818663989,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818663989,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818664658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818664658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818664658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818664658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818664658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818664658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818664660,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818664660,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818664660,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818664660,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818664660,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818664661,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818664661,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818664661,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818664776,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818664777,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818664778,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818664779,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818664848,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818664849,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818664850,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818664850,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818668983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818668983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818668988,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818668988,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818668988,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818668988,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818668988,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818669658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818669658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818669658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818669658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818669658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818669658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818669660,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818669660,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818669660,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818669660,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818669663,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818669663,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818669663,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818669664,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818669776,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818669777,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818669778,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818669779,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818669848,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818669849,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818669849,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818669850,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818673983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818673983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818673988,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818673988,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818673988,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818673988,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818673988,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818674658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818674658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818674658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818674658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818674658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818674658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818674660,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818674661,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818674661,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818674661,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818674661,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818674661,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818674661,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818674661,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818674776,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818674777,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818674778,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818674779,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818674848,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818674849,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818674849,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818674850,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818678983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818678983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818678988,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818678988,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818678988,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818678988,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818678988,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818679658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818679658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818679658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818679658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818679658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818679658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818679660,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818679660,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818679660,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818679660,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818679660,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818679661,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818679661,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818679661,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818679776,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818679777,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818679778,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818679779,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818679848,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818679849,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818679849,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818679850,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818683982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818683983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818683984,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818683984,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818683984,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818683984,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818683984,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818684658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818684658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818684658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818684658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818684658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818684658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818684660,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818684660,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818684660,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818684660,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818684660,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818684661,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818684661,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818684661,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818684776,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818684777,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818684778,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818684779,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818684848,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818684849,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818684849,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818684850,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818688982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818688982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818688984,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818688984,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818688984,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818688984,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818688984,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818689658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818689658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818689658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818689658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818689658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818689658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818689660,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818689660,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818689660,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818689660,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818689660,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818689661,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818689661,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818689661,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818689776,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818689777,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818689778,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818689779,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818689848,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818689849,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818689849,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818689850,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818693983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818693983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818693983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818693985,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818693985,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818693985,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818693985,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818694658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818694659,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818694659,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818694659,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818694659,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818694659,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818694660,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818694660,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818694660,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818694661,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818694663,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818694663,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818694663,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818694666,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818694776,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818694777,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818694778,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818694779,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818694848,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818694849,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818694849,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818694850,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818698982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818698982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818698982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818698983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818698983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818698983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818698983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818699658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818699659,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818699659,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818699659,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818699659,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818699659,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818699660,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818699660,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818699660,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818699660,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818699661,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818699661,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818699661,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818699661,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818699776,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818699777,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818699778,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818699779,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818699848,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818699849,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818699849,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818699850,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818703982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818703982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818703983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818703983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818703983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818703983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818703983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818704658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818704659,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818704659,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818704659,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818704659,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818704659,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818704661,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818704661,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818704661,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818704661,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818704661,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818704661,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818704661,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818704661,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818704776,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818704777,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818704778,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818704779,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818704848,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818704849,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818704849,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818704850,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818708983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818708983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818708983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818708985,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818708985,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818708985,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818708985,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818709658,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818709659,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818709659,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818709659,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818709659,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818709659,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818709661,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818709661,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818709661,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818709661,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818709662,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818709662,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818709662,
+        "sensedAssertionType": "hasNoiseLevel"
+      },
+      {
+        "timestamp": 1420818709663,
+        "sensedAssertionType": "sensesSkeletonInPosition"
+      },
+      {
+        "timestamp": 1420818709776,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818709777,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818709778,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818709779,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818709848,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818709849,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818709849,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818709849,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818713982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818713982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818713983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818713983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818713983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818713983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818713983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818714776,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818714778,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818714779,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818714779,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818714848,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818714849,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818714849,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818714850,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818718982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818718982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818718982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818718982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818718982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818718982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818718982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818719776,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818719777,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818719778,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818719778,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818719848,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818719848,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818719849,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818719850,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818723983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818723983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818723983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818723983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818723983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818723983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818723983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818724776,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818724778,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818724778,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818724780,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818724848,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818724849,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818724849,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818724850,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818728982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818728982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818728982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818728983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818728983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818728983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818728983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818729776,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818729777,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818729778,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818729778,
+        "sensedAssertionType": "sensesTemperature"
+      },
+      {
+        "timestamp": 1420818729848,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818729849,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818729849,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818729850,
+        "sensedAssertionType": "sensesLuminosity"
+      },
+      {
+        "timestamp": 1420818733983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818733983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818733983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818733983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818733983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818733983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818733983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818738982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818738982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818738982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818738982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818738982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818738982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818738982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818743982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818743982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818743982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818743982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818743982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818743982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818743982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818748982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818748982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818748982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818748982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818748982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818748982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818748982,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818753983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818753983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818753983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818753983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818753983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818753983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818753983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818758983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818758983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818758983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818758983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818758983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818758983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      },
+      {
+        "timestamp": 1420818758983,
+        "sensedAssertionType": "sensesBluetoothAddress"
+      }
+    ],
+    "sensingMessageEventHistory": [
+      {
+        "timestamp": 1420818584011,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 1757478430
+      },
+      {
+        "timestamp": 1420818584022,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 2100967169
+      },
+      {
+        "timestamp": 1420818584029,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 798154703
+      },
+      {
+        "timestamp": 1420818584047,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 311042418
+      },
+      {
+        "timestamp": 1420818584052,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 714722528
+      },
+      {
+        "timestamp": 1420818584062,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 106276082
+      },
+      {
+        "timestamp": 1420818584071,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 63581223
+      },
+      {
+        "timestamp": 1420818608992,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 28890800
+      },
+      {
+        "timestamp": 1420818609781,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 795655435
+      },
+      {
+        "timestamp": 1420818609782,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 94465183
+      },
+      {
+        "timestamp": 1420818609792,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1672334875
+      },
+      {
+        "timestamp": 1420818609792,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 24677951
+      },
+      {
+        "timestamp": 1420818609801,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 413486234
+      },
+      {
+        "timestamp": 1420818609802,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 206053146
+      },
+      {
+        "timestamp": 1420818609804,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1659210767
+      },
+      {
+        "timestamp": 1420818609805,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1280204674
+      },
+      {
+        "timestamp": 1420818609854,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 562685156
+      },
+      {
+        "timestamp": 1420818609863,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 641465518
+      },
+      {
+        "timestamp": 1420818609874,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 977198976
+      },
+      {
+        "timestamp": 1420818609875,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 1975741023
+      },
+      {
+        "timestamp": 1420818609877,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 553749175
+      },
+      {
+        "timestamp": 1420818609879,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 1815741774
+      },
+      {
+        "timestamp": 1420818609881,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 357021746
+      },
+      {
+        "timestamp": 1420818609882,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 1691897804
+      },
+      {
+        "timestamp": 1420818613987,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 639902079
+      },
+      {
+        "timestamp": 1420818614778,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1978936780
+      },
+      {
+        "timestamp": 1420818614779,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 548685479
+      },
+      {
+        "timestamp": 1420818614783,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 631217793
+      },
+      {
+        "timestamp": 1420818614785,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 704011633
+      },
+      {
+        "timestamp": 1420818614849,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 943148310
+      },
+      {
+        "timestamp": 1420818614851,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 1407140976
+      },
+      {
+        "timestamp": 1420818614856,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 330443851
+      },
+      {
+        "timestamp": 1420818614857,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 1834901553
+      },
+      {
+        "timestamp": 1420818618984,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 1147144455
+      },
+      {
+        "timestamp": 1420818619778,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 309613559
+      },
+      {
+        "timestamp": 1420818619780,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 8903316
+      },
+      {
+        "timestamp": 1420818619785,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 2050383444
+      },
+      {
+        "timestamp": 1420818619789,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 180939013
+      },
+      {
+        "timestamp": 1420818619849,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 1332167817
+      },
+      {
+        "timestamp": 1420818619855,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 1250134117
+      },
+      {
+        "timestamp": 1420818619860,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 1468996467
+      },
+      {
+        "timestamp": 1420818619863,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 127358021
+      },
+      {
+        "timestamp": 1420818623984,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 1388411952
+      },
+      {
+        "timestamp": 1420818624778,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1258438098
+      },
+      {
+        "timestamp": 1420818624779,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1988597941
+      },
+      {
+        "timestamp": 1420818624780,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1987892704
+      },
+      {
+        "timestamp": 1420818624782,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 751829473
+      },
+      {
+        "timestamp": 1420818624850,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 800275545
+      },
+      {
+        "timestamp": 1420818624855,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 621396462
+      },
+      {
+        "timestamp": 1420818624858,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 586401853
+      },
+      {
+        "timestamp": 1420818624860,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 154252702
+      },
+      {
+        "timestamp": 1420818628991,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 962146493
+      },
+      {
+        "timestamp": 1420818628992,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 244245941
+      },
+      {
+        "timestamp": 1420818628994,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 1200280970
+      },
+      {
+        "timestamp": 1420818629660,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 334122187
+      },
+      {
+        "timestamp": 1420818629661,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 313750351
+      },
+      {
+        "timestamp": 1420818629662,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 1129795872
+      },
+      {
+        "timestamp": 1420818629662,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 428813930
+      },
+      {
+        "timestamp": 1420818629663,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 120602178
+      },
+      {
+        "timestamp": 1420818629663,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 1745478625
+      },
+      {
+        "timestamp": 1420818629664,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 1632632355
+      },
+      {
+        "timestamp": 1420818629664,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1253432766
+      },
+      {
+        "timestamp": 1420818629664,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1777404739
+      },
+      {
+        "timestamp": 1420818629778,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 2115848595
+      },
+      {
+        "timestamp": 1420818629779,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 498486687
+      },
+      {
+        "timestamp": 1420818629780,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1590361280
+      },
+      {
+        "timestamp": 1420818629781,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 817988231
+      },
+      {
+        "timestamp": 1420818629849,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 1463002312
+      },
+      {
+        "timestamp": 1420818629851,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 362534752
+      },
+      {
+        "timestamp": 1420818629852,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 865674955
+      },
+      {
+        "timestamp": 1420818629854,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 620506574
+      },
+      {
+        "timestamp": 1420818633984,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 260229823
+      },
+      {
+        "timestamp": 1420818633985,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 1405929869
+      },
+      {
+        "timestamp": 1420818633985,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 700740342
+      },
+      {
+        "timestamp": 1420818634661,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 178795443
+      },
+      {
+        "timestamp": 1420818634661,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 685388348
+      },
+      {
+        "timestamp": 1420818634661,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 219682328
+      },
+      {
+        "timestamp": 1420818634662,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 676497503
+      },
+      {
+        "timestamp": 1420818634777,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 763639133
+      },
+      {
+        "timestamp": 1420818634779,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1061684023
+      },
+      {
+        "timestamp": 1420818634783,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 865622013
+      },
+      {
+        "timestamp": 1420818634784,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 2057407649
+      },
+      {
+        "timestamp": 1420818634849,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 1560047738
+      },
+      {
+        "timestamp": 1420818634850,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 1805128904
+      },
+      {
+        "timestamp": 1420818634851,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 1763069212
+      },
+      {
+        "timestamp": 1420818634853,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 792176513
+      },
+      {
+        "timestamp": 1420818638988,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 799923328
+      },
+      {
+        "timestamp": 1420818638989,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 1063743476
+      },
+      {
+        "timestamp": 1420818638991,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 535239857
+      },
+      {
+        "timestamp": 1420818639661,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 1155855777
+      },
+      {
+        "timestamp": 1420818639662,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 685220809
+      },
+      {
+        "timestamp": 1420818639662,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1698821649
+      },
+      {
+        "timestamp": 1420818639663,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 1300367878
+      },
+      {
+        "timestamp": 1420818639778,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1026126814
+      },
+      {
+        "timestamp": 1420818639779,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1004923889
+      },
+      {
+        "timestamp": 1420818639785,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 564521284
+      },
+      {
+        "timestamp": 1420818639788,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 816462505
+      },
+      {
+        "timestamp": 1420818639852,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 1385524417
+      },
+      {
+        "timestamp": 1420818639853,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 495059234
+      },
+      {
+        "timestamp": 1420818639853,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 1374840854
+      },
+      {
+        "timestamp": 1420818639854,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 2113170618
+      },
+      {
+        "timestamp": 1420818643988,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 382887538
+      },
+      {
+        "timestamp": 1420818643989,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 1329844754
+      },
+      {
+        "timestamp": 1420818643990,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 1838466149
+      },
+      {
+        "timestamp": 1420818644663,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 475215186
+      },
+      {
+        "timestamp": 1420818644665,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 449947909
+      },
+      {
+        "timestamp": 1420818644666,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 984585476
+      },
+      {
+        "timestamp": 1420818644668,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 1566594997
+      },
+      {
+        "timestamp": 1420818644778,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1810400108
+      },
+      {
+        "timestamp": 1420818644779,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1847843717
+      },
+      {
+        "timestamp": 1420818644780,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 791190608
+      },
+      {
+        "timestamp": 1420818644781,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 591683786
+      },
+      {
+        "timestamp": 1420818644849,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 1338479129
+      },
+      {
+        "timestamp": 1420818644850,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 224308273
+      },
+      {
+        "timestamp": 1420818644851,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 198928919
+      },
+      {
+        "timestamp": 1420818644852,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 6380341
+      },
+      {
+        "timestamp": 1420818648987,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 1987725871
+      },
+      {
+        "timestamp": 1420818648988,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 1453101165
+      },
+      {
+        "timestamp": 1420818648989,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 1087246471
+      },
+      {
+        "timestamp": 1420818649660,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 1652097146
+      },
+      {
+        "timestamp": 1420818649660,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 1980660759
+      },
+      {
+        "timestamp": 1420818649660,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 821364366
+      },
+      {
+        "timestamp": 1420818649661,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 2068572337
+      },
+      {
+        "timestamp": 1420818649778,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1787720991
+      },
+      {
+        "timestamp": 1420818649779,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 2090036751
+      },
+      {
+        "timestamp": 1420818649780,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 782692282
+      },
+      {
+        "timestamp": 1420818649780,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1226228901
+      },
+      {
+        "timestamp": 1420818649849,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 1402240004
+      },
+      {
+        "timestamp": 1420818649850,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 1228413440
+      },
+      {
+        "timestamp": 1420818649851,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 1767246018
+      },
+      {
+        "timestamp": 1420818649854,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 671170578
+      },
+      {
+        "timestamp": 1420818653984,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 1699483666
+      },
+      {
+        "timestamp": 1420818653984,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 1689469362
+      },
+      {
+        "timestamp": 1420818653984,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 882786500
+      },
+      {
+        "timestamp": 1420818654660,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 1526277919
+      },
+      {
+        "timestamp": 1420818654660,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 460821218
+      },
+      {
+        "timestamp": 1420818654660,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 1196179844
+      },
+      {
+        "timestamp": 1420818654661,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1935307206
+      },
+      {
+        "timestamp": 1420818654777,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 730132055
+      },
+      {
+        "timestamp": 1420818654778,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1217890810
+      },
+      {
+        "timestamp": 1420818654780,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1907867411
+      },
+      {
+        "timestamp": 1420818654781,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1705228460
+      },
+      {
+        "timestamp": 1420818654849,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 1769603081
+      },
+      {
+        "timestamp": 1420818654849,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 356637444
+      },
+      {
+        "timestamp": 1420818654850,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 1187112456
+      },
+      {
+        "timestamp": 1420818654851,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 1587939082
+      },
+      {
+        "timestamp": 1420818658984,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 1543507234
+      },
+      {
+        "timestamp": 1420818658984,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 123626078
+      },
+      {
+        "timestamp": 1420818658985,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 1166806297
+      },
+      {
+        "timestamp": 1420818659660,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 929983762
+      },
+      {
+        "timestamp": 1420818659660,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 851105068
+      },
+      {
+        "timestamp": 1420818659660,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 134305209
+      },
+      {
+        "timestamp": 1420818659661,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 274804171
+      },
+      {
+        "timestamp": 1420818659777,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 2035487560
+      },
+      {
+        "timestamp": 1420818659778,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1283727129
+      },
+      {
+        "timestamp": 1420818659779,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 274957452
+      },
+      {
+        "timestamp": 1420818659780,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 149380683
+      },
+      {
+        "timestamp": 1420818659849,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 1262863555
+      },
+      {
+        "timestamp": 1420818659849,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 599136019
+      },
+      {
+        "timestamp": 1420818659850,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 1580895909
+      },
+      {
+        "timestamp": 1420818659851,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 331657844
+      },
+      {
+        "timestamp": 1420818663987,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 337717770
+      },
+      {
+        "timestamp": 1420818663988,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 223281369
+      },
+      {
+        "timestamp": 1420818663988,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 1036037474
+      },
+      {
+        "timestamp": 1420818664660,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 529127969
+      },
+      {
+        "timestamp": 1420818664660,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 323992756
+      },
+      {
+        "timestamp": 1420818664660,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 1475204947
+      },
+      {
+        "timestamp": 1420818664661,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1688430638
+      },
+      {
+        "timestamp": 1420818664777,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1916876600
+      },
+      {
+        "timestamp": 1420818664778,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1330686265
+      },
+      {
+        "timestamp": 1420818664779,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1974397424
+      },
+      {
+        "timestamp": 1420818664780,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 751198086
+      },
+      {
+        "timestamp": 1420818664849,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 571428129
+      },
+      {
+        "timestamp": 1420818664850,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 368181497
+      },
+      {
+        "timestamp": 1420818664850,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 549958739
+      },
+      {
+        "timestamp": 1420818664851,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 2010466368
+      },
+      {
+        "timestamp": 1420818668987,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 182723116
+      },
+      {
+        "timestamp": 1420818668987,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 125795402
+      },
+      {
+        "timestamp": 1420818668988,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 1119412766
+      },
+      {
+        "timestamp": 1420818669661,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 1468620490
+      },
+      {
+        "timestamp": 1420818669662,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 1881910780
+      },
+      {
+        "timestamp": 1420818669663,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1135326444
+      },
+      {
+        "timestamp": 1420818669664,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 1039340713
+      },
+      {
+        "timestamp": 1420818669777,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 483478120
+      },
+      {
+        "timestamp": 1420818669778,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1367622680
+      },
+      {
+        "timestamp": 1420818669779,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 733643206
+      },
+      {
+        "timestamp": 1420818669779,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1296009106
+      },
+      {
+        "timestamp": 1420818669849,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 1786613101
+      },
+      {
+        "timestamp": 1420818669849,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 1230815804
+      },
+      {
+        "timestamp": 1420818669850,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 1008915360
+      },
+      {
+        "timestamp": 1420818669851,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 1885633022
+      },
+      {
+        "timestamp": 1420818673986,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 1292941861
+      },
+      {
+        "timestamp": 1420818673987,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 86833834
+      },
+      {
+        "timestamp": 1420818673988,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 1274851725
+      },
+      {
+        "timestamp": 1420818674659,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 1803503823
+      },
+      {
+        "timestamp": 1420818674660,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 1904559403
+      },
+      {
+        "timestamp": 1420818674660,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 1686127686
+      },
+      {
+        "timestamp": 1420818674661,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 737435432
+      },
+      {
+        "timestamp": 1420818674777,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 929973447
+      },
+      {
+        "timestamp": 1420818674778,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 562317421
+      },
+      {
+        "timestamp": 1420818674779,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1590599551
+      },
+      {
+        "timestamp": 1420818674780,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1804939067
+      },
+      {
+        "timestamp": 1420818674849,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 2055189496
+      },
+      {
+        "timestamp": 1420818674849,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 849789981
+      },
+      {
+        "timestamp": 1420818674850,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 1267654343
+      },
+      {
+        "timestamp": 1420818674851,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 1132349304
+      },
+      {
+        "timestamp": 1420818678986,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 1132141440
+      },
+      {
+        "timestamp": 1420818678987,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 1196069660
+      },
+      {
+        "timestamp": 1420818678988,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 1895839700
+      },
+      {
+        "timestamp": 1420818679659,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 1807440515
+      },
+      {
+        "timestamp": 1420818679660,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 1496548790
+      },
+      {
+        "timestamp": 1420818679660,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 1167039866
+      },
+      {
+        "timestamp": 1420818679661,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1392722860
+      },
+      {
+        "timestamp": 1420818679777,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 292915004
+      },
+      {
+        "timestamp": 1420818679778,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 551779845
+      },
+      {
+        "timestamp": 1420818679779,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 580074630
+      },
+      {
+        "timestamp": 1420818679779,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 738970684
+      },
+      {
+        "timestamp": 1420818679849,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 506089745
+      },
+      {
+        "timestamp": 1420818679849,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 1157342987
+      },
+      {
+        "timestamp": 1420818679850,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 48950724
+      },
+      {
+        "timestamp": 1420818679851,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 878763327
+      },
+      {
+        "timestamp": 1420818683984,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 1058411390
+      },
+      {
+        "timestamp": 1420818683984,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 1113183629
+      },
+      {
+        "timestamp": 1420818683984,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 399719939
+      },
+      {
+        "timestamp": 1420818684659,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 1294074603
+      },
+      {
+        "timestamp": 1420818684660,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 1944959452
+      },
+      {
+        "timestamp": 1420818684660,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 2084918777
+      },
+      {
+        "timestamp": 1420818684661,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 826212685
+      },
+      {
+        "timestamp": 1420818684777,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1930109250
+      },
+      {
+        "timestamp": 1420818684778,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1057070231
+      },
+      {
+        "timestamp": 1420818684779,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1051771905
+      },
+      {
+        "timestamp": 1420818684780,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 609568772
+      },
+      {
+        "timestamp": 1420818684849,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 390631590
+      },
+      {
+        "timestamp": 1420818684849,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 703189605
+      },
+      {
+        "timestamp": 1420818684850,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 616256410
+      },
+      {
+        "timestamp": 1420818684850,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 215710855
+      },
+      {
+        "timestamp": 1420818688984,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 2043421834
+      },
+      {
+        "timestamp": 1420818688984,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 1232281214
+      },
+      {
+        "timestamp": 1420818688984,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 618072030
+      },
+      {
+        "timestamp": 1420818689660,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 1555490185
+      },
+      {
+        "timestamp": 1420818689660,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 1805104364
+      },
+      {
+        "timestamp": 1420818689660,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 887564579
+      },
+      {
+        "timestamp": 1420818689661,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1193744364
+      },
+      {
+        "timestamp": 1420818689777,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1059603720
+      },
+      {
+        "timestamp": 1420818689778,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1603278058
+      },
+      {
+        "timestamp": 1420818689779,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1641123353
+      },
+      {
+        "timestamp": 1420818689779,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 628405215
+      },
+      {
+        "timestamp": 1420818689849,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 1548019824
+      },
+      {
+        "timestamp": 1420818689849,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 1617783058
+      },
+      {
+        "timestamp": 1420818689850,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 1514642507
+      },
+      {
+        "timestamp": 1420818689851,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 2143139205
+      },
+      {
+        "timestamp": 1420818693985,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 1044368618
+      },
+      {
+        "timestamp": 1420818694659,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 1366742422
+      },
+      {
+        "timestamp": 1420818694663,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 908293612
+      },
+      {
+        "timestamp": 1420818694663,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 1376974008
+      },
+      {
+        "timestamp": 1420818694665,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 1518372384
+      },
+      {
+        "timestamp": 1420818694666,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 736480587
+      },
+      {
+        "timestamp": 1420818694777,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 178669316
+      },
+      {
+        "timestamp": 1420818694778,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1365139082
+      },
+      {
+        "timestamp": 1420818694779,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 760364793
+      },
+      {
+        "timestamp": 1420818694779,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1470723819
+      },
+      {
+        "timestamp": 1420818694849,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 680791297
+      },
+      {
+        "timestamp": 1420818694849,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 847176646
+      },
+      {
+        "timestamp": 1420818694850,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 389523780
+      },
+      {
+        "timestamp": 1420818694851,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 967152108
+      },
+      {
+        "timestamp": 1420818698983,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 893373282
+      },
+      {
+        "timestamp": 1420818699659,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 1478931982
+      },
+      {
+        "timestamp": 1420818699660,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 1396097000
+      },
+      {
+        "timestamp": 1420818699661,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 887576383
+      },
+      {
+        "timestamp": 1420818699661,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1074857019
+      },
+      {
+        "timestamp": 1420818699661,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 489479769
+      },
+      {
+        "timestamp": 1420818699777,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1989334247
+      },
+      {
+        "timestamp": 1420818699778,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1413149063
+      },
+      {
+        "timestamp": 1420818699778,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 136596893
+      },
+      {
+        "timestamp": 1420818699779,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 370330866
+      },
+      {
+        "timestamp": 1420818699849,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 1655138556
+      },
+      {
+        "timestamp": 1420818699849,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 1560606636
+      },
+      {
+        "timestamp": 1420818699850,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 130969349
+      },
+      {
+        "timestamp": 1420818699851,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 1035109455
+      },
+      {
+        "timestamp": 1420818703983,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 1310440671
+      },
+      {
+        "timestamp": 1420818704659,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 933972145
+      },
+      {
+        "timestamp": 1420818704660,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 1110414201
+      },
+      {
+        "timestamp": 1420818704660,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 1098583777
+      },
+      {
+        "timestamp": 1420818704661,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 1980626780
+      },
+      {
+        "timestamp": 1420818704661,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1671432765
+      },
+      {
+        "timestamp": 1420818704777,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1383472545
+      },
+      {
+        "timestamp": 1420818704778,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 729058688
+      },
+      {
+        "timestamp": 1420818704779,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1719569614
+      },
+      {
+        "timestamp": 1420818704779,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 604178982
+      },
+      {
+        "timestamp": 1420818704849,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 710646751
+      },
+      {
+        "timestamp": 1420818704849,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 1670028052
+      },
+      {
+        "timestamp": 1420818704850,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 1419686420
+      },
+      {
+        "timestamp": 1420818704851,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 1827150562
+      },
+      {
+        "timestamp": 1420818708985,
+        "sensedAssertionType": "sensesBluetoothAddress",
+        "messageId": 1551002301
+      },
+      {
+        "timestamp": 1420818709659,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 304313784
+      },
+      {
+        "timestamp": 1420818709660,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 381659493
+      },
+      {
+        "timestamp": 1420818709662,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1144742442
+      },
+      {
+        "timestamp": 1420818709663,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 380229221
+      },
+      {
+        "timestamp": 1420818709663,
+        "sensedAssertionType": "sensesSkeletonInPosition",
+        "messageId": 1748667522
+      },
+      {
+        "timestamp": 1420818709777,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 285007211
+      },
+      {
+        "timestamp": 1420818709778,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 300202493
+      },
+      {
+        "timestamp": 1420818709779,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1984885520
+      },
+      {
+        "timestamp": 1420818709780,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1846526846
+      },
+      {
+        "timestamp": 1420818709849,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 325584409
+      },
+      {
+        "timestamp": 1420818709849,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 29549350
+      },
+      {
+        "timestamp": 1420818709849,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 300794318
+      },
+      {
+        "timestamp": 1420818709850,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 592173289
+      },
+      {
+        "timestamp": 1420818714778,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 735463089
+      },
+      {
+        "timestamp": 1420818714779,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 2121715172
+      },
+      {
+        "timestamp": 1420818714779,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 311707984
+      },
+      {
+        "timestamp": 1420818714780,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1462617315
+      },
+      {
+        "timestamp": 1420818714849,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 1281776012
+      },
+      {
+        "timestamp": 1420818714849,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 1102622281
+      },
+      {
+        "timestamp": 1420818714850,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 242057
+      },
+      {
+        "timestamp": 1420818714850,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 1379510360
+      },
+      {
+        "timestamp": 1420818719777,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1680663293
+      },
+      {
+        "timestamp": 1420818719778,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 375015353
+      },
+      {
+        "timestamp": 1420818719778,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 114565467
+      },
+      {
+        "timestamp": 1420818719779,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 272234147
+      },
+      {
+        "timestamp": 1420818719848,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 1842029362
+      },
+      {
+        "timestamp": 1420818719849,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 2087885989
+      },
+      {
+        "timestamp": 1420818719850,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 1907324373
+      },
+      {
+        "timestamp": 1420818719850,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 635593714
+      },
+      {
+        "timestamp": 1420818724778,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1841022902
+      },
+      {
+        "timestamp": 1420818724778,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 73326005
+      },
+      {
+        "timestamp": 1420818724780,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1097524665
+      },
+      {
+        "timestamp": 1420818724781,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1861158583
+      },
+      {
+        "timestamp": 1420818724849,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 1701053769
+      },
+      {
+        "timestamp": 1420818724849,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 616019531
+      },
+      {
+        "timestamp": 1420818724850,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 1204159857
+      },
+      {
+        "timestamp": 1420818724850,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 344824365
+      },
+      {
+        "timestamp": 1420818729777,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1620937821
+      },
+      {
+        "timestamp": 1420818729778,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 1485937404
+      },
+      {
+        "timestamp": 1420818729778,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 947810003
+      },
+      {
+        "timestamp": 1420818729779,
+        "sensedAssertionType": "hasNoiseLevel",
+        "messageId": 804421090
+      },
+      {
+        "timestamp": 1420818729848,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 509157299
+      },
+      {
+        "timestamp": 1420818729849,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 1991595123
+      },
+      {
+        "timestamp": 1420818729850,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 764798628
+      },
+      {
+        "timestamp": 1420818729850,
+        "sensedAssertionType": "sensesTemperature",
+        "messageId": 1937133779
+      }
+    ]
+  }
+}
