@@ -1,8 +1,9 @@
-package org.aimas.ami.cmm.simulation;
+package org.aimas.ami.cmm.simulation.commands;
 
 import java.io.InputStream;
 import java.io.PrintStream;
 
+import org.aimas.ami.cmm.simulation.SimulationUsers;
 import org.apache.felix.ipojo.ComponentInstance;
 import org.apache.felix.ipojo.annotations.Component;
 import org.apache.felix.ipojo.annotations.Instantiate;

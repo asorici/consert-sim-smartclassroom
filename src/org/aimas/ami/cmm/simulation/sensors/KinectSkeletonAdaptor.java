@@ -11,6 +11,7 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
 import org.aimas.ami.cmm.sensing.ContextAssertionAdaptor;
+import org.aimas.ami.cmm.simulation.SensorStatsCollector;
 import org.aimas.ami.contextrep.datatype.CalendarInterval;
 import org.aimas.ami.contextrep.datatype.CalendarIntervalList;
 import org.aimas.ami.contextrep.model.ContextAssertion.ContextAssertionType;
@@ -67,6 +68,9 @@ public class KinectSkeletonAdaptor extends SensorAdaptorBase {
 	@Requires(id="kinectSensors")
 	private KinectCamera[] kinectSensors;
 	
+	@Requires
+	private SensorStatsCollector sensorStatsCollector;
+	
 	protected KinectSkeletonAdaptor() {
 	    super(SmartClassroom.sensesSkeletonInPosition.getURI());
 	    
@@ -96,7 +100,7 @@ public class KinectSkeletonAdaptor extends SensorAdaptorBase {
 				+ "removing camera: " + cam.getSerialNumber());
 		
 		if (updatesEnabled.get()) {
-			startUpdates(false);
+			stopUpdates();
 		}
 	}
 	
@@ -286,6 +290,7 @@ public class KinectSkeletonAdaptor extends SensorAdaptorBase {
 				
 				String sensorIdURI = SmartClassroom.BOOTSTRAP_NS + kinect.getSerialNumber();
 				Map<String, String> sensedSkeletons = kinect.getSensedSkeletons();
+				sensorStatsCollector.markSensing(System.currentTimeMillis(), SmartClassroom.sensesSkeletonInPosition.getLocalName());
 				
 				if (sensedSkeletons != null) {
 					if (sensorInstances.containsKey(sensorIdURI)) {
@@ -305,6 +310,8 @@ public class KinectSkeletonAdaptor extends SensorAdaptorBase {
 							
 				        	for (UpdateRequest update : updateRequests) {
 				        		sensingAdaptor.deliverUpdate(getProvidedAssertion(), update);
+				        		sensorStatsCollector.markSensingUpdateMessage(System.currentTimeMillis(), update.hashCode(), 
+				        				SmartClassroom.sensesSkeletonInPosition.getLocalName());
 				        	}
 						}
 					}

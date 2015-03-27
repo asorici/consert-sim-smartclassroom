@@ -56,19 +56,26 @@ public class AirConditioningUser implements PersonListener {
 	
 	@Invalidate
 	private void stop() {
-		if (userPresenceRequestTask != null) {
-			userPresenceRequestTask.cancel(false);
-			userPresenceRequestExecutor.shutdown();
-		}
+		cancelTemperatureUpdates();
+		stopPresenceTask();
 		
 		simulationManager.removeListener(this);
 	}
+	
 	
 	private void startPresenceTask() {
 		userPresenceRequestExecutor = Executors.newSingleThreadScheduledExecutor();
 		userPresenceRequestTask = userPresenceRequestExecutor.scheduleAtFixedRate(
 					new UserPresenceTask(), 0, PRESENCE_REQUEST_SECONDS_INTERVAL, TimeUnit.SECONDS);
     }
+	
+	private void stopPresenceTask() {
+		if (userPresenceRequestTask != null) {
+			userPresenceRequestTask.cancel(false);
+			userPresenceRequestExecutor.shutdown();
+		}
+	}
+	
 	
 	private void subscribeTemperatureUpdates() {
 		if (temperatureSubscription == null) {

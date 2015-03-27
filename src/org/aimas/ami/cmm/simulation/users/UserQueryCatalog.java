@@ -22,9 +22,36 @@ public class UserQueryCatalog {
     		+ "		?assertionID ctxann:hasCertainty ?certAnn ."
     		+ "		?certAnn ctxann:hasStructuredValue ?certainty ."
     		+ "  }"
-    		+ "	 FILTER ((?time >= functions:datetimeDelay(functions:now(), -2)) && (?certainty >= 0.8))"
+    		+ "	 FILTER ((?time >= functions:datetimeDelay(functions:now(), -5)) && (?certainty >= 0.8))"
     		+ "}"; 
 	
+	public static String whereAliceQuery = "" 
+			+ "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>" + "\n"
+			+ "PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>" + "\n"
+    		+ "PREFIX smartclassroom: <http://pervasive.semanticweb.org/ont/2014/07/smartclassroom/core#>" + "\n"
+			+ "PREFIX bootstrap: <http://pervasive.semanticweb.org/ont/2014/07/smartclassroom/bootstrap#>" + "\n"
+			+ "PREFIX per: <http://pervasive.semanticweb.org/ont/2004/06/person#>" + "\n"
+			+ "PREFIX space: <http://pervasive.semanticweb.org/ont/2004/06/space#>" + "\n"
+			+ "PREFIX ctxann: <http://pervasive.semanticweb.org/ont/2014/05/consert/annotation#>" + "\n"
+			+ "PREFIX functions: <http://pervasive.semanticweb.org/ont/2014/05/consert/functions#>" + "\n"
+			+ "PREFIX afn: <http://jena.hpl.hp.com/ARQ/function#>" + "\n"
+			
+    		+ "SELECT DISTINCT ?loc" + "\n"
+    		+ "WHERE {" + "\n"
+    		+ "	 GRAPH ?assertionID {" + "\n"
+    		+ "		bootstrap:Alice	per:locatedIn ?loc" + "\n"
+    		+ "	 }" + "\n"
+    		+ "  GRAPH <http://pervasive.semanticweb.org/ont/2004/06/person/locatedInStore> {" + "\n"
+    		+ "		?assertionID ctxann:hasTimestamp ?tsAnn ." + "\n"
+    		+ "		?tsAnn ctxann:hasStructuredValue ?time ." + "\n"
+    		+ "		?assertionID ctxann:hasCertainty ?certAnn ." + "\n"
+    		+ "		?certAnn ctxann:hasStructuredValue ?certainty ." + "\n"
+    		+ "  }" + "\n"
+    		+ "  GRAPH <http://pervasive.semanticweb.org/ont/2014/05/consert/entityStore> {" + "\n"
+    		+ "	 	?loc a smartclassroom:MultiFunctionalRoom ." + "\n"
+    		+ "	 }" + "\n"
+    		+ "	 FILTER ((?time >= functions:datetimeDelay(functions:now(), -5)) && (?certainty >= 0.8))" + "\n"
+    		+ "}";
 	
 	public static String whichUsersQuery = "" 
 			+ "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>" + "\n"
@@ -64,13 +91,13 @@ public class UserQueryCatalog {
     		+ "	 	GRAPH ?assertionID {" + "\n"
     		+ "			?user	per:locatedIn 	bootstrap:EF210" + "\n"
     		+ "	 	}" + "\n"
-    		+ "  	GRAPH <http://pervasive.semanticweb.org/ont/2004/06/person/locatedInStore> {"
-    		+ "			?assertionID ctxann:hasTimestamp ?tsAnn ."
-    		+ "			?tsAnn ctxann:hasStructuredValue ?time ."
-    		+ "			?assertionID ctxann:hasCertainty ?certAnn ."
-    		+ "			?certAnn ctxann:hasStructuredValue ?certainty ."
-    		+ "  	}"
-    		+ "	 	FILTER ((?time >= functions:datetimeDelay(functions:now(), -2)) && (?certainty >= 0.8))"
+    		+ "  	GRAPH <http://pervasive.semanticweb.org/ont/2004/06/person/locatedInStore> {" + "\n"
+    		+ "			?assertionID ctxann:hasTimestamp ?tsAnn ." + "\n"
+    		+ "			?tsAnn ctxann:hasStructuredValue ?time ." + "\n"
+    		+ "			?assertionID ctxann:hasCertainty ?certAnn ." + "\n"
+    		+ "			?certAnn ctxann:hasStructuredValue ?certainty ." + "\n"
+    		+ "  	}" + "\n"
+    		+ "	 	FILTER ((?time >= functions:datetimeDelay(functions:now(), -2)) && (?certainty >= 0.8))" + "\n"
     		+ "}";
 	
 	public static String adHocMeetingQuery = ""
@@ -151,6 +178,27 @@ public class UserQueryCatalog {
     		+ "	 GRAPH ?deviceLocID {" + "\n"
     		+ "		?sensor	 device:hasProfiledLocation ?roomSection" + "\n"
     		+ "	 }" + "\n"
-    		+ "}"; 
+    		+ "}";
+	
+	public static String aliceAvailabilityQuery = "" 
+			+ "PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>" + "\n"
+    		+ "PREFIX smartclassroom: <http://pervasive.semanticweb.org/ont/2014/07/smartclassroom/core#>" + "\n"
+    		+ "PREFIX bootstrap: <http://pervasive.semanticweb.org/ont/2014/07/smartclassroom/bootstrap#>" + "\n"
+			+ "PREFIX per: <http://pervasive.semanticweb.org/ont/2004/06/person#>" + "\n"
+			+ "PREFIX ctxann: <http://pervasive.semanticweb.org/ont/2014/05/consert/annotation#>" + "\n"
+			+ "PREFIX functions: <http://pervasive.semanticweb.org/ont/2014/05/consert/functions#>" + "\n"
+			+ "PREFIX afn: <http://jena.hpl.hp.com/ARQ/function#>" + "\n"
+			
+    		+ "SELECT DISTINCT ?status ?time" + "\n"
+    		+ "WHERE {" + "\n"
+    		+ "	 GRAPH ?assertionID {" + "\n"
+    		+ "		bootstrap:Alice	smartclassroom:hasAvailabilityStatus ?status" + "\n"
+    		+ "	 }" + "\n"
+    		+ "  GRAPH <http://pervasive.semanticweb.org/ont/2014/07/smartclassroom/core/hasAvailabilityStatusStore> {"
+    		+ "		?assertionID ctxann:hasTimestamp ?tsAnn ."
+    		+ "		?tsAnn ctxann:hasStructuredValue ?time ."
+    		+ "  }"
+    		+ "	 FILTER ((?time >= functions:datetimeDelay(functions:now(), -5)))"
+    		+ "}";
 	
 }

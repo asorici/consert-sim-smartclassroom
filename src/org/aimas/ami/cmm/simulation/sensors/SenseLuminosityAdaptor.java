@@ -11,6 +11,7 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
 import org.aimas.ami.cmm.sensing.ContextAssertionAdaptor;
+import org.aimas.ami.cmm.simulation.SensorStatsCollector;
 import org.aimas.ami.contextrep.datatype.CalendarInterval;
 import org.aimas.ami.contextrep.datatype.CalendarIntervalList;
 import org.aimas.ami.contextrep.model.ContextAssertion.ContextAssertionType;
@@ -61,6 +62,9 @@ public class SenseLuminosityAdaptor extends SensorAdaptorBase {
 	@Requires(id="lightSensors")
 	private Photometer[] luminositySensors;
 	
+	@Requires
+	private SensorStatsCollector sensorStatsCollector;
+	
 	protected SenseLuminosityAdaptor() {
 	    super(SmartClassroom.sensesLuminosity.getURI());
 	    
@@ -87,7 +91,7 @@ public class SenseLuminosityAdaptor extends SensorAdaptorBase {
 	@Unbind(id="lightSensors")
 	public void unbindLuminositySensor() {
 		if (updatesEnabled.get()) {
-			startUpdates(false);
+			stopUpdates();
 		}
 	}
 	
@@ -245,6 +249,9 @@ public class SenseLuminosityAdaptor extends SensorAdaptorBase {
 				int ligthLevel = (int)Math.round(luminositySensor.getIlluminance());
 				String sensorIdURI = SmartClassroom.BOOTSTRAP_NS + luminositySensor.getSerialNumber();
 				
+				sensorStatsCollector.markSensing(System.currentTimeMillis(), 
+						SmartClassroom.sensesLuminosity.getLocalName());
+				
 				if (sensorInstances.containsKey(sensorIdURI)) {
 					luminosityMap.put(sensorIdURI, ligthLevel);
 					List<UpdateRequest> updateRequests = deliverUpdates(sensorIdURI);
@@ -255,6 +262,9 @@ public class SenseLuminosityAdaptor extends SensorAdaptorBase {
 						
 						for (UpdateRequest update : updateRequests) {
 			        		sensingAdaptor.deliverUpdate(getProvidedAssertion(), update);
+			        		sensorStatsCollector.markSensingUpdateMessage(System.currentTimeMillis(), 
+									update.hashCode(), SmartClassroom.sensesTemperature.getLocalName());
+							
 			        	}
 					}
 				}

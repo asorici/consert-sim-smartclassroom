@@ -15,6 +15,7 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
 import org.aimas.ami.cmm.sensing.ContextAssertionAdaptor;
+import org.aimas.ami.cmm.simulation.SensorStatsCollector;
 import org.aimas.ami.contextrep.datatype.CalendarInterval;
 import org.aimas.ami.contextrep.datatype.CalendarIntervalList;
 import org.aimas.ami.contextrep.model.ContextAssertion.ContextAssertionType;
@@ -61,6 +62,9 @@ public class SenseBluetoothAdaptor extends SensorAdaptorBase {
 	@Requires(id="presenceSensors")
 	private BluetoothSensor[] presenceSensors;
 	
+	@Requires
+	private SensorStatsCollector sensorStatsCollector;
+	
 	private ScheduledExecutorService presenceUpdateService;
 	private ScheduledFuture<?> presenceUpdateTask;
 	
@@ -90,7 +94,7 @@ public class SenseBluetoothAdaptor extends SensorAdaptorBase {
 	@Unbind(id="presenceSensors")
 	public void unbindPresenceSensor() {
 		if (updatesEnabled.get()) {
-			startUpdates(false);
+			stopUpdates();
 		}
 	}
 	
@@ -172,7 +176,7 @@ public class SenseBluetoothAdaptor extends SensorAdaptorBase {
 		
 		for (String sensedAddress : sensedBluetoothAddresses) {
 			//System.out.println("[" + getClass().getSimpleName() + "::" + sensorIdURI + "] "
-			//		+ "Sensed bluetoothAddress: " + sensedAddress);
+			//	+ "Sensed bluetoothAddress: " + sensedAddress);
 			
 			Map<Integer, Update> assertionUpdate = new HashMap<Integer, Update>();
 			
@@ -259,12 +263,14 @@ public class SenseBluetoothAdaptor extends SensorAdaptorBase {
 		@Override
         public void run() {
 			// access the data from the presence sensor(s)
-			
-			
 			for (BluetoothSensor sensor : presenceSensors) {
 				sensedBluetoothAddresses.clear();
 				
 				Set<String> sensedAddresses = sensor.getSensedAddresses();
+				
+				sensorStatsCollector.markSensing(System.currentTimeMillis(), 
+						SmartClassroom.sensesBluetoothAddress.getLocalName());
+				
 				if (sensedAddresses != null) {
 					String sensorIdURI = SmartClassroom.BOOTSTRAP_NS + sensor.getSerialNumber();
 					if (sensorInstances.containsKey(sensorIdURI)) {
@@ -278,6 +284,8 @@ public class SenseBluetoothAdaptor extends SensorAdaptorBase {
 							
 				        	for (UpdateRequest update : updateRequests) {
 				        		sensingAdaptor.deliverUpdate(getProvidedAssertion(), update);
+				        		sensorStatsCollector.markSensingUpdateMessage(System.currentTimeMillis(), 
+				        				update.hashCode(), SmartClassroom.sensesBluetoothAddress.getLocalName());
 				        	}
 						}
 					}

@@ -1,7 +1,6 @@
 package org.aimas.ami.cmm.simulation.users;
 
 import org.aimas.ami.cmm.api.ApplicationUserAdaptor;
-import org.aimas.ami.contextrep.engine.api.InsertionHandler;
 import org.apache.felix.ipojo.annotations.Bind;
 import org.apache.felix.ipojo.annotations.Component;
 import org.apache.felix.ipojo.annotations.Invalidate;
@@ -28,7 +27,7 @@ public class BobUser extends PersonUser {
 		describeSelf();
 		
 		// start presence task
-		startPresenceTask();
+		startPresenceTask(null);
 	}
 	
 	@Invalidate
@@ -63,15 +62,5 @@ public class BobUser extends PersonUser {
 	@Unbind
 	private void unbindApplicationAdaptor(ApplicationUserAdaptor applicationAdaptor) {
 		super.setApplicationAdaptor(null);
-	}
-	
-	@Bind
-	private void bindBootstrapInsertionAdaptor(InsertionHandler insertionAdaptor) {
-		super.setBootstrapInsertionAdaptor(insertionAdaptor);
-	}
-	
-	@Unbind
-	private void unbindBootstrapInsertionAdaptor(InsertionHandler insertionAdaptor) {
-		super.setBootstrapInsertionAdaptor(null);
 	}
 }

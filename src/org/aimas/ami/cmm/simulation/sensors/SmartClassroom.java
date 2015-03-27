@@ -43,6 +43,7 @@ public class SmartClassroom {
     public final static Resource TimedActivity = m_model.createResource( NS + "TimedActivity" );
     public final static Resource AdHocDiscussion = m_model.createResource( NS + "AdHocDiscussion" );
     public final static Resource TeachingActivity = m_model.createResource( NS + "TeachingActivity" );
+    public final static Resource AvailabilityStatus = m_model.createResource( NS + "AvailabilityStatus" );
     
     public final static Resource SkeletonPosition = m_model.createResource( NS + "SkeletonPosition" );
     public final static Resource KinectSkeleton = m_model.createResource( NS + "KinectSkeleton" );
@@ -76,6 +77,8 @@ public class SmartClassroom {
  	public final static Property locatedIn = m_model.createProperty( SOUPA_PERSON_NS + "locatedIn" );
  	public final static Property engagedIn = m_model.createProperty( NS + "engagedIn" );
  	public final static Property takesPlaceIn = m_model.createProperty( NS + "takesPlaceIn" );
+ 	public final static Property hasAvailabilityStatus = m_model.createProperty( NS + "hasAvailabilityStatus" );
+ 	
  	
  	public final static Property sensesBluetoothAddress = m_model.createProperty( NS + "sensesBluetoothAddress" );
  	public final static Property sensesLuminosity = m_model.createProperty( NS + "sensesLuminosity" );
@@ -134,6 +137,8 @@ public class SmartClassroom {
  	public final static Resource PresenceSensor_EF210_Section3_Left = m_model.createResource( BOOTSTRAP_NS + "PresenceSensor_EF210_Section3_Left", PresenceSensor);
  	public final static Resource PresenceSensor_EF210_Section3_Right = m_model.createResource( BOOTSTRAP_NS + "PresenceSensor_EF210_Section3_Right", PresenceSensor);
  	
+ 	public final static Resource Free = m_model.createResource( NS + "Free", AvailabilityStatus);
+ 	public final static Resource Busy = m_model.createResource( NS + "Busy", AvailabilityStatus);
  	
  	public final static Resource SkeletonSitting = m_model.createResource( NS + "SkeletonSitting", SkeletonPosition);
  	public final static Resource SkeletonStanding = m_model.createResource( NS + "SkeletonStanding", SkeletonPosition);

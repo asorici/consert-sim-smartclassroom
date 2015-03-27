@@ -1,4 +1,4 @@
-package org.aimas.ami.cmm.simulation;
+package org.aimas.ami.cmm.simulation.services;
 
 import java.util.Calendar;
 import java.util.TimeZone;

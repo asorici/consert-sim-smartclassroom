@@ -55,10 +55,8 @@ public class ProjectorUser implements PersonListener {
 	
 	@Invalidate
 	private void stop() {
-		if (userPresenceRequestTask != null) {
-			userPresenceRequestTask.cancel(false);
-			userPresenceRequestExecutor.shutdown();
-		}
+		cancelLuminosityUpdates();
+		stopPresenceTask();
 		
 		simulationManager.removeListener(this);
 	}
@@ -69,6 +67,12 @@ public class ProjectorUser implements PersonListener {
 					new UserPresenceTask(), 0, PRESENCE_REQUEST_SECONDS_INTERVAL, TimeUnit.SECONDS);
     }
 	
+	private void stopPresenceTask() {
+		if (userPresenceRequestTask != null) {
+			userPresenceRequestTask.cancel(false);
+			userPresenceRequestExecutor.shutdown();
+		}
+	}
 	
 	private void subscribeLuminosityUpdates() {
 		if (luminositySubscription == null) {

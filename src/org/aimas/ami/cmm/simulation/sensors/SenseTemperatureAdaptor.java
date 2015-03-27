@@ -11,6 +11,7 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
 import org.aimas.ami.cmm.sensing.ContextAssertionAdaptor;
+import org.aimas.ami.cmm.simulation.SensorStatsCollector;
 import org.aimas.ami.contextrep.datatype.CalendarInterval;
 import org.aimas.ami.contextrep.datatype.CalendarIntervalList;
 import org.aimas.ami.contextrep.model.ContextAssertion.ContextAssertionType;
@@ -61,6 +62,9 @@ public class SenseTemperatureAdaptor extends SensorAdaptorBase {
 	@Requires(id="temperatureSensors")
 	private Thermometer[] temperatureSensors;
 	
+	@Requires
+	private SensorStatsCollector sensorStatsCollector;
+	
 	protected SenseTemperatureAdaptor() {
 	    super(SmartClassroom.sensesTemperature.getURI());
 	    
@@ -87,7 +91,7 @@ public class SenseTemperatureAdaptor extends SensorAdaptorBase {
 	@Unbind(id="temperatureSensors")
 	public void unbindTemperatureSensor() {
 		if (updatesEnabled.get()) {
-			startUpdates(false);
+			stopUpdates();
 		}
 	}
 	
@@ -245,6 +249,9 @@ public class SenseTemperatureAdaptor extends SensorAdaptorBase {
 				int temperatureLevel = (int)Math.round(temperatureSensor.getTemperature() - 273.15);
 				String sensorIdURI = SmartClassroom.BOOTSTRAP_NS + temperatureSensor.getSerialNumber();
 				
+				sensorStatsCollector.markSensing(System.currentTimeMillis(), 
+						SmartClassroom.sensesTemperature.getLocalName());
+				
 				if (sensorInstances.containsKey(sensorIdURI)) {
 					temperatureMap.put(sensorIdURI, temperatureLevel);
 					List<UpdateRequest> updateRequests = deliverUpdates(sensorIdURI);
@@ -255,6 +262,8 @@ public class SenseTemperatureAdaptor extends SensorAdaptorBase {
 						
 						for (UpdateRequest update : updateRequests) {
 			        		sensingAdaptor.deliverUpdate(getProvidedAssertion(), update);
+			        		sensorStatsCollector.markSensingUpdateMessage(System.currentTimeMillis(), 
+			        				update.hashCode(), SmartClassroom.hasNoiseLevel.getLocalName());
 			        	}
 					}
 				}

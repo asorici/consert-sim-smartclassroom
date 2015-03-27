@@ -1,4 +1,4 @@
-package org.aimas.ami.cmm.simulation;
+package org.aimas.ami.cmm.simulation.commands;
 
 import java.io.InputStream;
 import java.io.PrintStream;
@@ -18,15 +18,16 @@ import fr.liglab.adele.icasa.ContextManager;
 import fr.liglab.adele.icasa.commands.AbstractCommand;
 import fr.liglab.adele.icasa.commands.Signature;
 
-@Component(name = "StartConsertCommand")
+@Component(name = "StartAmILabCommand")
 @Provides
-@Instantiate(name = "start-consert-cmm-command")
-public class StartConsertCommand extends AbstractCommand {
-	private static final String COMMAND_NAME = "start-consert-cmm";
+@Instantiate(name = "start-amilab-command")
+public class StartAmILabCommand extends AbstractCommand {
+	private static final String COMMAND_NAME = "start-amilab";
 	
 	private static final String CONTEXT_DIMENSION_URI = "http://pervasive.semanticweb.org/ont/2004/06/person#locatedIn";
 	private static final String CONTEXT_DOMAIN_VALUE_URI = "http://pervasive.semanticweb.org/ont/2014/07/smartclassroom/bootstrap#EF210";
 	
+	private static final String AMILAB_APP = "SmartClassroom";
 	private static final String AIR_CONDITIONING_APP = "AirConditioning";
 	private static final String PROJECTOR_APP = "Projector";
 	private static final String ALICE_APP = "AliceUsage";
@@ -39,7 +40,7 @@ public class StartConsertCommand extends AbstractCommand {
 	
 	private BundleContext bundleContext;
 	
-	public StartConsertCommand(BundleContext context) {
+	public StartAmILabCommand(BundleContext context) {
 		bundleContext = context;
 		
 		addSignature(new Signature(new String[0])); // Adding an empty signature, without parameters
@@ -68,11 +69,11 @@ public class StartConsertCommand extends AbstractCommand {
 		CMMPlatformManagementService platformMgmtService = bundleContext.getService(platformMgmtServiceRef);
 		
 		// First we start the platform, which automatically searches for the default Provisioning Group
-		platformMgmtService.startCMMPlatform();
+		// platformMgmtService.startCMMPlatform();
 		
 		// Then, as this is a simulation, we launch the other "users" of the SmartClassroom: the projector, the
 		// air conditioning unit and the 3 persons
-		CMMOperationFuture<?> op = platformMgmtService.installProvisioningGroup(AIR_CONDITIONING_APP, CONTEXT_DIMENSION_URI, CONTEXT_DOMAIN_VALUE_URI);
+		CMMOperationFuture<?> op = platformMgmtService.installProvisioningGroup(AMILAB_APP, CONTEXT_DIMENSION_URI, CONTEXT_DOMAIN_VALUE_URI);
 		try {
 			op.awaitOperation();
 		}
@@ -80,6 +81,7 @@ public class StartConsertCommand extends AbstractCommand {
 			ex.printStackTrace();
 		}
 		
+		platformMgmtService.installProvisioningGroup(AIR_CONDITIONING_APP, CONTEXT_DIMENSION_URI, CONTEXT_DOMAIN_VALUE_URI);
 		platformMgmtService.installProvisioningGroup(PROJECTOR_APP, CONTEXT_DIMENSION_URI, CONTEXT_DOMAIN_VALUE_URI);
 		platformMgmtService.installProvisioningGroup(ALICE_APP, CONTEXT_DIMENSION_URI, CONTEXT_DOMAIN_VALUE_URI);
 		platformMgmtService.installProvisioningGroup(BOB_APP, CONTEXT_DIMENSION_URI, CONTEXT_DOMAIN_VALUE_URI);
@@ -90,6 +92,6 @@ public class StartConsertCommand extends AbstractCommand {
 	
 	@Override
 	public String getDescription() {
-		return "Starts the CONSERT Context Management Middleware Platform for the EF210 room of the SmartClassroom simulation.\n\t" + super.getDescription();
+		return "Starts the EF210 room of the SmartClassroom simulation.\n\t" + super.getDescription();
 	}
 }

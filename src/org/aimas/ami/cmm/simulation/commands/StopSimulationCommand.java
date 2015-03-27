@@ -1,4 +1,4 @@
-package org.aimas.ami.cmm.simulation;
+package org.aimas.ami.cmm.simulation.commands;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -12,6 +12,8 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.TimeZone;
 
+import org.aimas.ami.cmm.simulation.SensorStatsCollector;
+import org.aimas.ami.cmm.simulation.SensorStatsCollector.SensorStats;
 import org.aimas.ami.contextrep.engine.api.PerformanceResult;
 import org.aimas.ami.contextrep.engine.api.StatsHandler;
 import org.aimas.ami.contextrep.resources.CMMConstants;
@@ -43,6 +45,9 @@ public class StopSimulationCommand extends AbstractCommand {
 	@Requires
 	private SimulationManager simulationManager;
 	
+	@Requires
+	private SensorStatsCollector sensorStatsAdaptor;
+	
 	@Requires(
 		filter="(" + CMMConstants.CONSERT_APPLICATION_ID_PROP + "=" + SMART_CLASSROOM_APP + ")"
 	)
@@ -61,17 +66,25 @@ public class StopSimulationCommand extends AbstractCommand {
     public Object execute(InputStream in, PrintStream out, JSONObject parameters, Signature signature) throws Exception {
 		out.println("###################### SIMULATION END ######################");
 		
-		out.println("#### Collecting performance results");
-		PerformanceResult performanceResult = engineStatsAdaptor.measurePerformance();
-		storePerformanceStatistics(performanceResult);
+		out.println("#### Collecting Engine performance results");
+		PerformanceResult enginePerformanceResult = engineStatsAdaptor.measurePerformance();
+		
+		out.println("#### Collecting Sensing statistics");
+		SensorStats sensorStats = sensorStatsAdaptor.collectSensingStats();
+		
+		storePerformanceStatistics(enginePerformanceResult, sensorStats);
+		
 		
 		return null;
     }
 	
-	private void storePerformanceStatistics(PerformanceResult performanceResult) {
+	private void storePerformanceStatistics(PerformanceResult performanceResult, SensorStats sensorStats) {
+		SimulationPerformanceStats simulationPerformanceStats = 
+				new SimulationPerformanceStats(performanceResult, sensorStats);
+		
 		// get JSON output of run statistics
 		Gson gsonOut = new GsonBuilder().setPrettyPrinting().create();
-		String jsonOutput = gsonOut.toJson(performanceResult, PerformanceResult.class);
+		String jsonOutput = gsonOut.toJson(simulationPerformanceStats, SimulationPerformanceStats.class);
 		
 		// create test output directory if it does not exist 
 		File globalTestDir = new File(TEST_DIR);
@@ -111,4 +124,22 @@ public class StopSimulationCommand extends AbstractCommand {
 		}
 	}
 	
+	public static class SimulationPerformanceStats {
+		PerformanceResult enginePerformanceResult;
+		SensorStats seningPerformanceResult;
+		
+		public SimulationPerformanceStats(PerformanceResult enginePerformanceResult, 
+				SensorStats seningPerformanceResult) {
+	        this.enginePerformanceResult = enginePerformanceResult;
+	        this.seningPerformanceResult = seningPerformanceResult;
+        }
+
+		public PerformanceResult getEnginePerformanceResult() {
+			return enginePerformanceResult;
+		}
+
+		public SensorStats getSeningPerformanceResult() {
+			return seningPerformanceResult;
+		}
+	}
 }

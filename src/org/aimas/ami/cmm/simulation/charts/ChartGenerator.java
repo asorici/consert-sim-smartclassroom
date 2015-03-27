@@ -15,10 +15,16 @@ import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
+import org.aimas.ami.cmm.simulation.SensorStatsCollector.SensingEvent;
+import org.aimas.ami.cmm.simulation.SensorStatsCollector.SensingMessageEvent;
+import org.aimas.ami.cmm.simulation.SensorStatsCollector.SensorStats;
+import org.aimas.ami.cmm.simulation.commands.StopSimulationCommand.SimulationPerformanceStats;
 import org.aimas.ami.contextrep.engine.api.PerformanceResult;
 import org.jfree.chart.ChartFactory;
 import org.jfree.chart.ChartUtilities;
@@ -28,7 +34,9 @@ import org.jfree.chart.labels.ItemLabelAnchor;
 import org.jfree.chart.labels.ItemLabelPosition;
 import org.jfree.chart.labels.StandardCategoryItemLabelGenerator;
 import org.jfree.chart.plot.CombinedDomainXYPlot;
+import org.jfree.chart.plot.Marker;
 import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.chart.plot.ValueMarker;
 import org.jfree.chart.plot.XYPlot;
 import org.jfree.chart.renderer.category.BarRenderer;
 import org.jfree.chart.renderer.xy.ClusteredXYBarRenderer;
@@ -40,6 +48,8 @@ import org.jfree.data.xy.XYBarDataset;
 import org.jfree.data.xy.XYDataset;
 import org.jfree.data.xy.XYSeries;
 import org.jfree.data.xy.XYSeriesCollection;
+import org.jfree.ui.Layer;
+import org.jfree.ui.RectangleAnchor;
 import org.jfree.ui.TextAnchor;
 import org.jfree.util.PaintUtilities;
 import org.jfree.util.ShapeUtilities;
@@ -68,31 +78,33 @@ public class ChartGenerator {
 				
 				System.out.println("## Generating charts for config: " + testConfigFolder.getName());
 				
-				Map<String, PerformanceResult> collectedResults = getCollectedResults(resultFiles);
+				Map<String, SimulationPerformanceStats> collectedResults = getCollectedResults(resultFiles);
 				//createGeneralCharts(collectedResults, testConfigFolder);
 				createHistoryCharts(collectedResults, testConfigFolder);
 			}
 		}
 	}
 	
-
-	private static Map<String, PerformanceResult> getCollectedResults(File[] resultFiles) {
-		Map<String, PerformanceResult> collectedResults = new HashMap<>();
+	
+	private static Map<String, SimulationPerformanceStats> getCollectedResults(File[] resultFiles) {
+		Map<String, SimulationPerformanceStats> collectedResults = new HashMap<>();
 		for (int i = 0; i < resultFiles.length; i++) {
 			File resultFile = resultFiles[i];
 			String jsonContent = readFile(resultFile); 
 			
 			Gson gson = new Gson();
-			PerformanceResult performanceResult = gson.fromJson(jsonContent, PerformanceResult.class);
+			SimulationPerformanceStats simulationPerformanceStats = 
+				gson.fromJson(jsonContent, SimulationPerformanceStats.class);
 			
-			collectedResults.put(resultFile.getName(), performanceResult);
+			collectedResults.put(resultFile.getName(), simulationPerformanceStats);
 		}
 		
 	    return collectedResults;
     }
 	
 	
-	private static PerformanceResult getCumulatedMeasure(Map<String, PerformanceResult> collectedResults) {
+	@SuppressWarnings("unused")
+    private static PerformanceResult getCumulatedMeasure(Map<String, PerformanceResult> collectedResults) {
 		List<PerformanceResult> resultMeasures = new LinkedList<>(collectedResults.values());
 	    
 		PerformanceResult cumulatedMeasure = new PerformanceResult();
@@ -191,13 +203,16 @@ public class ChartGenerator {
 	}
 	
 	
-	private static void createHistoryCharts(Map<String, PerformanceResult> collectedResults, File configFolder) throws IOException {
-	    int skipRate = 20;
+	private static void createHistoryCharts(Map<String, SimulationPerformanceStats> collectedResults, File configFolder) throws IOException {
+	    int skipRate = 12;
 		int phase = 0;
 	    
 		for (String resultName : collectedResults.keySet()) {
-	    	PerformanceResult performanceResult = collectedResults.get(resultName);
-	    	
+			SimulationPerformanceStats simulationResults = collectedResults.get(resultName);
+			
+			PerformanceResult performanceResult = simulationResults.getEnginePerformanceResult();
+	    	SensorStats sensingResult = simulationResults.getSeningPerformanceResult();
+			
 	    	XYSeriesCollection insertionDatasetCollection = new XYSeriesCollection();
 	    	XYSeriesCollection inferenceDatasetCollection = new XYSeriesCollection();
 	    	XYBarDataset inferenceBarDataset = new XYBarDataset(inferenceDatasetCollection, 16);
@@ -258,14 +273,109 @@ public class ChartGenerator {
 	    	
 	    	deductionCycleDatasetCollection.addSeries(deductionSeries);
 	    	
-	    	JFreeChart historyChart = setupHistoryChart(insertionDatasetCollection, inferenceBarDataset, deductionBarDataset);
-	    	File historyGraph = new File(configFolder.getAbsolutePath() + File.separator + resultName + "_graph.png"); 
-		    ChartUtilities.saveChartAsPNG(historyGraph, historyChart, 800, 600);
+	    	// ============ create the sensing event series ============
+	    	List<SensingEvent> sensingEventHistory = sensingResult.getSensingEventHistory();
+	    	List<SensingMessageEvent> sensingMessageHistory = sensingResult.getSensingMessageEventHistory();
+	    	Collections.sort(sensingEventHistory);
+	    	Collections.sort(sensingMessageHistory);
+	    	
+	    	long sensingEventStart = sensingEventHistory.get(0).getTimestamp();
+	    	long sensingEventStop = sensingEventHistory.get(sensingEventHistory.size() - 1).getTimestamp();
+	    	
+	    	int firstTempIndex = -1;
+	    	int lastTempIndex = -1;
+	    	
+	    	int firstNoiseLevelIndex = -1;
+	    	int lastNoiseLevelIndex = -1;
+	    	
+	    	// create event count bins every 5 seconds
+	    	XYSeries sensingEventSeries = new XYSeries("Sensing Events", true);
+	    	XYSeries sensingMessageSeries = new XYSeries("Sensing Message Updates", true);
+	    	
+	    	int eventIndex = 0;
+	    	int messageIndex = 0;
+	    	
+	    	int totalSensingEvents = 0;
+	    	int totalSensingMessages = 0;
+	    	
+	    	int step = 10000;
+	    	
+	    	Set<String> sensingTypes = new HashSet<String>();
+	    	
+	    	for (long ts = sensingEventStart; ts < sensingEventStop; ts += step) {
+	    		long tsNext = ts + step;
+	    		int eventCt = 0;
+		    	int messageCt = 0;
+		    	
+		    	sensingTypes.clear();
+		    	
+		    	while(eventIndex < sensingEventHistory.size() && 
+		    			sensingEventHistory.get(eventIndex).getTimestamp() < tsNext) {
+		    		
+		    		sensingTypes.add(sensingEventHistory.get(eventIndex).getSensedAssertionType());
+		    		
+		    		eventCt += 1;
+		    		eventIndex++;
+		    	}
+		    	
+		    	while(messageIndex < sensingMessageHistory.size() && 
+		    			sensingMessageHistory.get(messageIndex).getTimestamp() < tsNext) {
+		    		messageCt += 1;
+		    		messageIndex++;
+		    	}
+		    	
+		    	sensingEventSeries.add((tsNext - sensingEventStart) / 1000, eventCt);
+		    	sensingMessageSeries.add((tsNext - sensingEventStart) / 1000, messageCt);
+		    	
+		    	totalSensingEvents += eventCt;
+		    	totalSensingMessages += messageCt;
+		    	
+		    	if (firstTempIndex < 0) {
+		    		if (sensingTypes.contains("sensesTemperature")) {
+		    			firstTempIndex = (int)((tsNext - sensingEventStart) / 1000);
+		    		}
+		    	}
+		    	else if (lastTempIndex < 0) {
+		    		if (!sensingTypes.contains("sensesTemperature")) {
+		    			lastTempIndex = (int)((tsNext - sensingEventStart) / 1000);
+		    		}
+		    	}
+		    	
+		    	if (firstNoiseLevelIndex < 0) {
+		    		if (sensingTypes.contains("hasNoiseLevel")) {
+		    			firstNoiseLevelIndex = (int)((tsNext - sensingEventStart) / 1000);
+		    		}
+		    	}
+		    	else if (lastNoiseLevelIndex < 0) {
+		    		if (!sensingTypes.contains("hasNoiseLevel")) {
+		    			lastNoiseLevelIndex = (int)((tsNext - sensingEventStart) / 1000);
+		    		}
+		    	}
+	    	}
+	    	
+	    	sensingEventSeries.setKey("Sensing Events " + "(" + totalSensingEvents + ")");
+	    	sensingMessageSeries.setKey("Sensing Message Updates " + "(" + totalSensingMessages + ")");
+	    	
+	    	XYSeriesCollection sensingEventCollection = new XYSeriesCollection();
+	    	sensingEventCollection.addSeries(sensingEventSeries);
+	    	sensingEventCollection.addSeries(sensingMessageSeries);
+	    	
+	    	// =================== Create charts ====================
+	    	JFreeChart historyChart = setupEngineHistoryChart(performanceResult, insertionDatasetCollection, inferenceBarDataset, deductionBarDataset);
+	    	JFreeChart sensingHistoryChart = setupSensingHistoryChart(sensingResult, sensingEventCollection,
+	    			totalSensingEvents, totalSensingMessages, 
+	    			firstTempIndex, lastTempIndex, firstNoiseLevelIndex, lastNoiseLevelIndex);
+	    	
+	    	File historyGraph = new File(configFolder.getAbsolutePath() + File.separator + resultName + "_engine_graph.png"); 
+	    	File sensingHistoryGraph = new File(configFolder.getAbsolutePath() + File.separator + resultName + "_sensing_graph.png");
+	    	ChartUtilities.saveChartAsPNG(historyGraph, historyChart, 800, 600);
+	    	ChartUtilities.saveChartAsPNG(sensingHistoryGraph, sensingHistoryChart, 800, 600);
 	    }
-    }
-	
-	
-	private static JFreeChart setupGeneralChart(String title, String domainAxisLabel, String rangeAxisLabel, 
+	}	
+
+
+	@SuppressWarnings("unused")
+    private static JFreeChart setupGeneralChart(String title, String domainAxisLabel, String rangeAxisLabel, 
 			DefaultCategoryDataset dataset) {
 		JFreeChart chart = ChartFactory.createBarChart(
 		        title, domainAxisLabel, rangeAxisLabel, dataset, PlotOrientation.VERTICAL, true, true, false);
@@ -281,11 +391,42 @@ public class ChartGenerator {
 	}
 	
 	
-	private static JFreeChart setupHistoryChart(
+	private static JFreeChart setupSensingHistoryChart(SensorStats sensingResult, 
+			XYSeriesCollection sensingEventCollection, int totalSensingEvents, int totalSensingMessages, 
+			int firstTempIndex, int lastTempIndex, int firstNoiseLevelIndex, int lastNoiseLevelIndex) {
+		
+		JFreeChart chart = ChartFactory.createXYLineChart(
+	            "Simulated Sensing Event Log", 
+	            "Time (seconds)", 
+	            "Nr. Events", 
+	            sensingEventCollection
+	        );
+		
+		XYPlot plot = chart.getXYPlot();
+		ValueMarker tempStartMarker = new ValueMarker(firstTempIndex, Color.BLACK, new BasicStroke(2));
+		ValueMarker tempStopMarker = new ValueMarker(lastTempIndex, Color.BLACK, new BasicStroke(2));
+		
+		ValueMarker noiseStartMarker = new ValueMarker(firstNoiseLevelIndex, Color.YELLOW, new BasicStroke(2));
+		ValueMarker noiseStopMarker = new ValueMarker(lastNoiseLevelIndex, Color.YELLOW, new BasicStroke(2));
+		
+		plot.addDomainMarker(tempStartMarker, Layer.BACKGROUND);
+		plot.addDomainMarker(tempStopMarker, Layer.BACKGROUND);
+		plot.addDomainMarker(noiseStartMarker, Layer.BACKGROUND);
+		plot.addDomainMarker(noiseStopMarker, Layer.BACKGROUND);
+		
+		//plot.addAnnotation(new XYTextAnnotation("Total sensing events: " + totalSensingEvents, 400, 300));
+		//plot.addAnnotation(new XYTextAnnotation("Total sensing messages: " + totalSensingMessages, 400, 350));
+		
+		return chart;
+    }
+	
+	private static JFreeChart setupEngineHistoryChart(PerformanceResult performanceResult,
 			XYDataset insertionDataset, XYDataset inferenceDataset, XYDataset deductionDataset) {
 		
 		NumberAxis insertionRangeAxis = new NumberAxis("ms");
 		insertionRangeAxis.setStandardTickUnits(NumberAxis.createIntegerTickUnits());
+		insertionRangeAxis.setUpperBound(300);
+		
 		XYItemRenderer insertionRenderer = new StandardXYItemRenderer(StandardXYItemRenderer.SHAPES_AND_LINES);
 		XYPlot insertionPlot = new XYPlot(insertionDataset, null, insertionRangeAxis, insertionRenderer);
 		insertionPlot.setDomainGridlinesVisible(true);
@@ -294,6 +435,14 @@ public class ChartGenerator {
 		insertionRenderer.setSeriesStroke(1, new BasicStroke(1));
 		insertionRenderer.setSeriesShape(0, ShapeUtilities.createRegularCross(2, 2));
 		insertionRenderer.setSeriesShape(1, ShapeUtilities.createUpTriangle(4));
+		
+		Marker avgInsertDelayMark = new ValueMarker(performanceResult.averageInsertionDelay);
+        avgInsertDelayMark.setPaint(Color.green);
+        avgInsertDelayMark.setStroke(new BasicStroke(2.0f));
+        avgInsertDelayMark.setLabel("Average Insertion Delay");
+        avgInsertDelayMark.setLabelAnchor(RectangleAnchor.TOP_RIGHT);
+        avgInsertDelayMark.setLabelTextAnchor(TextAnchor.TOP_RIGHT);
+        insertionPlot.addRangeMarker(avgInsertDelayMark);
 		
 		NumberAxis inferenceRangeAxis = new NumberAxis("ms");
 		inferenceRangeAxis.setStandardTickUnits(NumberAxis.createIntegerTickUnits());
@@ -306,6 +455,15 @@ public class ChartGenerator {
         XYPlot inferencePlot = new XYPlot(inferenceDataset, null, inferenceRangeAxis, inferenceRenderer);
         inferencePlot.setDomainGridlinesVisible(true);
         
+        Marker avgInferenceDelayMark = new ValueMarker(performanceResult.averageInferenceDelay);
+        avgInferenceDelayMark.setPaint(Color.green);
+        avgInferenceDelayMark.setStroke(new BasicStroke(2.0f));
+        avgInferenceDelayMark.setLabel("Average Inference Delay");
+        avgInferenceDelayMark.setLabelAnchor(RectangleAnchor.TOP_RIGHT);
+        avgInferenceDelayMark.setLabelTextAnchor(TextAnchor.TOP_RIGHT);
+        inferencePlot.addRangeMarker(avgInferenceDelayMark);
+		
+        
         NumberAxis deductionRangeAxis = new NumberAxis("ms");
 		deductionRangeAxis.setStandardTickUnits(NumberAxis.createIntegerTickUnits());
 		XYBarRenderer deductionRenderer = new XYBarRenderer();
@@ -316,11 +474,19 @@ public class ChartGenerator {
         XYPlot deductionPlot = new XYPlot(deductionDataset, null, deductionRangeAxis, deductionRenderer);
         deductionPlot.setDomainGridlinesVisible(true);
         
+        Marker avgDeductionDurationMark = new ValueMarker(performanceResult.averageDeductionCycleDuration);
+        avgDeductionDurationMark.setPaint(Color.green);
+        avgDeductionDurationMark.setStroke(new BasicStroke(2.0f));
+        avgDeductionDurationMark.setLabel("Average Deduction Duration");
+        avgDeductionDurationMark.setLabelAnchor(RectangleAnchor.TOP_RIGHT);
+        avgDeductionDurationMark.setLabelTextAnchor(TextAnchor.TOP_RIGHT);
+        deductionPlot.addRangeMarker(avgDeductionDurationMark);
+        
         NumberAxis domainAxis = new NumberAxis("Insert Event");
         CombinedDomainXYPlot plot = new CombinedDomainXYPlot(domainAxis);
-        plot.add(insertionPlot, 3);
-        plot.add(inferencePlot, 2);
-        plot.add(deductionPlot, 1);
+        plot.add(insertionPlot, 1);
+        //plot.add(inferencePlot, 2);
+        //plot.add(deductionPlot, 1);
         
         JFreeChart result = new JFreeChart(
         		"ContextAssertion Runtime Statistics",
@@ -343,7 +509,8 @@ public class ChartGenerator {
         return "";
 	}
 	
-	private static void writeFile(File file, String content) {
+	@SuppressWarnings("unused")
+    private static void writeFile(File file, String content) {
 		Writer writer = null;
 		try {
 			writer = new BufferedWriter(new OutputStreamWriter(
@@ -362,7 +529,8 @@ public class ChartGenerator {
 	}
 	
 	
-	private static class MinMaxAverageDisplay implements Comparable<MinMaxAverageDisplay> {
+	@SuppressWarnings("unused")
+    private static class MinMaxAverageDisplay implements Comparable<MinMaxAverageDisplay> {
 		public static final String[] displayOrder = {"min", "average", "max"}; 
 		
 		int displayIndex = 0;

@@ -8,10 +8,11 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
 import org.aimas.ami.cmm.api.ApplicationUserAdaptor;
+import org.aimas.ami.cmm.api.DisconnectedCoordinatorException;
 import org.aimas.ami.cmm.api.DisconnectedQueryHandlerException;
 import org.aimas.ami.cmm.api.QueryNotificationHandler;
+import org.aimas.ami.cmm.sensing.ContextAssertionDescription;
 import org.aimas.ami.cmm.simulation.sensors.SmartClassroom;
-import org.aimas.ami.contextrep.engine.api.InsertionHandler;
 import org.aimas.ami.contextrep.engine.api.QueryResult;
 import org.aimas.ami.contextrep.utils.ContextModelUtils;
 import org.aimas.ami.contextrep.vocabulary.ConsertCore;
@@ -34,14 +35,19 @@ import com.hp.hpl.jena.sparql.modify.request.UpdateDataInsert;
 import com.hp.hpl.jena.update.UpdateRequest;
 
 import fr.liglab.adele.icasa.ContextManager;
-import fr.liglab.adele.icasa.location.LocatedDevice;
-import fr.liglab.adele.icasa.location.Position;
-import fr.liglab.adele.icasa.simulator.Person;
 import fr.liglab.adele.icasa.simulator.SimulationManager;
-import fr.liglab.adele.icasa.simulator.listener.PersonListener;
 
-public class PersonUser implements PersonListener {
+public class PersonUser {
 	static final int PRESENCE_REQUEST_SECONDS_INTERVAL = 5;
+	
+	public static final int ASSERTION_ENTITY_UPDATE 	=	1;
+	public static final int ASSERTION_ID_CREATE 		=	2;
+	public static final int ASSERTION_CONTENT_UPDATE 	= 	3;
+	public static final int ASSERTION_ANNOTATION_UPDATE = 	4;
+	
+	public static interface NumUserListener {
+		public void userCountUpdated(String location, int userNumber);
+	}
 	
 	protected boolean firstMove = true;
 	protected Object guard = new Object();
@@ -51,7 +57,7 @@ public class PersonUser implements PersonListener {
 	
 	protected ContextManager simulationManager;
 	protected ApplicationUserAdaptor applicationAdaptor;  
-	protected InsertionHandler bootstrapInsertionAdaptor;
+	//protected InsertionHandler bootstrapInsertionAdaptor;
 	
 	protected Model personModel;
 	protected boolean describedSelf = false;
@@ -68,22 +74,34 @@ public class PersonUser implements PersonListener {
 	
 	public void setSimulationManager(SimulationManager simulationManager) {
 		this.simulationManager = simulationManager;
-		simulationManager.addListener(this);
 	}
 	
 	public void setApplicationAdaptor(ApplicationUserAdaptor applicationAdaptor) {
 		this.applicationAdaptor = applicationAdaptor;
 	}
 	
+	/*
 	public void setBootstrapInsertionAdaptor(InsertionHandler bootstrapInsertionAdaptor) {
 		this.bootstrapInsertionAdaptor = bootstrapInsertionAdaptor;
 	}
+	*/
 	
-	protected void startPresenceTask() {
+	protected void startPresenceTask(NumUserListener presenceListener) {
 		userPresenceRequestExecutor = Executors.newSingleThreadScheduledExecutor();
 		userPresenceRequestTask = userPresenceRequestExecutor.scheduleAtFixedRate(
-					new UserPresenceTask(), 0, PRESENCE_REQUEST_SECONDS_INTERVAL, TimeUnit.SECONDS);
+					new UserPresenceTask(presenceListener), 0, PRESENCE_REQUEST_SECONDS_INTERVAL, TimeUnit.SECONDS);
 	}
+	
+	protected void stopPresenceTask() {
+		if (userPresenceRequestTask != null) {
+			userPresenceRequestTask.cancel(false);
+			userPresenceRequestExecutor.shutdown();
+			
+			userPresenceRequestExecutor = null;
+			userPresenceRequestTask = null;
+		}
+	}
+	
 	
 	// SELF DESCRIPTION
 	////////////////////////////////////////////////////////////////////////////////////////////
@@ -133,10 +151,16 @@ public class PersonUser implements PersonListener {
 		System.out.println("[" + PersonUser.class.getName() + " " + name + "] Describing myself");
 		
 		// == STEP 4: insert the new statement
-		bootstrapInsertionAdaptor.insertAssertion(personProfiledUpdate, InsertionHandler.TIME_BASED_UPDATE_MODE);
-		//applicationAdaptor.sendProfiledAssertion(assertionDescription, profiledAssertionUpdate);
+		//bootstrapInsertionAdaptor.insertAssertion(personProfiledUpdate, InsertionHandler.TIME_BASED_UPDATE_MODE);
+		ContextAssertionDescription profiledAssertionDesc = new ContextAssertionDescription(SmartClassroom.hasUser.getURI());
 		
-		describedSelf = true;
+		try {
+	        applicationAdaptor.sendProfiledAssertion(profiledAssertionDesc, personProfiledUpdate);
+	        describedSelf = true;
+		}
+        catch (DisconnectedCoordinatorException e) {
+	        e.printStackTrace();
+        }
 	}
 	
 	protected void subscribeForAdHocDiscussion() {
@@ -167,47 +191,6 @@ public class PersonUser implements PersonListener {
 		}
 	}
 	
-	// PERSON LISTENER
-	////////////////////////////////////////////////////////////////////////////////////////////
-	@Override
-    public void personAdded(Person person) {}
-	
-	@Override
-    public void personDeviceAttached(Person person, LocatedDevice device) {}
-	
-	@Override
-    public void personDeviceDetached(Person person, LocatedDevice device) {}
-	
-	@Override
-    public void personMoved(Person person, Position position) {
-		/*
-		if (person.getName().equals(name)) {
-			//System.out.println("[" + PersonUser.class.getName() + " " + name + "] Received personMoved notification to (" + position.x + ", " + position.y + ")");
-			
-			if (firstMove) {
-				// on first ever move of the person, announce specific ContextEntities and EntityDescriptions
-				if (!describedSelf) {
-					describeSelf();
-				}
-				
-				// register to be notified of how many users there are in the room
-				subscribeForNumUsers();
-				
-				firstMove = false;
-			}
-			else {
-				if (position.x < 0 && position.y < 0) {
-					cancelAdHocSubscription();
-				}
-				//System.out.println("[INFO "+ PersonUser.class.getName() +"]: User " + name + " has left the room.");
-			}
-		}
-		*/
-	}
-	
-	@Override
-    public void personRemoved(Person person) {}
-	
 	
 	// SUBSCRIPTION RESULT NOTIFIERS
 	////////////////////////////////////////////////////////////////////////////////////////////
@@ -233,6 +216,12 @@ public class PersonUser implements PersonListener {
 	}
 	
 	private class UserPresenceTask implements Runnable, QueryNotificationHandler {
+		private NumUserListener presenceListener;
+		
+		public UserPresenceTask(NumUserListener listener) {
+			this.presenceListener = listener;
+		}
+		
 		@Override
         public void run() {
 			Query presenceQuery = QueryFactory.create(UserQueryCatalog.numUsersQuery);
@@ -253,7 +242,7 @@ public class PersonUser implements PersonListener {
 					QuerySolution solution = resultSet.nextSolution();
 					int numUsers = solution.getLiteral("numUsers").getInt();
 					
-					//System.out.println("["+PersonUser.this.getClass().getSimpleName() +"] Received notification for numUsers : " + numUsers);
+					//System.out.println("["+PersonUser.this.getClass().getSimpleName() +"] Received notification for numUsers in EF210 AmI Lab: " + numUsers);
 					if (numUsers > 1) {
 						subscribeForAdHocDiscussion();
 					}
@@ -261,6 +250,11 @@ public class PersonUser implements PersonListener {
 						synchronized(guard) {
 							cancelAdHocSubscription();
 						}
+					}
+					
+					// if we have a presence listener, update result
+					if (presenceListener != null) {
+						presenceListener.userCountUpdated(SmartClassroom.EF210.getURI(), numUsers);
 					}
 				}
 				else {

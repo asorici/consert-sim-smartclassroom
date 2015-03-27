@@ -1,4 +1,4 @@
-package org.aimas.ami.cmm.simulation;
+package org.aimas.ami.cmm.simulation.services;
 
 import java.util.Calendar;
 import java.util.TimeZone;
@@ -13,13 +13,13 @@ import org.apache.felix.ipojo.annotations.StaticServiceProperty;
 
 import fr.liglab.adele.icasa.clock.Clock;
 
-@Component(name="SimulationTime-Cecille", immediate=false, publicFactory = false)
+@Component(name="SimulationTime-EF301", immediate=false, publicFactory = false)
 @Provides(properties = {
 	@StaticServiceProperty(name="service.ranking", type="java.lang.Integer", value="10"),
-	@StaticServiceProperty(name=CMMConstants.CONSERT_APPLICATION_ID_PROP, type="java.lang.String", value="CecilleUsage"),
+	@StaticServiceProperty(name=CMMConstants.CONSERT_APPLICATION_ID_PROP, type="java.lang.String", value="EF301"),
 })
 @Instantiate
-public class SimulationTimeCecille implements TimeService {
+public class SimulationTimeEF301 implements TimeService {
 	
 	@Requires
 	private Clock simulationClock;

@@ -11,6 +11,7 @@ import java.util.concurrent.ScheduledFuture;
 import java.util.concurrent.TimeUnit;
 
 import org.aimas.ami.cmm.sensing.ContextAssertionAdaptor;
+import org.aimas.ami.cmm.simulation.SensorStatsCollector;
 import org.aimas.ami.contextrep.datatype.CalendarInterval;
 import org.aimas.ami.contextrep.datatype.CalendarIntervalList;
 import org.aimas.ami.contextrep.model.ContextAssertion.ContextAssertionType;
@@ -59,6 +60,9 @@ public class NoiseLevelAdaptor extends SensorAdaptorBase {
 	@Requires(id="micSensors")
 	private Microphone[] microphoneSensors;
 	
+	@Requires
+	private SensorStatsCollector sensorStatsCollector;
+	
 	public NoiseLevelAdaptor() {
 	    super(SmartClassroom.hasNoiseLevel.getURI());
 	    
@@ -85,7 +89,7 @@ public class NoiseLevelAdaptor extends SensorAdaptorBase {
 	@Unbind(id="micSensors")
 	public void unbindMicrophoneSensor() {
 		if (updatesEnabled.get()) {
-			startUpdates(false);
+			stopUpdates();
 		}
 	}
 	
@@ -254,6 +258,9 @@ public class NoiseLevelAdaptor extends SensorAdaptorBase {
 			
 			for (Microphone mic : microphoneSensors) {
 				int noiseLevel = mic.getNoiseLevel();
+				sensorStatsCollector.markSensing(System.currentTimeMillis(), 
+						SmartClassroom.hasNoiseLevel.getLocalName());
+				
 				String sensorIdURI = SmartClassroom.BOOTSTRAP_NS + mic.getSerialNumber();
 				//System.out.println("[" + NoiseLevelAdaptor.class.getSimpleName() + "] "
 				//		+ "Generating update from sensor: " + sensorIdURI);
@@ -265,6 +272,8 @@ public class NoiseLevelAdaptor extends SensorAdaptorBase {
 					if (updateRequests != null) {
 			        	for (UpdateRequest update : updateRequests) {
 			        		sensingAdaptor.deliverUpdate(getProvidedAssertion(), update);
+			        		sensorStatsCollector.markSensingUpdateMessage(System.currentTimeMillis(), update.hashCode(), 
+			        				SmartClassroom.hasNoiseLevel.getLocalName());
 			        	}
 					}
 				}
